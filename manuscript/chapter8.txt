@@ -1,0 +1,18 @@
+# Creating & Managing Data Objects
+
+## Basics
+
+
+## Vector
+
+
+## List
+
+
+## Matrix
+
+
+## Data frame
+
+
+## Dealing with Missing Values (NAs)
