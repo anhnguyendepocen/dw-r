@@ -3,7 +3,7 @@
 Welcome to Data Wrangling with R! In this book, I will help you learn the essentials of preprocessing data leveraging the R 
 programming language to easily and quickly turn noisy data into usable pieces of information. Data wrangling, which is also 
 commonly referred to as data munging, transformation, manipulation, janitor work, etc. can be a painstakenly laborious process.
-In fact, its been stated that up to 80% of data analysis is spent on the process of cleaning and preparing data.  [^fn-first_footnote]
+In fact, its been stated that up to 80% of data analysis is spent on the process of cleaning and preparing data[^fn-first_footnote].
 However, being a prerequisite to the rest of the data analysis workflow (visualization, analysis, reporting), it's essential 
 that you become fluent *and* efficient in data wrangling techniques.
 
