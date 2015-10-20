@@ -39,7 +39,7 @@ as.integer()
 ### Checking for Numeric Type
 To check whether a vector is made up of integer or double values:
 
-
+{linenos=off}
 ```r
 # identifies the vector type (double, integer, logical, or character)
 typeof(x)     
