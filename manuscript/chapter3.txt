@@ -95,7 +95,7 @@ rm("object_name")
 # you can remove multiple objects by using the `c()` function
 rm(c("object1", "object2"))  
 
-# basically removes everything working environment -- use with caution!
+# basically removes everything in the working environment -- use with caution!
 rm(list = ls())              
 ```
 
@@ -156,7 +156,7 @@ To access a menu displaying all the shortcuts in RStudio you can use option + sh
 
 
 ## Working with packages
-In R, the fundamental unit of shareable code is the package.  A package bundles together code, data, documentation, and tests and provides an easy method to share with others.<sup><a href="#fn1" id="ref1">1</a></sup>  As of September 2015 there were over 7000 packages available on [CRAN](https://cran.r-project.org), 1000 on [Bioconductor](https://www.bioconductor.org), and countless more available through [GitHub](https://github.com).  This huge variety of packages is one of the reasons that R is so successful: chances are that someone has already solved a problem that you're working on, and you can benefit from their work by downloading their package.
+In R, the fundamental unit of shareable code is the package.  A package bundles together code, data, documentation, and tests and provides an easy method to share with others[^hadley_R_Packages].  As of September 2015 there were over 7000 packages available on [CRAN](https://cran.r-project.org), 1000 on [Bioconductor](https://www.bioconductor.org), and countless more available through [GitHub](https://github.com).  This huge variety of packages is one of the reasons that R is so successful: chances are that someone has already solved a problem that you're working on, and you can benefit from their work by downloading their package.
 
 ### Installing Packages
 To install packages: 
@@ -211,21 +211,32 @@ For help on packages that are installed on your computer:
 
 {line-numbers=off}
 ```r
-help(package = "packagename")      # provides details regarding contents of a package
-library()                          # see all packages installed 
-search()                           # see packages currently loaded
-vignette(package = "packagename")  # list vignettes available for a specific package
-vignette("vignettename")           # view specific vignette
-vignette()                         # view all vignettes on your computer
+# provides details regarding contents of a package
+help(package = "packagename")
+
+# see all packages installed
+library()                          
+
+# see packages currently loaded
+search()                           
+
+# list vignettes available for a specific package
+vignette(package = "packagename")  
+
+# view specific vignette
+vignette("vignettename")           
+
+# view all vignettes on your computer
+vignette()                         
 ```
 
 Note that some packages will have multiple vignettes.  For instance `vignette(package = "grid")` will list the 13 vignettes available for the grid package.  To access one of the specific vignettes you simply use `vignette("vignettename")`.
 
 
 ## Useful packages
+There are thousands of helpful R packages for you to use, but navigating them all can be a challenge.  To help you out, RStudio compiled a [guide](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages) to some of the best packages for loading, manipulating, visualizing, analyzing, and reporting data.  In addition, their list captures packages that specialize in spatial data, time series and financial data, increasing spead and performance, and developing your own R packages. 
 
 
 
 
-
-
+[^hadley_R_Packages]: [Wickham, H. (2015). *R packages.* "O'Reilly Media, Inc.".](http://r-pkgs.had.co.nz/)
