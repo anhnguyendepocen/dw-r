@@ -38,11 +38,16 @@ Note that some packages will have multiple vignettes.  For instance `vignette(pa
 
 For more direct help on functions that are installed on your computer:
 
-
+{line-numbers=off}
 ```r
-help(functionname)      # provides details for specific function
-?functionname           # provides same information as help(functionname) 
-example(functionname)   # provides examples for said function
+# provides details for specific function
+help(functionname)      
+
+# provides same information as help(functionname)
+?functionname           
+
+# provides examples for said function
+example(functionname)   
 ```
 
 Note that the `help()` and `?` function calls only work for functions within loaded packages.  If you want to see details on a function in a package that is installed on your computer but not loaded in the active R session you can use `help(functionname, package = "packagename")`.  Another alternative is to use the `::` operator as in `help(packagename::functionname)`.
@@ -62,9 +67,13 @@ The workspace is your current R working environment and includes any user-define
 ### Working Directory
 The *working directory* is the default location for all file inputs and outputs.  
 
+{line-numbers=off}
 ```r
-getwd()                  # returns path for the current working directory
-setwd(directory_name)    #set the working directory to directory_name
+# returns path for the current working directory
+getwd()                  
+
+#set the working directory to directory_name
+setwd(directory_name)    
 ```
 
 For example, if I call `getwd()` the file path "/Users/bradboehmke/Desktop/Personal/R Vocabulary" is returned.  If I want to set the working directory to the "Workspace" folder within the "R Vocabulary" directory I would use `setwd("Workspace")`.  Now if I call `getwd()` again it returns "/Users/bradboehmke/Desktop/Personal/R Vocabulary/Workspace".
@@ -72,12 +81,22 @@ For example, if I call `getwd()` the file path "/Users/bradboehmke/Desktop/Perso
 ### Environment Objects
 To identify or remove the objects (i.e. vectors, data frames, user defined functions, etc.) in your current R environment:
 
+{line-numbers=off}
 ```r
-ls()                         # list all objects 
-exists("object_name")        # identify if an R object with a given name is present
-rm("object_name")            # remove defined object from the environment 
-rm(c("object1", "object2"))  # you can remove multiple objects by using the `c()` function
-rm(list = ls())              # basically removes everything working environment -- use with caution!
+# list all objects
+ls()              
+
+# identify if an R object with a given name is present
+exists("object_name")        
+
+# remove defined object from the environment
+rm("object_name")            
+
+# you can remove multiple objects by using the `c()` function
+rm(c("object1", "object2"))  
+
+# basically removes everything working environment -- use with caution!
+rm(list = ls())              
 ```
 
 
@@ -85,20 +104,32 @@ rm(list = ls())              # basically removes everything working environment 
 ### Command History
 You can view previous commands one at a time by simply pressing &#8679; or view a defined number of previous commands with:
 
+{line-numbers=off}
 ```r
-history()        # default shows 25 most recent commands
-history(100)     # show 100 most recent commands
-history(Inf)     # show entire saved history
+# default shows 25 most recent commands
+history()        
+
+# show 100 most recent commands
+history(100)     
+
+# show entire saved history
+history(Inf)     
 ```
 
 
 ### Saving & Loading 
 You can save and load your workspaces.  Saving your workspace will save all R files and objects within your workspace to a .RData file.
 
+{line-numbers=off}
 ```r
-save.image()                                     # save all items in workspace to a .RData file
-save(object1, object2, file = "myfile.RData")    # save specified objects to a .RData file
-load("myfile.RData")                             # load workspace into current session
+# save all items in workspace to a .RData file
+save.image()                                  
+
+# save specified objects to a .RData file
+save(object1, object2, file = "myfile.RData")    
+
+# load workspace into current session
+load("myfile.RData")                             
 ```
 
 Note that saving the workspace without specifying the working directory will default to saving in the current directory.  You can further specify where to save the .RData by including the path: `save(object1, object2, file = "/users/name/folder/myfile.RData")`
@@ -107,18 +138,94 @@ Note that saving the workspace without specifying the working directory will def
 ### Workspace Options
 You can view and set options for the current R session:
 
+{line-numbers=off}
 ```r
-help(options)        # learn about available options
-options()            # view current option settings
-options(digits=3)    # change a specific option (i.e. number of digits to print on output)
+# learn about available options
+help(options)
+
+# view current option settings
+options()            
+
+# change a specific option (i.e. number of digits to print on output)
+options(digits=3)    
 ```
 
 
 ### Shortcuts
-To access a menu displaying all the shortcuts in RStudio you can use  &#8997;&#8679;k (option + shift + k).  Within RStudio you can also access them in the Help menu &#187; Keyboard Shortcuts.
+To access a menu displaying all the shortcuts in RStudio you can use option + shift + k.  Within RStudio you can also access them in the Help menu &#187; Keyboard Shortcuts.
 
 
 ## Working with packages
+In R, the fundamental unit of shareable code is the package.  A package bundles together code, data, documentation, and tests and provides an easy method to share with others.<sup><a href="#fn1" id="ref1">1</a></sup>  As of September 2015 there were over 7000 packages available on [CRAN](https://cran.r-project.org), 1000 on [Bioconductor](https://www.bioconductor.org), and countless more available through [GitHub](https://github.com).  This huge variety of packages is one of the reasons that R is so successful: chances are that someone has already solved a problem that you're working on, and you can benefit from their work by downloading their package.
+
+### Installing Packages
+To install packages: 
+
+{line-numbers=off}
+```r
+# install packages from CRAN
+install.packages("packagename")   
+```
+
+As previously stated, packages are also available through Bioconductor and GitHub.  To download Bioconductor packages:
+
+{line-numbers=off}
+```r
+# link to Bioconductor URL
+source("http://bioconductor.org/biocLite.R")  
+
+# install core Bioconductor packages
+biocLite()                                    
+
+# install specific Bioconductor package
+biocLite("packagename")                       
+```
+
+And to download GitHub packages:
+
+{line-numbers=off}
+```r
+# the devtools package provides a simply function to download GitHub packages
+install.packages("devtools")                      
+
+# install package which exists at github.com/username/packagename
+devtools::install_github("username/packagename")  
+```
+
+### Loading Packages
+Once the package is downloaded to your computer you can access the functions and resources provided by the package in two different ways:
+
+{line-numbers=off}
+```r
+# load the package to use in the current R session
+library(packagename)         
+
+# use a particular function within a package without loading the package
+packagename::functionname    
+```
+For instance, if you want to have full access to the tidyr package you would use `library(tidyr)`; however, if you just wanted to use the `gather()` function without loading the tidyr package you can use `tidyr::gather(function arguments)`.
+
+
+### Getting Help on Packages
+For help on packages that are installed on your computer:
+
+{line-numbers=off}
+```r
+help(package = "packagename")      # provides details regarding contents of a package
+library()                          # see all packages installed 
+search()                           # see packages currently loaded
+vignette(package = "packagename")  # list vignettes available for a specific package
+vignette("vignettename")           # view specific vignette
+vignette()                         # view all vignettes on your computer
+```
+
+Note that some packages will have multiple vignettes.  For instance `vignette(package = "grid")` will list the 13 vignettes available for the grid package.  To access one of the specific vignettes you simply use `vignette("vignettename")`.
 
 
 ## Useful packages
+
+
+
+
+
+
