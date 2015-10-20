@@ -1,0 +1,18 @@
+# Dealing with Numbers
+
+## Integer vs. Double
+
+
+## Generating sequence of non-random numbers
+
+
+## Generating sequence of random numbers
+
+
+## Setting the seed for reproducible random numbers
+
+
+## Comparing numeric values
+
+
+## Rounding numbers
