@@ -1,0 +1,12 @@
+# Dealing with Character Strings
+
+## Character string basics
+
+
+## String manipulation
+
+
+## Regular expressions
+
+
+## Additional resources
