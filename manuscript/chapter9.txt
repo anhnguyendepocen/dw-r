@@ -1,0 +1,12 @@
+# Functions
+
+## Creating functions
+
+
+## Loops
+
+
+## Apply family
+
+
+## Other useful "loop-like" functions
