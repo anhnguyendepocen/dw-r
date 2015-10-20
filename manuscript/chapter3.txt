@@ -1,7 +1,7 @@
 # R Basics
 
 ## Getting help
-The help documentation and support in R is comprehensive and easily accessible from the command line. To leverage general help resources you can use:  
+The help documentation and support in R is comprehensive and easily accessible from the command line. To leverage general help resources you can use the following:  
 
 {line-numbers=off}
 ```r
@@ -11,14 +11,13 @@ help.start()
 # searches the help system for documentation matching a given character string
 help.search("text")    
 ```
-
 Note that the `help.search("some text here")` function requires a character string enclosed in quotation marks.
 
 ### Getting Help on Packages
 
 For more direct help on packages that are installed on your computer:
 
-
+{line-numbers=off}
 ```r
 # provides details regarding contents of a package
 help(package = "packagename")      
