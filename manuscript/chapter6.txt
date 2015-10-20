@@ -1,0 +1,12 @@
+# Dealing with Factors
+
+## Creating, converting & inspecting
+
+
+## Ordering levels
+
+
+## Revalue levels
+
+
+## Dropping levels
