@@ -1,0 +1,21 @@
+# Dealing with Dates
+
+## Getting current date & time
+
+
+## Converting strings to dates
+
+
+## Extract & manipulate parts of dates
+
+
+## Creating date sequences
+
+
+## Calculations with dates
+
+
+## Dealing with time zones & daylight savings
+
+
+## Additional resources
