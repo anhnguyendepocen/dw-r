@@ -15,6 +15,14 @@ access before, develop your own functions, manage control structures, reshape th
 and join data sets.  In essence, you will have the data wrangling toolbox required for modern day data analysis.
 
 
+## Who this Book is For
+
+
+## What You Need For this Book
+
+
+## Reader Feedback
+
 
 
 [^fn-first_footnote]: cf. [Wickham, 2014](http://vita.had.co.nz/papers/tidy-data.pdf) and [Dasu and Johnson, 2003](http://onlinelibrary.wiley.com/doi/10.1002/0471448354.ch4/summary)
