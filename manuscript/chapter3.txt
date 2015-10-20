@@ -20,10 +20,17 @@ For more direct help on packages that are installed on your computer:
 
 
 ```r
-help(package = "packagename")      # provides details regarding contents of a package
-vignette(package = "packagename")  # list vignettes available for a specific package
-vignette("vignettename")           # view specific vignette
-vignette()                         # view all vignettes on your computer
+# provides details regarding contents of a package
+help(package = "packagename")      
+
+# list vignettes available for a specific package
+vignette(package = "packagename")  
+
+# view specific vignette
+vignette("vignettename")           
+
+# view all vignettes on your computer
+vignette()                         
 ```
 
 Note that some packages will have multiple vignettes.  For instance `vignette(package = "grid")` will list the 13 vignettes available for the grid package.  To access one of the specific vignettes you simply use `vignette("vignettename")`. 
