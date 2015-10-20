@@ -5,8 +5,11 @@ The help documentation and support in R is comprehensive and easily accessible f
 
 
 ```r
-help.start()           # provides general help links
-help.search("text")    # searches the help system for documentation matching a given character string
+# provides general help links
+help.start()   
+
+# searches the help system for documentation matching a given character string
+help.search("text")    
 ```
 
 Note that the `help.search("some text here")` function requires a character string enclosed in quotation marks.
