@@ -16,6 +16,7 @@ and join data sets.  In essence, you will have the data wrangling toolbox requir
 
 
 ## Who this Book is For
+This book is meant to establish the baseline R vocabulary and knowledge for the primary data wrangling processes.  This captures a wide range of programming activities which covers the full spectrum from understanding basic data objects in R to writing your own functions, applying loops, and webscraping.  As a result, this book can be beneficial to all levels of R programmers.  Beginner R programmers will a gain basic understanding of the functionality of R along with learning how to work with data using R.  Intermediate and/or advanced R programmers will likely find the early chapters reiterating established knowledge; however, these programmers will benefit from the mid and latter chapters by learning newer and/or more efficient data wrangling techniques.  
 
 
 ## What You Need For this Book
