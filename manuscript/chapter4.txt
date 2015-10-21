@@ -45,7 +45,7 @@ To check whether a vector is made up of integer or double values:
 typeof(x)     
 ```
 
-## Generating sequence of non-random numbers
+## Generating sequence of non-random numbers {#generating_sequence_numbers}
 There are a few R operators and functions that are especially useful for creating vectors.  These functions allow for generating numbers in multiple ways.
 
 ### Specifing Numbers within a Sequence
