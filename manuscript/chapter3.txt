@@ -1,6 +1,13 @@
 # R Basics
+This chapter will cover some of the basics of R to get you comfortable.  This includes understanding how to [assign and evaluation expressions](#basics_assignment), the idea of [vectorization](#basics_vectorization), how to [get help](#basics_help), managing your [workspace](#basics_workspace), and how to work with [packages](#packages).  
 
-## Getting help
+
+## Assignment & Evaluation {#basics_assignment}
+
+
+## Vectorization {#basics_vectorization}
+
+## Getting help {#basics_help}
 The help documentation and support in R is comprehensive and easily accessible from the command line. To leverage general help resources you can use the following:  
 
 {line-numbers=off}
@@ -61,6 +68,7 @@ Typically, a problem you may be encountering is not new and others have faced, s
 * [R-seek](http://rseek.org): a Google custom search that is focused on R-specific websites
 * [R-bloggers](http://www.r-bloggers.com/): a central hub of content collected from over 500 bloggers who provide news and tutorials about R.
 
+{#basics_workspace}
 ## Workspace
 The workspace is your current R working environment and includes any user-defined objects (vectors, matrices, data frames, lists, functions).  The following code provides the basics for understanding, configuring and customizing your current R environment.
 
