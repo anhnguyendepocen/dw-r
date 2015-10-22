@@ -2,7 +2,7 @@
 Dealing with character strings is often under-emphasized in data analysis training.  The focus typically remains on numeric values; however, the growth in data collection is also resulting in greater bits of information embedded in character strings.  Consequently, handling, cleaning and processing character strings is becoming a prerequisite in daily data analysis.  This chapter is meant to give you the foundation of working with characters by covering some [basics](#character_basics) followed by learning how to [manipulate strings](#string_manipulation) using base R functions along with using the simplified `stringr` package.  Next you will learn the basics of identifying, extracting, and replacing patterns in character strings commonly referred to as [regular expressions](#regex). Lastly, I offer some [additional resources](#add_resources) to learn more about dealing with characters and expressions.
 
 ## Character string basics {#character_basics}
-In this section you'll learn the basics of creating, converting and printing character string followed by how to assess the number of elements and characters in a string.
+In this section you'll learn the basics of creating, converting and printing character strings followed by how to assess the number of elements and characters in a string.
 
 ### Creating Strings
 
@@ -21,15 +21,24 @@ The `paste()` function provides a versatile means for creating and building stri
 # paste together string a & b
 paste(a, b)                      
 ## [1] "learning to create character strings"
+```
 
+{linenos=off}
+```r
 # paste character and number strings (converts numbers to character class)
 paste("The life of", pi)           
 ## [1] "The life of 3.14159265358979"
+```
 
+{linenos=off}
+```r
 # paste multiple strings
 paste("I", "love", "R")            
 ## [1] "I love R"
+```
 
+{linenos=off}
+```r
 # paste multiple strings with a separating character
 paste("I", "love", "R", sep = "-")  
 ## [1] "I-love-R"
