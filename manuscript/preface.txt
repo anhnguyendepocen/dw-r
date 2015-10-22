@@ -20,6 +20,7 @@ This book is meant to establish the baseline R vocabulary and knowledge for the 
 
 
 ## What You Need For this Book
+Obviously to gain and retain knowledge from this book it is highly recommended that you follow along and practice the code examples yourself.  Furthermore, this book assumes that you will actually be performing data wrangling in R; therefore, it is only assumed that you have or plan to have R installed on your computer. You will find the latest version of R for Linux, Mac OS, and Windows at [cran.r-project.org/](https://cran.r-project.org/).  It is also recommended that you use an integrated development environment (IDE) as it will simplify and organize your coding environment greatly.  There are several to choose from; however, I highly recommend [RStudio](https://www.rstudio.com/).
 
 
 ## Reader Feedback
