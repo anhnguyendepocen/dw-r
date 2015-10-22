@@ -645,9 +645,9 @@ C> . &nbsp;&nbsp; \\\ &nbsp;&nbsp; | &nbsp;&nbsp; ( &nbsp;&nbsp; ) &nbsp;&nbsp; 
 
 To match metacharacters in R you need to escape them with a double backslash "\\\\".  The following displays the general escape syntax for the most common metacharacters:
 
-![](https://github.com/bradleyboehmke/bradleyboehmke.github.io/blob/master/public/images/r_vocab/metacharacter_escape.png)
+![](images/metacharacter_escape.png)
 
-The following provides examples to show how to use the escape syntax to find and replace metacharacters.  For information on the `sub` and `gsub` functions used in example visit the [main regex functions page](#main_regex_functions):
+The following provides examples to show how to use the escape syntax to find and replace metacharacters.  For information on the `sub` and `gsub` functions used in this example visit the [main regex functions page](#main_regex_functions).
 
 {linenos=off}
 ```r
@@ -662,13 +662,94 @@ gsub(pattern = "\\\\", " ", "I\\need\\space")
 ```
 
 #### Sequences
+To match a sequence of characters we can apply short-hand notation which captures the fundamental types of sequences.  The following displays the general syntax for these common sequences:
 
+![](images/anchor_sequence.png)
+    
+The following provides examples to show how to use the anchor syntax to find and replace sequences.  For information on the `gsub` function used in this example visit the [main regex functions page](#main_regex_functions).
+
+{linenos=off}
+```r
+gsub(pattern = "\\d", "_", "I'm working in RStudio v.0.99.484")
+## [1] "I'm working in RStudio v._.__.___"
+
+gsub(pattern = "\\D", "_", "I'm working in RStudio v.0.99.484")
+## [1] "_________________________0_99_484"
+
+gsub(pattern = "\\s", "_", "I'm working in RStudio v.0.99.484")
+## [1] "I'm_working_in_RStudio_v.0.99.484"
+
+gsub(pattern = "\\w", "_", "I'm working in RStudio v.0.99.484")
+## [1] "_'_ _______ __ _______ _._.__.___"
+```
+{#character_class}
 #### Character classes
+To match one of several characters in a specified set we can enclose the characters of concern with square brackets [ ].  In addition, to match any characters **not** in a specified character set we can include the caret ^ at the beginning of the set within the brackets.  The following displays the general syntax for common character classes but these can be altered easily as shown in the examples that follow:
+
+[](images/character_class.png)
+
+The following provides examples to show how to use the anchor syntax to match character classes.  For information on the `grep` function used in this example visit the [main regex functions page](#main_regex_functions).
+
+{linenos=off}
+```r
+x <- c("RStudio", "v.0.99.484", "2015", "09-22-2015", "grep vs. grepl")
+
+grep(pattern = "[0-9]", x, value = TRUE)
+## [1] "v.0.99.484" "2015"       "09-22-2015"
+
+grep(pattern = "[6-9]", x, value = TRUE)
+## [1] "v.0.99.484" "09-22-2015"
+
+grep(pattern = "[Rr]", x, value = TRUE)
+## [1] "RStudio"        "grep vs. grepl"
+
+grep(pattern = "[^0-9a-zA-Z]", x, value = TRUE)
+## [1] "v.0.99.484"     "09-22-2015"     "grep vs. grepl"
+```
 
 #### POSIX character classes
+Closely related to regex [character classes](#character_class) are POSIX character classes which are expressed in double brackets [[ ]].
+
+[](images/posix.png)   
+
+The following provides examples to show how to use the anchor syntax to match POSIX character classes. For information on the `grep` function used in this example visit the [main regex functions page](#main_regex_functions).
+
+{linenos=off}
+```r
+x <- "I like beer! #beer, @wheres_my_beer, I like R (v3.2.2) #rrrrrrr2015"
+
+gsub(pattern = "[[:blank:]]", replacement = "", x)
+## [1] "Ilikebeer!#beer,@wheres_my_beer,IlikeR(v3.2.2)#rrrrrrr2015"
+
+gsub(pattern = "[[:punct:]]", replacement = " ", x)
+## [1] "I like beer   beer   wheres my beer  I like R  v3 2 2   rrrrrrr2015"
+
+gsub(pattern = "[[:alnum:]]", replacement = "", x)
+## [1] "  ! #, @__,    (..) #"
+```
 
 #### Quantifiers
+When we want to match a **certain number** of characters that meet a certain criteria we can apply quantifiers to our pattern searches.  The quantifiers we can use are:
 
+[](images/quantifier.png)    
+
+The following provides examples to show how to use the quantifier syntax to match a **certain number** of characters patterns. For information on the `grep` function used in this example visit the [main regex functions page](#main_regex_functions).  Note that `state.name` is a built in dataset within R that contains all the U.S. state names.
+
+{linenos=off}
+```r
+grep(pattern = "z+", state.name, value = TRUE)
+## [1] "Arizona"
+
+grep(pattern = "s{2}", state.name, value = TRUE)
+## [1] "Massachusetts" "Mississippi"   "Missouri"      "Tennessee"
+
+grep(pattern = "s{1,2}", state.name, value = TRUE)
+##  [1] "Alaska"        "Arkansas"      "Illinois"      "Kansas"       
+##  [5] "Louisiana"     "Massachusetts" "Minnesota"     "Mississippi"  
+##  [9] "Missouri"      "Nebraska"      "New Hampshire" "New Jersey"   
+## [13] "Pennsylvania"  "Rhode Island"  "Tennessee"     "Texas"        
+## [17] "Washington"    "West Virginia" "Wisconsin"
+```
 
 {#regex_functions}
 ### Regex Functions
