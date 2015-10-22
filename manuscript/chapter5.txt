@@ -246,7 +246,9 @@ nchar(c("How", "many", "characters", "are", "in", "this", "string?"))
 ## String manipulation {#string_manipulation}
 Basic string manipulation typically inludes case conversion, simple character and substring replacement, adding/removing whitespace, and performing set operations to compare similarities and differences between two character vectors.  These operations can all be performed with base R functions; however, some operations (or at least their syntax) are simplified with the `stringr` package.  This section illustrates these string manipulation capabilities.
 
-### Convert to Lower Case
+### String manipulation with base R
+
+#### Convert to Lower Case
 To convert all upper case characters to lower case use `tolower()`:
 
 {linenos=off}
@@ -257,7 +259,7 @@ tolower(x)
 ## [1] "learning to manipulate strings in r"
 ```
 
-### Convert to Upper Case
+#### Convert to Upper Case
 To convert all lower case characters to upper case use `toupper()`:
 
 {linenos=off}
@@ -266,7 +268,7 @@ toupper(x)
 ## [1] "LEARNING TO MANIPULATE STRINGS IN R"
 ```
 
-### Simple Character Replacement
+#### Simple Character Replacement
 To replace a character (or multiple characters) in a string you can use `chartr()`:
 
 {linenos=off}
@@ -285,7 +287,7 @@ chartr(old = "dz", new = "ta", y)
 
 Note that `chartr()` replaces every identified letter for replacement so the only time I use it is when I am certain that I want to change every possible occurence of a letter.
 
-### String Abbreviations
+#### String Abbreviations
 To abbreviate strings you can use `abbreviate()`:
 
 {linenos=off}
@@ -305,7 +307,7 @@ abbreviate(streets, minlength = 2)
 
 Note that if you are working with U.S. states, R already has a pre-built vector with state names (`state.name`).  Also, there is a pre-built vector of abbreviated state names (`state.abb`).
 
-### Extract/Replace Substrings
+#### Extract/Replace Substrings
 To extract or replace substrings in a character vector use `substr()`, `substring()`, and `strsplit()`:
 
 Extract and replace substrings with specified starting and stopping characters with `substr()`:
@@ -371,6 +373,20 @@ Note that the output of `strsplit()` is a list.  To convert the output to a simp
 unlist(strsplit(a, split = "-"))
 ## [1] "Alabama"    "Alaska"     "Arizona"    "Arkansas"   "California"
 ```
+
+### String manipulation with `stringr`
+The [`stringr`](http://cran.r-project.org/web/packages/stringr/index.html) package was developed by Hadley Wickham to act as simple wrappers that make R’s string functions more consistent, simpler, and easier to use.  To replicate the functions in this section you will need to install and load the `stringr` package:
+
+{linenos=off}
+```r
+# install stringr package
+install.packages("stringr")
+
+# load package
+library(stringr)
+```
+For more information on getting help with packages visit the [working with packages section](#packages).
+
 
 
 ## Regular expressions {#regex}
