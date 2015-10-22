@@ -1,5 +1,5 @@
 # Dealing with Numbers
-In this chapter you will learn the basics of working with numbers in R.  This includes understanding how to manage the [numeric type (integer vs. double)](integer_vs_double), the different ways of generating [non-random](#generating_sequence_numbers) and [random](#generating_random_numbers) numbers, how to [set seed values](#setting_seed) for reproducible random number generation, and the different ways to [compare](#compare_numeric_values) and [round](#round_numbers) numeric values.
+In this chapter you will learn the basics of working with numbers in R.  This includes understanding how to manage the [numeric type (integer vs. double)](#integer_vs_double), the different ways of generating [non-random](#generating_sequence_numbers) and [random](#generating_random_numbers) numbers, how to [set seed values](#setting_seed) for reproducible random number generation, and the different ways to [compare](#compare_numeric_values) and [round](#round_numbers) numeric values.
 
 
 ## Integer vs. Double {#integer_vs_double}
