@@ -867,7 +867,7 @@ gsub("New", replacement = "Old", new, ignore.case = TRUE)
 ##### Splitting Character Vectors
 To split the elements of a character string use `strsplit()`:
 
-{linenos=off}
+{linenos=off, lang="js"}
 ```r
 x <- paste(state.name[1:10], collapse = " ")
 
