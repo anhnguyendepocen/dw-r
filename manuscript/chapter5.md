@@ -645,7 +645,7 @@ C> . &nbsp;&nbsp; \\\ &nbsp;&nbsp; | &nbsp;&nbsp; ( &nbsp;&nbsp; ) &nbsp;&nbsp; 
 
 To match metacharacters in R you need to escape them with a double backslash "\\\\".  The following displays the general escape syntax for the most common metacharacters:
 
-![Metacharacters in R](images/metacharacter_escape.png)
+![](images/metacharacter_escape.png)
 
 The following provides examples to show how to use the escape syntax to find and replace metacharacters.  For information on the `sub` and `gsub` functions used in this example visit the [main regex functions page](#main_regex_functions).
 
@@ -664,7 +664,7 @@ gsub(pattern = "\\\\", " ", "I\\need\\space")
 #### Sequences
 To match a sequence of characters we can apply short-hand notation which captures the fundamental types of sequences.  The following displays the general syntax for these common sequences:
 
-![Anchor sequences in R](images/anchor_sequence.png)
+![](images/anchor_sequence.png)
     
 The following provides examples to show how to use the anchor syntax to find and replace sequences.  For information on the `gsub` function used in this example visit the [main regex functions page](#main_regex_functions).
 
@@ -686,7 +686,7 @@ gsub(pattern = "\\w", "_", "I'm working in RStudio v.0.99.484")
 #### Character classes
 To match one of several characters in a specified set we can enclose the characters of concern with square brackets [ ].  In addition, to match any characters **not** in a specified character set we can include the caret ^ at the beginning of the set within the brackets.  The following displays the general syntax for common character classes but these can be altered easily as shown in the examples that follow:
 
-![Character classes in R](images/character_class.png)
+![](images/character_class.png)
 
 The following provides examples to show how to use the anchor syntax to match character classes.  For information on the `grep` function used in this example visit the [main regex functions page](#main_regex_functions).
 
@@ -710,7 +710,7 @@ grep(pattern = "[^0-9a-zA-Z]", x, value = TRUE)
 #### POSIX character classes
 Closely related to regex [character classes](#character_class) are POSIX character classes which are expressed in double brackets [[ ]].
 
-![POSIX classes in R](images/posix.png)   
+![](images/posix.png)   
 
 The following provides examples to show how to use the anchor syntax to match POSIX character classes. For information on the `grep` function used in this example visit the [main regex functions page](#main_regex_functions).
 
@@ -762,7 +762,7 @@ The primary base R regex functions serve three primary purposes:  [pattern match
 ##### Pattern matching {#pattern_matching}
 There are five functions that provide pattern matching capabilities.  The three functions that I provide examples for are ones that are most common.  The two other functions which I do not illustrate are `gregexpr()` and `regexec()` which provide similar capabilities as `regexpr()` but with the output in list form.
 
-###### grep()
+###### `grep()`:
 To find a pattern in a character vector and to have the element values or indices as the output use `grep()`:
 
 {linenos=off}
@@ -792,7 +792,7 @@ grep("North | South", state.division, invert = TRUE)
 ## [24] 40 44 45 46 47 48 50
 ```
 
-###### grepl()
+###### `grepl()`:
 To find a pattern in a character vector and to have logical (TRUE/FALSE) outputs use `grep()`:
 
 {linenos=off}
@@ -809,7 +809,7 @@ sum(grepl("North | South", state.division))
 ## [1] 20
 ```
 
-###### regexpr()
+###### `regexpr()`:
 To find exactly where the pattern exists in a string use `regexpr()`:
 
 {linenos=off}
@@ -832,7 +832,7 @@ In addition to finding patterns in character vectors, its also common to want to
 * Replace the first occurrence
 * Replace all occurrences
 
-###### sub()
+###### `sub()`:
 To replace the **first** matching occurrence of a pattern use `sub()`:
 
 {linenos=off}
@@ -850,7 +850,7 @@ sub("New", replacement = "Old", new, ignore.case = TRUE)
 ## [1] "Old York"         "Old new York"     "Old New New York"
 ```
 
-###### gsub()
+###### `gsub()`:
 To replace **all** matching occurrences of a pattern use `gsub()`:
 
 {linenos=off}
