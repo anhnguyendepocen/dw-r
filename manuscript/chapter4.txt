@@ -70,7 +70,7 @@ x
 ##  [1]  1  2  3  4  5  6  7  8  9 10
 ```
 
-### Generating Regular Sequences
+### Generating Regular Sequences {#seq}
 A generalization of `:` is the `seq()` function, which generates a sequence of numbers with a specified arithmetic progression.
 
 {linenos=off}
