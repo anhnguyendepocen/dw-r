@@ -1,7 +1,0 @@
-# Data Wrangling
-
-
-## `tidyr` for reshaping the layout of data frames
-
-
-## `dplyr` for manipulating, summarizing, and joining data frames
