@@ -890,6 +890,7 @@ unlist(strsplit(x, " "))
 #### Regex functions in `stringr`
 Similar to basic string manipulation, the `stringr` package also offers regex functionality.  In some cases the `stringr` performs the same functions as certain base R functions but with more consistent syntax.  In other cases `stringr` offers additional functionality that is not available in base R functions.
 
+{linenos=off}
 ```r
 # install stringr package
 install.packages("stringr")
@@ -901,6 +902,7 @@ library(stringr)
 ##### Detecting Patterns
 To detecting whether a pattern is present (or absent) in a string vector use the `str_detect()`. This function is a wraper for [`grepl()`](#grepl).
 
+{linenos=off}
 ```r
 # use the built in data set 'state.name'
 head(state.name)
@@ -928,6 +930,7 @@ To *locate* the occurences of patterns `stringr` offers two options:
 {#first_match}
 To locate the position of the first occurrence of a pattern in a string vector use `str_locate()`. The output provides the starting and ending position of the first match found within each element.
 
+{linenos=off}
 ```r
 x <- c("abcd", "a22bc1d", "ab3453cd46", "a1bc44d")
 
@@ -944,6 +947,7 @@ str_locate(x, "[0-9]+")
 {#last_match}
 To locate the positions of all pattern match occurrences in a character vector use `str_locate_all()`.  The output provides a list the same length as the number of elements in the vector.  Each list item will provide the starting and ending positions for each pattern match occurrence in its respective element.
 
+{linenos=off}
 ```r
 # locate all sequences of 1 or more consecutive numbers
 str_locate_all(x, "[0-9]+")
@@ -975,6 +979,7 @@ For extracting a string containing a pattern, `stringr` offers two primary optio
 {#first_match_extract}
 To extract the first occurrence of a pattern in a character vector use `str_extract()`. The output will be the same length as the string and if no match is found the output will be `NA` for that element.
 
+{linenos=off}
 ```r
 y <- c("I use R #useR2014", "I use R and love R #useR2015", "Beer")
 
@@ -985,6 +990,7 @@ str_extract(y, pattern = "R")
 {#all_match_extract}
 To extract all occurrences of a pattern in a character vector use `str_extract_all()`.  The output provides a list the same length as the number of elements in the vector.  Each list item will provide the matching pattern occurrence within that relative vector element.
 
+{linenos=off}
 ```r
 str_extract_all(y, pattern = "[[:punct:]]*[a-zA-Z0-9]*R[a-zA-Z0-9]*")
 ## [[1]]
@@ -1006,6 +1012,7 @@ For extracting a string containing a pattern, `stringr` offers two options:
 {#replace_first}
 To replace the first occurrence of a pattern in a character vector use `str_replace()`. This function is a wraper of [`sub()`](#sub)
 
+{linenos=off}
 ```r
 cities <- c("New York", "new new York", "New New New York")
 cities
@@ -1023,6 +1030,7 @@ str_replace(cities, pattern = "[N]*[n]*ew", replacement = "Old")
 {#replace_all}
 To extract all occurrences of a pattern in a character vector use `str_replace_all()`.  This function is a wraper of [`gsub()`](#gsub)
 
+{linenos=off}
 ```r
 str_replace_all(cities, pattern = "[N]*[n]*ew", replacement = "Old")
 ## [1] "Old York"         "Old Old York"     "Old Old Old York"
@@ -1031,6 +1039,7 @@ str_replace_all(cities, pattern = "[N]*[n]*ew", replacement = "Old")
 ##### String Splitting
 To split the elements of a character string use `str_split()`. This function is a wraper of [`strsplit()`](#strsplit).
 
+{linenos=off}
 ```r
 z <- "The day after I will take a break and drink a beer."
 str_split(z, pattern = " ")
@@ -1046,6 +1055,7 @@ str_split(a, pattern = "-")
 
 Note that the output of `strs_plit()` is a list.  To convert the output to a simple atomic vector simply wrap in `unlist()`:
 
+{linenos=off}
 ```r
 unlist(str_split(a, pattern = "-"))
 ## [1] "Alabama"    "Alaska"     "Arizona"    "Arkansas"   "California"
