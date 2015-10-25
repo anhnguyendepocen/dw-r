@@ -12,5 +12,7 @@ chapter8_dates.txt
 part3.txt
 chapter9_data_structures.txt
 chapter10_get_data.txt
-chapter10.txt
-chapter11.txt
+part4.txt
+chapter11_functions.txt
+chapter12_tidy.txt
+chapter13_dplyr.txt
