@@ -1,1 +1,1 @@
--# Managing Data Structures and Getting Data into R
+-# Importing, Scraping, Managing, and Exporting Data Objects in R
