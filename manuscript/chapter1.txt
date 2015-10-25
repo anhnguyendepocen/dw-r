@@ -1,2 +1,5 @@
 # The Role of Data Wrangling
-Hello, world!
+
+> *"Water, water, everywhere, nor any a dropt to drink"* - Samuel Taylor Coleridge
+
+
