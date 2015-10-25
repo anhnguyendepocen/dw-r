@@ -2,7 +2,7 @@ preface.txt
 part1.txt
 chapter1_data_wrangling_role.txt
 chapter2_intro_to_R.txt
-chapter3.txt
+chapter3_R_basics.txt
 part2.txt
 chapter4.txt
 chapter5.txt
