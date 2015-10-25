@@ -3,6 +3,7 @@ part1.txt
 chapter1.txt
 chapter2.txt
 chapter3.txt
+part1.txt
 chapter4.txt
 chapter5.txt
 chapter6.txt
