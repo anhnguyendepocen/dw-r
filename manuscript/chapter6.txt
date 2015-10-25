@@ -11,7 +11,7 @@ In this chapter I will cover the basics of dealing with factors which will cover
 * [Dropping levels](#factors_dropping)
 
 
-## Creating, converting & inspecting {#factors_creating}
+## Creating, converting & inspecting factors {#factors_creating}
 Factor objects can be created with the `factor()` function:
 
 {linenos=off}
