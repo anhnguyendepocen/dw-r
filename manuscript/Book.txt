@@ -6,6 +6,7 @@ chapter3_R_basics.txt
 part2.txt
 chapter4_numbers.txt
 chapter5.txt
+chapter6_regex.txt
 chapter6.txt
 chapter7.txt
 chapter8.txt
