@@ -7,7 +7,7 @@ part2.txt
 chapter4_numbers.txt
 chapter5_characters.txt
 chapter6_regex.txt
-chapter6.txt
+chapter7_factors.txt
 chapter7.txt
 chapter8.txt
 chapter9.txt
