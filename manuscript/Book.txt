@@ -4,7 +4,7 @@ chapter1_data_wrangling_role.txt
 chapter2_intro_to_R.txt
 chapter3_R_basics.txt
 part2.txt
-chapter4.txt
+chapter4_numbers.txt
 chapter5.txt
 chapter6.txt
 chapter7.txt
