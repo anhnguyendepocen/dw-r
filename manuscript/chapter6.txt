@@ -5,7 +5,7 @@ One can think of a factor as an integer vector where each integer has a label[^h
 
 In this chapter I will cover the basics of dealing with factors which will cover:
 
-* [Creating, converting & inspecting](#factors_creating)
+* [Creating, converting & inspecting factors](#factors_creating)
 * [Ordering levels](#factors_ordering)
 * [Revalue levels](#factors_revalue)
 * [Dropping levels](#factors_dropping)
