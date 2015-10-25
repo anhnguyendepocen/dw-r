@@ -8,7 +8,8 @@ chapter4_numbers.txt
 chapter5_characters.txt
 chapter6_regex.txt
 chapter7_factors.txt
-chapter7.txt
+chapter8_dates.txt
+part3.txt
 chapter8.txt
 chapter9.txt
 chapter10.txt
