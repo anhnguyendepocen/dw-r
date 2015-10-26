@@ -1,5 +1,7 @@
 # Functions
 
+> “To iterate is human, to recurse divine.” - L. Peter Deutsch
+
 ## Creating functions
 
 
