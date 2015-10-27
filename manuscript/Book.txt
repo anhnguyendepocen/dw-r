@@ -14,5 +14,6 @@ chapter9_data_structures.txt
 chapter10_get_data.txt
 part4.txt
 chapter11_functions.txt
+chapter11_loops.txt
 chapter12_tidy.txt
 chapter13_dplyr.txt
