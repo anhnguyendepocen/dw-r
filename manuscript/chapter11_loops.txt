@@ -390,7 +390,7 @@ The `lapply()` function does the following simple series of operations:
 
 1. it loops over a list, iterating over each element in that list
 2. it applies a function to each element of the list (a function that you specify) 
-3. and returns a list (the l is for “list”).
+3. and returns a list (the l is for "list").
 
 The syntax for `lapply()` is as follows where 
 
