@@ -1,0 +1,20 @@
+# Loop Control Statements
+
+> *"To iterate is human, to recurse divine."* - L. Peter Deutsch
+
+Provide introduction here...
+
+In this chapter I will cover the [basic loop functions](#loop_functions) in R.  These loop functions are considered "control structures" because they allow you to control the flow of execution through various logical commands.  Common loop functions that I will cover include `if`, `else`, `for`, `while`, and `repeat`.  In addition, I cover `break` and `next` which allow you to further control flow within the aforementioned loop functions.
+Next I will cover a set of vectorized functions known as the apply family of functions which minimize your need to explicitly create loops.  I then provide some [additional "loop-like" functions](#other_loops) that are helpful in everyday data analysis followed by a list of [additional resources](#functions_add_resource) to learn more about control structures in R.
+
+
+## Loops {#loop_functions}
+
+
+## Apply family {#apply_family}
+
+
+## Other useful "loop-like" functions {#other_loops}
+
+
+## Additional Resources {#functions_add_resource}
