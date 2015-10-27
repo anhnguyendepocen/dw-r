@@ -2,17 +2,11 @@
 
 > *"To iterate is human, to recurse divine."* - L. Peter Deutsch
 
-Provide introduction here...
+Provide introduction to functions here...
 
-In this chapter I will first provide you with the basic knowledge of how functions operate in R.  In the [first section](#creating_functions) I cover the general components of functions, scoping and evaluation rules, managing function outputs, handling invalid parameters, and saving & sourcing functions for reuse.  This will provide you the with the required knowledge to start building your own functions.  
+In this chapter I will provide you with the basic knowledge of how functions operate in R.  To do this, I cover the general [components of functions](#function_components), specifying function [arguments](#function_arguments), [scoping](#function_scoping) and [evaluation](#function_lazy) rules, [managing function outputs](#function_outputs), handling [invalid parameters](#function_invalid), and [saving & sourcing functions](#function_saving) for reuse.  This will provide you the with the required knowledge to start building your own functions.  Lastly, I offer some [additional resources](#functions_add_resource) that will help you learn more about functions in R. 
 
-[Section two](#loop_functions) will then cover the basic loop functions in R.  These loop functions are considered "control structures" because they allow you to control the flow of execution through various logical commands.  Common loop functions that I will cover include `if`, `else`, `for`, `while`, and `repeat`.  In addition, I cover `break` and `next` which allow you to further control flow within the aforementioned loop functions.
-
-[Section three](#apply_family) covers a set of vectorized functions known as the apply family of functions which minimize your need to explicitly create loops.  I then provide some [additional "loop-like" functions](#other_loops) that are helpful in everyday data analysis followed by a list of [additional resources](#functions_add_resource) to learn more about functions in R.
-
-## Creating functions {#creating_functions}
-
-### Function Components
+## Function Components {#function_components}
 With the exception of [primitive functions](https://cran.r-project.org/doc/manuals/r-release/R-ints.html#g_t_002eInternal-vs-_002ePrimitive) all R functions have three parts:
 
 - `body()`: the code inside the function
@@ -21,17 +15,49 @@ With the exception of [primitive functions](https://cran.r-project.org/doc/manua
 
 For example, let's build a function that calculates the present value (PV) of a single future sum.  The equation for a single sum PV is: $PV = FV/(1+r)^n$ where FV is future value, r is the interest rate, and n is the number of periods.  In the function that follows the `body` of the function includes the equation $FV/(1+r)^n$ and then rounding the output to two decimals. The `formals` (or arguments) required for the function include `FV`, `r`, and `n`.  And the `environment` shows that function operates in the global environment.
 
+```r
+PV <- function(FV, r, n) {
+        PV <- FV/(1+r)^n
+        round(PV, 2)
+}
 
-## Loops {#loop_functions}
+body(PV)
+## {
+##     PV <- FV/(1 + r)^n
+##     round(PV, 2)
+## }
 
+formals(PV)
+## $FV
+## 
+## 
+## $r
+## 
+## 
+## $n
 
-## Apply family {#apply_family}
+environment(PV)
+## <environment: R_GlobalEnv>
+```
 
+## Arguments {#function_arguments}
 
-## Other useful "loop-like" functions {#other_loops}
+## Scoping Rules {#function_scoping}
 
+## Lazy Evaluation {#function_lazy}
+
+## Returning Multiple Outputs from a Function {#function_outputs}
+
+## Dealing with Invalid Parameters {#function_invalid}
+
+## Saving and Sourcing Functions {#function_saving}
 
 ## Additional Resources {#functions_add_resource}
+Functions are a fundamental building block of R and writing functions is a core activity of an R programmer. It represents the key step of the transition from a mere “user” to a developer who creates new functionality for R.  As a result, its important to turn your existing, informal knowledge of functions into a rigorous understanding of what functions are and how they work.  A few additional resources that can help you get to the next step of understanding functions include:
 
+* [Hadley Wickham's Advanced R book](http://adv-r.had.co.nz/Functions.html)
+* [Roger Peng's R Programming for Data Science book](https://leanpub.com/rprogramming)
+* [DataCamp's Intermediate R course](https://www.datacamp.com/courses/intermediate-r?utm_source=functions_r_tutorial_post&utm_medium=blog&utm_campaign=functions_r_tutorial_post)
+* [Coursera's R Programming course](https://www.coursera.org/course/rprog)
 
 
