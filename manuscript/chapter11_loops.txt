@@ -8,7 +8,7 @@ In this chapter I will cover the [basic loop functions](#loop_functions) in R.  
 Next I will cover a set of vectorized functions known as the apply family of functions which minimize your need to explicitly create loops.  I then provide some [additional "loop-like" functions](#other_loops) that are helpful in everyday data analysis followed by a list of [additional resources](#functions_add_resource) to learn more about control structures in R.
 
 
-## Loops {#loop_functions}
+## Basic loop functions (i.e. `if`, `for`, `while`, etc.) {#loop_functions}
 
 
 ## Apply family {#apply_family}
