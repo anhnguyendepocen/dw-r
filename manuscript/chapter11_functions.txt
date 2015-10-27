@@ -303,23 +303,15 @@ PV(fv, 0.08, 5, na.rm = TRUE)
 ## Saving and Sourcing Functions {#function_saving}
 If you want to save a function to be used at other times and within other scripts there are two main ways to do this.  One way is to build a package which is discussed in more details [here](packages).  Another option, and the one discussed here, is to save the function in a script.  For example, we can save a script that contains the `PV()` function and save this script as `PV.R`.
 
-
-<center>
-<img src="images/shot1.png" alt="Save PV Function as a Script">
-</center> 
+![](images/shot1.png)
 
 Now, if we are working in a fresh script you'll see that we have no objects and functions in our working environment:
 
-<center>
-<img src="images/shot2.png" alt="Fresh Script">
-</center>
+![](images/shot2.png)
 
 If we want to use the PV function in this new script we can simply read in the function by sourcing the script using `source("PV.R")`.  Now, you'll notice that we have the `PV()` function in our global environment and can use it as normal.  Note that if you are working in a different directory then where the `PV.R` file is located you'll need to include the proper command to access the relevant directory. 
 
-<center>
-<img src="images/shot3.png" alt="PV Function Sourced In">
-</center>
-
+![](images/shot3.png)
 
 
 ## Additional Resources {#functions_add_resource}
