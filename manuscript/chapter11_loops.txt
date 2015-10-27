@@ -166,7 +166,7 @@ my.mat
 ## [5,]    0    2    2    2    4
 ```
 
-# while Loop
+### while Loop
 While loops begin by testing a condition. If it is true, then they execute the statement. Once the statement is executed, the condition is tested again, and so forth, until the condition is false, after which the loop exits.  It's considered a best practice to include a counter object to keep track of total iterations
 
 {linenos=off}
