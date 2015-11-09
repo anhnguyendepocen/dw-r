@@ -1,0 +1,7 @@
+# Scraping Data
+
+## Scraping text file data from the web
+
+## Scraping HTML tables
+
+## ...
