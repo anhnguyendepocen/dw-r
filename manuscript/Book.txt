@@ -10,7 +10,11 @@ chapter6_regex.txt
 chapter7_factors.txt
 chapter8_dates.txt
 part3a.txt
-chapter9_data_structures.txt
+chapter9_vectors.txt
+chapter9_lists.txt
+chapter9_matrices.txt
+chapter9_dataframes.txt
+chapter9_missing_values.txt
 part3b.txt
 chapter10_import_data.txt
 chapter10_scrape_data.txt
