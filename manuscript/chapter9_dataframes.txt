@@ -1,9 +1,10 @@
 # Managing Data Frames {#managing_dataframes}
+A data frame is the most common way of storing data in R and, generally, is the data structure most often used for data analyses. Under the hood, a data frame is a list of equal-length vectors. Each element of the list can be thought of as a column and the length of each element of the list is the number of rows. As a result, data frames can store different classes of objects in each column (i.e. numeric, character, factor). In this chapter I will illustrate how to [create data frames](#dataframes_create), [add additional elements to pre-existing data frames](#dataframes_add), [add attributes to data frames](#dataframes_attribute), and [subset data frames](#dataframes_subset).
 
-## Creating
+## Creating {#dataframes_create}
 
-## Adding on to
+## Adding on to {#dataframes_add}
 
-## Adding attributes
+## Adding attributes {#dataframes_attribute}
 
-## Subsetting
+## Subsetting {#dataframes_subset}
