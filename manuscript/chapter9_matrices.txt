@@ -1,11 +1,72 @@
 # Managing Matrices {#managing_matrices}
 
-A matrix is a collection of data elements arranged in a two-dimensional rectangular layout.  In R, the elements that make up a matrix must be of a consistant mode (i.e. all elements must be numeric, or character, etc.).  Therefore, a matrix can be thought of as an atomic vector with a dimension attribute.  Furthermore, all rows of a matrix must be of same length.
-
-In this chapter I will illustrate how to [create lists](#matrix_create), [add additional elements to pre-existing lists](#matrix_add), [add attributes to lists](#matrix_attribute), and [subset lists](#matrix_subset).
+A matrix is a collection of data elements arranged in a two-dimensional rectangular layout.  In R, the elements that make up a matrix must be of a consistant mode (i.e. all elements must be numeric, or character, etc.).  Therefore, a matrix can be thought of as an atomic vector with a dimension attribute.  Furthermore, all rows of a matrix must be of same length.  In this chapter I will illustrate how to [create matrices](#matrix_create), [add additional elements to pre-existing matrices](#matrix_add), [add attributes to matrices](#matrix_attribute), and [subset matrices](#matrix_subset).
 
 
 ## Creating {#matrix_create}
+Matrices are constructed column-wise, so entries can be thought of starting in the “upper left” corner and running down the columns.  We can create a matrix using the `matrix()` function:
+
+{linenos=off}
+```r
+# numeric matrix
+m1 <- matrix(1:6, nrow = 2, ncol = 3)
+m1
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+
+# structure of m1 is simply integer vector with an added
+# dimension attribute
+str(m1)
+##  int [1:2, 1:3] 1 2 3 4 5 6
+attributes(m1)
+## $dim
+## [1] 2 3
+
+# can also create a character matrix
+m2 <- matrix(letters[1:6], nrow = 2, ncol = 3)
+m2
+##      [,1] [,2] [,3]
+## [1,] "a"  "c"  "e" 
+## [2,] "b"  "d"  "f"
+
+# structure of m2 is simply character vector with dimensions
+str(m2)
+##  chr [1:2, 1:3] "a" "b" "c" "d" "e" "f"
+attributes(m2)
+## $dim
+## [1] 2 3
+```
+
+Matrices can also be created using the column-bind `cbind()` and row-bind `rbind()` functions.  However, keep in mind that the vectors that are being binded must be of equal length.
+
+{linenos=off}
+```r
+v1 <- 1:4
+v2 <- 5:8
+
+cbind(v1, v2)
+##      v1 v2
+## [1,]  1  5
+## [2,]  2  6
+## [3,]  3  7
+## [4,]  4  8
+
+rbind(v1, v2)
+##    [,1] [,2] [,3] [,4]
+## v1    1    2    3    4
+## v2    5    6    7    8
+
+# bind several vectors together
+v3 <- 9:12
+
+cbind(v1, v2, v3)
+##      v1 v2 v3
+## [1,]  1  5  9
+## [2,]  2  6 10
+## [3,]  3  7 11
+## [4,]  4  8 12
+```
 
 ## Adding on to {#matrix_add}
 
