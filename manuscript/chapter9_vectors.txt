@@ -1,6 +1,6 @@
 # Managing Vectors {#managing_vectors}
 
-The basic structure in R is the vector.  A vector is a sequence of data elements of the same basic type: [integer](#integer_vs_double), [double](integer_double), logical, or [character](char_basics). ^[There are two additional vector types which I will not discuss - complex and raw.]
+The basic structure in R is the vector.  A vector is a sequence of data elements of the same basic type: [integer](#integer_vs_double), [double](#integer_vs_double), logical, or [character](#character_basics). ^[There are two additional vector types which I will not discuss - complex and raw.]
 
 ## Creating
 
