@@ -1,0 +1,9 @@
+# Managing Data Frames
+
+## Creating
+
+## Adding on to
+
+## Adding attributes
+
+## Subsetting
