@@ -10,6 +10,7 @@ chapter6_regex.txt
 chapter7_factors.txt
 chapter8_dates.txt
 part3a.txt
+chapter9_basics.txt
 chapter9_vectors.txt
 chapter9_lists.txt
 chapter9_matrices.txt
