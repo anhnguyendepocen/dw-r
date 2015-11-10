@@ -1,0 +1,9 @@
+# Managing Vectors
+
+## Creating
+
+## Adding on to
+
+## Adding attributes
+
+## Subsetting
