@@ -1,0 +1,9 @@
+# Managing Lists
+
+## Creating
+
+## Adding on to
+
+## Adding attributes
+
+## Subsetting
