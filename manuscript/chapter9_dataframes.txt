@@ -1,4 +1,4 @@
-# Managing Data Frames
+# Managing Data Frames {#managing_dataframes}
 
 ## Creating
 
