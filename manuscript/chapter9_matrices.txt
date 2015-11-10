@@ -1,0 +1,9 @@
+# Managing Matrices
+
+## Creating
+
+## Adding on to
+
+## Adding attributes
+
+## Subsetting
