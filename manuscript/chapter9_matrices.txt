@@ -1,9 +1,12 @@
 # Managing Matrices {#managing_matrices}
 
-## Creating
+In this chapter I will illustrate how to [create lists](#matrix_create), [add additional elements to pre-existing lists](#matrix_add), [add attributes to lists](#matrix_attribute), and [subset lists](#matrix_subset).
 
-## Adding on to
 
-## Adding attributes
+## Creating {#matrix_create}
 
-## Subsetting
+## Adding on to {#matrix_add}
+
+## Adding attributes {#matrix_attribute}
+
+## Subsetting {#matrix_subset}
