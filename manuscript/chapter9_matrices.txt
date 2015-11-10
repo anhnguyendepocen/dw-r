@@ -1,4 +1,4 @@
-# Managing Matrices
+# Managing Matrices {#managing_matrices}
 
 ## Creating
 
