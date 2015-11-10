@@ -1,1 +1,14 @@
 -# Managing Data Objects in R
+
+> *"Witty quote here"*
+
+The basic data structures in R can be organized by their dimensionality (1D, 2D, ..., *n*D) and their "likeness" (homogenous vs. heterogeneous).  This results in five data structure types most often used in data analysis; and almost all other objects in R are built from these foundational types:
+
+<center>
+<img src="images/data_structure_types.png" alt="Data Structure Types">
+</center>  
+
+
+
+
+I have not had the need to use multi-dimensional arrays, therefore, the topics I will go into details on will include the vector, list, matrix, and data frame.  These types represent the most commonly used data structures for day-to-day analyses.
