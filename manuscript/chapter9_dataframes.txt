@@ -4,6 +4,7 @@ A data frame is the most common way of storing data in R and, generally, is the 
 ## Creating {#dataframes_create}
 Data frames are usually created by reading in a dataset using the `read.table()` or `read.csv()`; this will be covered in the [importing and scraping data chapters](#import_scrape_export). However, data frames can also be created explicitly with the `data.frame()` function or they can be coerced from other types of objects like lists:
 
+{linenos=off}
 ```r
 df <- data.frame(col1 = 1:3, 
                  col2 = c("this", "is", "text"), 
@@ -26,9 +27,9 @@ ncol(df)
 ## [1] 4
 ```
 
-Note how col2 in 'df' was converted to a column of factors.  This is because their is a default setting in `data.frame()` that converts character columns to factors.  We can turn this off by setting the `stringsAsFactors = FALSE` argument:
+Note how col2 in 'df' was converted to a column of factors.  This is because there is a default setting in `data.frame()` that converts character columns to factors.  We can turn this off by setting the `stringsAsFactors = FALSE` argument:
 
-
+{linenos=off}
 ```r
 df <- data.frame(col1 = 1:3, 
                  col2 = c("this", "is", "text"), 
@@ -44,8 +45,9 @@ str(df)
 ##  $ col4: num  2.5 4.2 3.14
 ```
 
-We can also convert items to a data frame:
+We can also convert pre-existing structures to a data frame:
 
+{linenos=off}
 ```r
 v1 <- 1:3
 v2 <-c("this", "is", "text")
