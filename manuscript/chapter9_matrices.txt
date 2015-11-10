@@ -1,5 +1,7 @@
 # Managing Matrices {#managing_matrices}
 
+A matrix is a collection of data elements arranged in a two-dimensional rectangular layout.  In R, the elements that make up a matrix must be of a consistant mode (i.e. all elements must be numeric, or character, etc.).  Therefore, a matrix can be thought of as an atomic vector with a dimension attribute.  Furthermore, all rows of a matrix must be of same length.
+
 In this chapter I will illustrate how to [create lists](#matrix_create), [add additional elements to pre-existing lists](#matrix_add), [add attributes to lists](#matrix_attribute), and [subset lists](#matrix_subset).
 
 
