@@ -4,7 +4,7 @@ A matrix is a collection of data elements arranged in a two-dimensional rectangu
 
 
 ## Creating {#matrix_create}
-Matrices are constructed column-wise, so entries can be thought of starting in the “upper left” corner and running down the columns.  We can create a matrix using the `matrix()` function:
+Matrices are constructed column-wise, so entries can be thought of starting in the "upper left" corner and running down the columns.  We can create a matrix using the `matrix()` function:
 
 {linenos=off}
 ```r
