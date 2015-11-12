@@ -1,3 +1,25 @@
 -# Introduction
 
 > *"With nothing but the power of your own mind, you operate on the symbols before you in such a way that you gradually lift yourself from a state of understanding less to one of understanding more."* - Mortimer J. Adler
+
+Data.  Our world has become increasingly reliant upon, and awash in, this resource.  Businesses are increasingly seeking to capitalize on data analysis as a means for gaining competitive advantages[^one].
+
+
+
+
+
+
+
+
+
+
+
+
+
+[^one]: See [Davenport, 2006](http://www.amazon.com/Competing-Analytics-The-Science-Winning/dp/1422103323); [Trkman et al., 2010](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CBwQFjAAahUKEwjqy_vorovJAhVDXR4KHQ_YCF0&url=http%3A%2F%2Fwww.cepead.face.ufmg.br%2Ffiles%2Fnucleos%2Fnipe_log%2FArtigo33.pdf&usg=AFQjCNHvgUqIKUqQIu8aZAd7QT90tKtBKQ&sig2=YH7Q1ZFm0wY1CbRGsNtWdA&bvm=bv.107406026,d.dmo); [McAfee & Brynjolfsson, 2012](https://hbr.org/2012/10/big-data-the-management-revolution); [Waller & Fawcett, 2013](http://www.researchgate.net/profile/Stanley_Fawcett/publication/264340780_Data_Science_Predictive_Analytics_and_Big_Data_A_Revolution_That_Will_Transform_Supply_Chain_Design_and_Management/links/547cb9f50cf27ed978622d13.pdf) to name a few.
+
+
+
+
+
+
