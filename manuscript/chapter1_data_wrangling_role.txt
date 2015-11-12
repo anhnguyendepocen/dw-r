@@ -3,3 +3,14 @@
 > *"Water, water, everywhere, nor any a drop to drink"* - Samuel Taylor Coleridge
 
 
+Intro here about how data is seldomly clean, unmessy...This is why there is a need for 
+
+Data wrangling is the ability to take a messy or unrefined source of data and wrangle it into something useful. When wrangling data, you seek raw data sources and determine their value and use for your research. Once the datasets are usable, you can utilize tools and methods (like a Python script) to help you analyze and present your findings in a report. This allows you to take data no one would bother looking at and make it both clear and actionable.
+
+
+
+
+
+
+
+
