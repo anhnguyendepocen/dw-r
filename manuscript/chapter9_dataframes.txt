@@ -1,5 +1,5 @@
 # Managing Data Frames {#managing_dataframes}
-A data frame is the most common way of storing data in R and, generally, is the data structure most often used for data analyses. Under the hood, a data frame is a list of equal-length vectors. Each element of the list can be thought of as a column and the length of each element of the list is the number of rows. As a result, data frames can store different classes of objects in each column (i.e. numeric, character, factor). In this chapter I will illustrate how to [create data frames](#dataframes_create), [add additional elements to pre-existing data frames](#dataframes_add), [add attributes to data frames](#dataframes_attribute), and [subset data frames](#dataframes_subset).
+A data frame is the most common way of storing data in R and, generally, is the data structure most often used for data analyses. Under the hood, a data frame is a list of equal-length vectors. Each element of the list can be thought of as a column and the length of each element of the list is the number of rows. As a result, data frames can store different classes of objects in each column (i.e. numeric, character, factor). In essence, the easiest way to think of a data frame is as an Excel worksheet that contains columns of different types of data but are all of equal length rows.  In this chapter I will illustrate how to [create data frames](#dataframes_create), [add additional elements to pre-existing data frames](#dataframes_add), [add attributes to data frames](#dataframes_attribute), and [subset data frames](#dataframes_subset).
 
 ## Creating {#dataframes_create}
 Data frames are usually created by reading in a dataset using the `read.table()` or `read.csv()`; this will be covered in the [importing and scraping data chapters](#import_scrape_export). However, data frames can also be created explicitly with the `data.frame()` function or they can be coerced from other types of objects like lists:
@@ -37,6 +37,7 @@ df <- data.frame(col1 = 1:3,
                  col4 = c(2.5, 4.2, pi), 
                  stringsAsFactors = FALSE)
 
+# note how col2 now is of a character class
 str(df)
 ## 'data.frame':	3 obs. of  4 variables:
 ##  $ col1: int  1 2 3
@@ -45,7 +46,7 @@ str(df)
 ##  $ col4: num  2.5 4.2 3.14
 ```
 
-We can also convert pre-existing structures to a data frame:
+We can also convert pre-existing structures to a data frame.  The following illustrates how we can turn multiple vectors, a list, or a matrix into a data frame:
 
 {linenos=off}
 ```r
@@ -53,14 +54,15 @@ v1 <- 1:3
 v2 <-c("this", "is", "text")
 v3 <- c(TRUE, FALSE, TRUE)
 
-# convert same length vectors to a data frame
+# convert same length vectors to a data frame using
+# data.frame()
 data.frame(col1 = v1, col2 = v2, col3 = v3)
 ##   col1 col2  col3
 ## 1    1 this  TRUE
 ## 2    2   is FALSE
 ## 3    3 text  TRUE
 
-# convert a list to a data frame
+# convert a list to a data frame using as.data.frame()
 l <- list(item1 = 1:3, item2 = c("this", "is", "text"), item3 = c(2.5, 4.2, 5.1))
 l
 ## $item1
@@ -78,7 +80,7 @@ as.data.frame(l)
 ## 2     2    is   4.2
 ## 3     3  text   5.1
 
-# convert a matrix to a data frame
+# convert a matrix to a data frame using as.data.frame()
 m1 <- matrix(1:12, nrow = 4, ncol = 3)
 m1
 ##      [,1] [,2] [,3]
