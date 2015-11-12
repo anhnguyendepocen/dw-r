@@ -1,6 +1,6 @@
 # Managing Vectors {#managing_vectors}
 
-The basic structure in R is the vector.  A vector is a sequence of data elements of the same basic type: [integer](#integer_vs_double), [double](#integer_vs_double), logical, or [character](#character_basics). [^There are two additional vector types which I will not discuss - complex and raw.]  The one-dimensional examples illustrated in the previous section are considered vectors.  In this chapter I will illustrate how to [create vectors](#vector_create), [add additional elements to pre-existing vectors](#vector_add), [add attributes to vectors](#vector_attributes), and [subset vectors](#vector_subset). 
+The basic structure in R is the vector.  A vector is a sequence of data elements of the same basic type: [integer](#integer_vs_double), [double](#integer_vs_double), logical, or [character](#character_basics).[^vectors]  The one-dimensional examples illustrated in the previous section are considered vectors.  In this chapter I will illustrate how to [create vectors](#vector_create), [add additional elements to pre-existing vectors](#vector_add), [add attributes to vectors](#vector_attributes), and [subset vectors](#vector_subset). 
 
 ## Creating {#vector_create}
 The `c()` function can be used to create vectors of objects by concatenating elements together:
@@ -230,4 +230,4 @@ f[-2, drop = TRUE]
 ## Levels: low high
 ```
 
-
+[^vectors]: There are two additional vector types which I will not discuss - complex and raw.
