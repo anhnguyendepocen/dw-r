@@ -6,7 +6,7 @@ Data.  Our world has become increasingly reliant upon, and awash in, this resour
 
 Fluency in data analysis captures a wide range of activities.  At its most basic structure, data analysis fluency includes the ability to get, clean, transform, visualize, and model data.  Furthermore, each specific instance of data analysis can include unique/different/multiple requirements regarding the specific process required in each step. For instance, getting data can include simply accessing an Excel file, scraping data from an HTML table, or using an [API](https://en.wikipedia.org/wiki/Application_programming_interface) to access a database.  Cleaning data can include reshaping data from a wide to long format, extracting parts of variables, and/or transforming variables to different formats.  Transforming data can include filtering, summarizing, and applying common/uncommon functions to data along with joining multiple datasets.  Visualizing data can range from common static exploratory data analysis plots to dynamic, interactive data visualizations in web browsers.  And modeling data can be even more diverse covering the range of [descriptive](https://en.wikipedia.org/wiki/Descriptive_statistics), [predictive](https://en.wikipedia.org/wiki/Predictive_analytics), and [prescriptive](https://en.wikipedia.org/wiki/Prescriptive_analytics) analytic techniques.
 
-Consequently, the road to becoming an expert in data analysis can be daunting. And, in fact, obtaining 
+Consequently, the road to becoming an expert in data analysis can be daunting. And, in fact, obtaining expertise in the wide range of data analysis processes 
 
 
 
