@@ -2,7 +2,10 @@
 
 > *"With nothing but the power of your own mind, you operate on the symbols before you in such a way that you gradually lift yourself from a state of understanding less to one of understanding more."* - Mortimer J. Adler
 
-Data.  Our world has become increasingly reliant upon, and awash in, this resource.  Businesses are increasingly seeking to capitalize on data analysis as a means for gaining competitive advantages[^one].  Government agencies are using more types of data to improve operations and identify efficiencies[^two].
+Data.  Our world has become increasingly reliant upon, and awash in, this resource.  Businesses are increasingly seeking to capitalize on data analysis as a means for gaining competitive advantages[^one].  Government agencies are using more types of data to improve operations and identify efficiencies[^two].  Sports entities are increasing the range of data applications, ranging from how teams are using analytics[^three] to how performance is reported to the fan base[^four] has exploded. Journalism has increased the role that numerical data is used in the production and distribution of information as evidenced by the emergining field of data journalism[^five].  
+
+
+In addition, the U.S. General Services Administration now provides access to over 180,000 data sets to provide organizations, academics, and individuals resources to conduct research, develop web and mobile applications, design data visualizations, etc[^xxxx]. 
 
 
 
@@ -20,8 +23,13 @@ Data.  Our world has become increasingly reliant upon, and awash in, this resour
 
 [^two]: Numerous examples exist but [this article](http://www.businessofgovernment.org/BigData3Blog.html) outlines several specific cases.
 
+[^three]: Examples have been illustrated in [Forbes](http://www.forbes.com/sites/bernardmarr/2015/03/25/big-data-the-winning-formula-in-sports/), 
 
+[^four]: See [here](http://www.smartdatacollective.com/mattzajechowski/347799/how-big-data-changing-sports-fan-s-experience), 
 
+[^five]: This is evidenced by the popularity of such data journalism productions such as [FiveThirtyEight](http://fivethirtyeight.com/), [UpShot](http://www.nytimes.com/upshot/?_r=0), and [Vox](http://www.vox.com/).  This [USAToday article](http://www.usatoday.com/story/money/business/2014/03/16/data-journalism-on-the-rise/6424671/) further articulates this emerging demand.
+
+[^xxxx]: https://www.data.gov/
 
 
 
