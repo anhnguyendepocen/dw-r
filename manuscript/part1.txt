@@ -23,9 +23,9 @@ In addition, the U.S. General Services Administration now provides access to ove
 
 [^two]: Numerous examples exist but [this article](http://www.businessofgovernment.org/BigData3Blog.html) outlines several specific cases.
 
-[^three]: Examples have been illustrated in [Forbes](http://www.forbes.com/sites/bernardmarr/2015/03/25/big-data-the-winning-formula-in-sports/), 
+[^three]: Recent examples are illustrated in [Forbes](http://www.forbes.com/sites/bernardmarr/2015/03/25/big-data-the-winning-formula-in-sports/), [GeekWire](http://www.geekwire.com/2015/geekwire-radio-how-big-data-and-predictive-analytics-are-transforming-sports/), and the [Huffington Post](http://www.huffingtonpost.com/richard-attias/big-data-the-next-revolut_b_5800342.html).
 
-[^four]: See [here](http://www.smartdatacollective.com/mattzajechowski/347799/how-big-data-changing-sports-fan-s-experience), 
+[^four]: See [here](http://www.smartdatacollective.com/mattzajechowski/347799/how-big-data-changing-sports-fan-s-experience), [here](http://yes.goinvo.com/articles/fantasy-sports-and-big-data-the-digital-life-podcast), and [here](http://www.sloansportsconference.com/?p=9981) for examples of how data is influencing the experience for fans. 
 
 [^five]: This is evidenced by the popularity of such data journalism productions such as [FiveThirtyEight](http://fivethirtyeight.com/), [UpShot](http://www.nytimes.com/upshot/?_r=0), and [Vox](http://www.vox.com/).  This [USAToday article](http://www.usatoday.com/story/money/business/2014/03/16/data-journalism-on-the-rise/6424671/) further articulates this emerging demand.
 
