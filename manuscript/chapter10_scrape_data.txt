@@ -1,7 +1,66 @@
 # Scraping Data
+Rapid growth of the World Wide Web has significantly changed the way we share, collect, and publish data. Vast amount of information is being stored online, both in structured and unstructured forms.  Regarding certain questions or research topics, this has resulted in a new problem - no longer is the concern of data scarcity and inaccessibility but, rather, one of overcoming the tangled masses of online data. 
 
-## Scraping text file data from the web
+Collecting data from the web is not an easy process as there are many technologies used to distribute web content (i.e. [HTML](https://en.wikipedia.org/wiki/HTML), [XML](https://en.wikipedia.org/wiki/XML), [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)), [JSON](https://en.wikipedia.org/wiki/JSON)). Therefore, dealing with more advanced web scraping requires familiarity with these technologies. Through this chapter I will provide an introduction to some of the fundamental tools required to perform basic web scraping. This includes [importing spreadsheet data files stored online](#importing_spreadsheet_data), [scraping HTML table data](#scraping_HTML_tables), ...
 
-## Scraping HTML tables
+My purpose in the following sections is to discuss these topics at a level meant to get you started in web scraping; however, this area is vast and complex and this chapter will far from provide you expertise level insight.  To advance your knowledge I highly recommend getting copies of [*XML and Web Technologies for Data Sciences with R*](http://www.amazon.com/XML-Web-Technologies-Data-Sciences/dp/1461478995) and [*Automated Data Collection with R*](http://www.amazon.com/Automated-Data-Collection-Practical-Scraping/dp/111883481X/ref=pd_sim_14_1?ie=UTF8&dpID=51Tm7FHxWBL&dpSrc=sims&preST=_AC_UL160_SR108%2C160_&refRID=1VJ1GQEY0VCPZW7VKANX).
+
+## Importing tabular and Excel files stored online {#importing_spreadsheet_data}
+The most basic form of getting data from online is to import tabular (i.e. .txt, .csv) or Excel files that are being hosted online. This is often not considered *web scraping*[^fn_scrap1]; however, I think its a good place to start introducing the user to interacting with the web for obtaining data. Importing tabular data is especially common for the many types of government data available online.  A quick perusal of [Data.gov](https://www.data.gov/) illustrates nearly 188,510 examples. In fact, we can provide our first example of importing online tabular data by downloading the Data.gov CSV file that lists all the federal agencies that supply data to Data.gov. 
+
+{linenos=off}
+```r
+# the url for the online CSV
+url <- "https://www.data.gov/media/federal-agency-participation.csv"
+
+# use read.csv to import
+data_gov <- read.csv(url, stringsAsFactors = FALSE)
+
+# for brevity I only display first 6 rows
+data_gov[1:6,c(1,3:4)]
+##                                      Agency.Name Datasets Last.Entry
+## 1           Commodity Futures Trading Commission        3 01/12/2014
+## 2           Consumer Financial Protection Bureau        2 09/26/2015
+## 3           Consumer Financial Protection Bureau        2 09/26/2015
+## 4 Corporation for National and Community Service        3 01/12/2014
+## 5 Court Services and Offender Supervision Agency        1 01/12/2014
+## 6                      Department of Agriculture      698 12/01/2015
+```
+
+Downloading Excel spreadsheets hosted online can be performed just as easily.  Recall that there is not a base R function for importing Excel data; however, several packages exist to handle this capability.  One package that works smoothly with pulling Excel data from urls is [`gdata`](https://cran.r-project.org/web/packages/gdata/index.html).  With `gdata` we can use `read.xls()` to download this [Fair Market Rents for Section 8 Housing](http://catalog.data.gov/dataset/fair-market-rents-for-the-section-8-housing-assistance-payments-program) Excel file from the given url. 
+
+{linenos=off}
+```r
+library(gdata)
+
+# the url for the online Excel file
+url <- "http://www.huduser.org/portal/datasets/fmr/fmr2015f/FY2015F_4050_Final.xls"
+
+# use read.xls to import
+rents <- read.xls(url)
+
+rents[1:6, 1:10]
+##    fips2000  fips2010 fmr2 fmr0 fmr1 fmr3 fmr4 county State CouSub
+## 1 100199999 100199999  788  628  663 1084 1288      1     1  99999
+## 2 100399999 100399999  762  494  643 1123 1318      3     1  99999
+## 3 100599999 100599999  670  492  495  834  895      5     1  99999
+## 4 100799999 100799999  773  545  652 1015 1142      7     1  99999
+## 5 100999999 100999999  773  545  652 1015 1142      9     1  99999
+## 6 101199999 101199999  599  481  505  791 1061     11     1  99999
+```
+
+Note that many of the arguments covered in the [Importing Data chapter]() (i.e. specifying sheets to read from, skipping lines) also apply to `read.xls()`. In addition, `gdata` provides some useful functions (`sheetCount()` and `sheetNames()`) for identifying if multiple sheets exist prior to downloading.
+
+Another common form of file storage is using zip files.  For instance, the [Bureau of Labor Statistics](http://www.bls.gov/home.htm) (BLS) stores their [public-use microdata](http://www.bls.gov/cex/pumdhome.htm) for the [Consumer Expenditure Survey](http://www.bls.gov/cex/home.htm) in .zip files.  We can use `download.file()` to download the file to your working directory and then work with this data as desired.
+
+
+
+## Scraping HTML table data {#scraping_HTML_tables}
+
 
 ## ...
+
+
+[^fn_scrap1]: In [Automated Data Collection with R](http://www.amazon.com/Automated-Data-Collection-Practical-Scraping/dp/111883481X/ref=pd_sim_14_1?ie=UTF8&dpID=51Tm7FHxWBL&dpSrc=sims&preST=_AC_UL160_SR108%2C160_&refRID=1VJ1GQEY0VCPZW7VKANX") Munzert et al. state that "[t]he first way to get data from the web is almost too banal to be considered here and actually not a case of web scraping in the narrower sense."
+
+
