@@ -7,6 +7,8 @@ Synonymous to Samuel Taylor Coleridge's quote in *Rime of the Ancient Mariner*, 
 
 Data wrangling is the ability to take a messy or unrefined source of data and wrangle it into something useful. When wrangling data, you seek raw data sources and determine their value and use for your research. Once the datasets are usable, you can utilize tools and methods (like a Python script) to help you analyze and present your findings in a report. This allows you to take data no one would bother looking at and make it both clear and actionable.
 
+Data munging is a colloquial term used in computer science for extracting raw data, using programming and algorithms to convert it into an appropriate format, fusing various data sources together, and then storing the data in a format and location where it can be leveraged for further use (aquire/parse).  See https://dscoe.army.mil/index.php/blog/what-is-data-science/ for visual.
+
 
 [^elephant]: See [Dasu & Johnson, 2003](http://samples.sainsburysebooks.co.uk/9780471458647_sample_388340.pdf); [Kandel et al., 2011](http://ivi.sagepub.com/content/10/4/271.short); [Wickham, 2013](http://www.jstatsoft.org/article/view/v059i10).
 
