@@ -1,1 +1,1 @@
-# Simplify Your Code with `%>%`
+# Simplify Your Code with `%>%` {#pipe}
