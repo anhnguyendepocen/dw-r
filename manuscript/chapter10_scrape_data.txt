@@ -306,7 +306,7 @@ head(tbls)
 ## [6] <table id="Exhibit1" class="regular" cellspacing="0" cellpadding="0" ...
 ```
 
-Looking through `tbls` we can see that the two tables of interest ("Table2" & "Table3") are captured as list items 3 & 4 above. We can now use `html_table()` to parse the HTML tables into data frames.  Since we are extracting two tables `html_table()` will create a list containing two data frames for the HTML tables parsed. Also, note that `rvest` makes use of the pipe operator (`%>%`) developed through the `magrittr` package.  The functionality of this operator is discussed in more detail in [Chapter XX]().
+Looking through `tbls` we can see that the two tables of interest ("Table2" & "Table3") are captured as list items 3 & 4 above. We can now use `html_table()` to parse the HTML tables into data frames.  Since we are extracting two tables `html_table()` will create a list containing two data frames for the HTML tables parsed. Also, note that `rvest` makes use of the pipe operator (`%>%`) developed through the `magrittr` package.  The functionality of this operator is discussed in more detail in a later [chapter covering the %>% operator](#pipe).
 
 {linenos=off}
 ```r
