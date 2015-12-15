@@ -208,6 +208,30 @@ These examples provide the basics required for downloading most tabular and Exce
 
 ## Scraping HTML table data {#scraping_HTML_tables}
 
+The next common structure of data storage on the Web is in the form of HTML tables. The simplest approach to scraping HTML table data directly into R is by using either the [XML package](#scraping_tables_xml) or the `rvest` package.  I will illustrate with this [BLS employment statistics webpage](http://www.bls.gov/web/empsit/cesbmart.htm) which contains multiple HTML tables.  
+
+### Scraping HTML tables with XML {#scraping_tables_xml}
+The XML package provides a convenient `readHTMLTable()` function to extract data from HTML tables in HTML documents.  By passing the URL to `readHTMLTable()`, the data in each table is read and stored as a data frame.  In a case like this where multiple tables exists, the data frames will be stored in a list as illustrated.
+
+{linenos=off}
+```r
+library(XML)
+
+url <- "http://www.bls.gov/web/empsit/cesbmart.htm"
+
+# read in HTML data
+tbls <- readHTMLTable(url)
+
+typeof(tbls)
+## [1] "list"
+
+length(tbls)
+## [1] 15
+```
+
+The list `tbl` contains 15 items.  This includes data from the 10 data tables seen on the webpage but also includes data from a few additional tables used to format parts of the page (i.e. table of contents, table of figures, advertisements). Using `str(tbl)`, you can investigate the data frames in the list to help identify the data you are interested in pulling.  Lets assume we are interested in pulling data from the second and third tables on the webpage (i) *Table 2. Nonfarm employment benchmarks by industry, March 2014 (in thousands)* and (ii) *Table 3. Net birth/death estimates by industry supersector, April – December 2014 (in thousands)*.  By assessing `str(tbl)` you will see that these data are captured as the third and fourth items in `tbl` with the convenient titles `Table2` and `Table3` respectively. 
+
+You can access these two data frames via normal list [subsetting](LINK TO SECTION) or by using the `which` argument in `readHTMLTable()` which restricts the data importing to only those tables specified.  Also, note that the variables in Table 2 have variable names: `V1`, `V2`,...,`V8`.  When HTML tables have split headers as is the case with Table 2, the variable names are stripped and replaced with generic names because R does not know which variable names should align with each column.
 
 ## ...
 
