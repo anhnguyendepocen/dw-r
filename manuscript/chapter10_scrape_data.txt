@@ -367,6 +367,8 @@ head(tbls_ls[[1]], 4)
 ## 5 07-000000 Service-providing   118,539  118,589      -50      (1)
 ```
 
+This section gives you a taste for how simple scraping data from HTML tables can be.  Next we'll take a look at how you can scrape...
+
 ## ...
 
 
