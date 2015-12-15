@@ -23,5 +23,6 @@ chapter10_export_data.txt
 part4.txt
 chapter11_functions.txt
 chapter11_loops.txt
+chapter14_pipe.txt
 chapter12_tidy.txt
 chapter13_dplyr.txt
