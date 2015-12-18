@@ -369,7 +369,11 @@ head(tbls_ls[[1]], 4)
 
 This section gives you a taste for how simple scraping data from HTML tables can be.  Next we'll take a look at how you can scrape...
 
-## ...
+## Scraping HTML text {#scraping_HTML_text}
+
+
+## Scraping data via APIs
+
 
 
 [^fn_scrap1]: In [Automated Data Collection with R](http://www.amazon.com/Automated-Data-Collection-Practical-Scraping/dp/111883481X/ref=pd_sim_14_1?ie=UTF8&dpID=51Tm7FHxWBL&dpSrc=sims&preST=_AC_UL160_SR108%2C160_&refRID=1VJ1GQEY0VCPZW7VKANX") Munzert et al. state that "[t]he first way to get data from the web is almost too banal to be considered here and actually not a case of web scraping in the narrower sense."
