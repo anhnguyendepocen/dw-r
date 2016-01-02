@@ -2,6 +2,8 @@
 
 > *"Programming is like kicking yourself in the face, sooner or later your nose will bleed."* - Kyle Woodbury
 
+A computer language is described by its *syntax* and *semantics*. These provide descriptions of the form and substance of the language.
+
 This chapter will cover some of the basics of R to get you comfortable.  This includes understanding how to [assign and evaluation expressions](#basics_assignment), the idea of [vectorization](#basics_vectorization), how to [get help](#basics_help), managing your [workspace](#basics_workspace), and how to work with [packages](#packages).  
 
 
