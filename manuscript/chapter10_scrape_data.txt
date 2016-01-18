@@ -1,7 +1,7 @@
 # Scraping Data
 Rapid growth of the World Wide Web has significantly changed the way we share, collect, and publish data. Vast amount of information is being stored online, both in structured and unstructured forms.  Regarding certain questions or research topics, this has resulted in a new problem - no longer is the concern of data scarcity and inaccessibility but, rather, one of overcoming the tangled masses of online data. 
 
-Collecting data from the web is not an easy process as there are many technologies used to distribute web content (i.e. [HTML](https://en.wikipedia.org/wiki/HTML), [XML](https://en.wikipedia.org/wiki/XML), [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)), [JSON](https://en.wikipedia.org/wiki/JSON)). Therefore, dealing with more advanced web scraping requires familiarity with these technologies. Through this chapter I will provide an introduction to some of the fundamental tools required to perform basic web scraping. This includes [importing spreadsheet data files stored online](#importing_spreadsheet_data), [scraping HTML text](#scraping_HTML_text), [scraping HTML table data](#scraping_HTML_tables), and [leveraging APIs to scrape data](#scraping_api).
+Collecting data from the web is not an easy process as there are many technologies used to distribute web content (i.e. [HTML](https://en.wikipedia.org/wiki/HTML), [XML](https://en.wikipedia.org/wiki/XML), [JSON](https://en.wikipedia.org/wiki/JSON)). Therefore, dealing with more advanced web scraping requires familiarity in dealing with these technologies via R. Through this chapter I will provide an introduction to some of the fundamental tools required to perform basic web scraping. This includes [importing spreadsheet data files stored online](#importing_spreadsheet_data), [scraping HTML text](#scraping_HTML_text), [scraping HTML table data](#scraping_HTML_tables), and [leveraging APIs to scrape data](#scraping_api).
 
 My purpose in the following sections is to discuss these topics at a level meant to get you started in web scraping; however, this area is vast and complex and this chapter will far from provide you expertise level insight.  To advance your knowledge I highly recommend getting copies of [*XML and Web Technologies for Data Sciences with R*](http://www.amazon.com/XML-Web-Technologies-Data-Sciences/dp/1461478995) and [*Automated Data Collection with R*](http://www.amazon.com/Automated-Data-Collection-Practical-Scraping/dp/111883481X/ref=pd_sim_14_1?ie=UTF8&dpID=51Tm7FHxWBL&dpSrc=sims&preST=_AC_UL160_SR108%2C160_&refRID=1VJ1GQEY0VCPZW7VKANX).
 
@@ -889,7 +889,7 @@ List of 4
   .. .. .. .. ..$ value     : chr "1383"
 ```
 
-One of the inconveniences of an API is we do not get to specify how the data we receive is formatted. This is a minor price to pay considering all the other benefits APIs provide. Once we understand the received data format we can typically re-format using a little subsetting and looping.
+One of the inconveniences of an API is we do not get to specify how the data we receive is formatted. This is a minor price to pay considering all the other benefits APIs provide. Once we understand the received data format we can typically re-format using a little [list subsetting](#lists_subset) which we previously covered and looping which we'll cover in a [future chapter](#loop_functions).
 
 
 {linenos=off}
@@ -953,7 +953,7 @@ stations$data
 ##   elevationUnit (chr), longitude (dbl)
 ```
 
-So we see that several stations are available from which to pull data. To actually pull data from one of these stations we need the station ID.  The station I want to pull data from is the Dayton International Airport station.  We can see that this station provides data from 1948-present and I can get the station ID as illustrated.
+So we see that several stations are available from which to pull data. To actually pull data from one of these stations we need the station ID.  The station I want to pull data from is the Dayton International Airport station.  We can see that this station provides data from 1948-present and I can get the station ID as illustrated. Note that I use some `dplyr` for data manipulation here; we will cover `dplyr` in a later [chapter](#dplyr) but this just illustrates the fact that we received the data via the API.
 
 {linenos=off}
 ```r
@@ -967,7 +967,7 @@ stations$data %>%
 ##      mindate    maxdate                id
 ##        (chr)      (chr)             (chr)
 ## 1 1948-01-01 2016-01-15 GHCND:USW00093815
-{% endhighlight %}
+```
 
 To pull all available GHCND data from this station we'll use `ncdc()`.  We simply supply the data to pull, the start and end dates (`ncdc` restricts you to a one year limit), station ID, and your key. We can see that this station provides a full range of data types.
 
@@ -1033,7 +1033,293 @@ snow$data %>%
 This is just an intro to `rnoaa` as the package offers a slew of data sets to pull from and functions to apply.  It even offers built in plotting functions. Use `help(package = "rnoaa")` to see all that `rnoaa` has to offer.
 
 #### rtimes {#rtimes}
+The [`rtimes`](https://cran.r-project.org/web/packages/rtimes/index.html) package provides an interface to Congress, Campaign Finance, Article Search, and Geographic APIs offered by the New York Times. The data libraries and documentation for the several APIs available can be found [here](http://developer.nytimes.com/docs/). To use the Times' API you'll need to get an API key [here](http://developer.nytimes.com/apps/register).
 
+{linenos=off}
+```r
+article_key <- "4f23572d8..."     # truncated
+cfinance_key <- "ee0b7cef..."     # truncated
+congress_key <- "57b3e8a3..."     # truncated
+```
+
+Lets start by searching NY Times articles. With the presendential elections upon us, we can illustrate by searching the least controversial candidate...Donald Trump. We can see that there are 4,566 article hits for the term "Trump". We can get more information on a particular article by subsetting.
+
+{linenos=off}
+```r
+library(rtimes)
+
+# article search for the term 'Trump'
+articles <- as_search(q = "Trump", 
+                 begin_date = "20150101", 
+                 end_date = '20160101',
+                 key = article_key)
+
+# summary
+articles$meta
+##   hits time offset
+## 1 4565   28      0
+
+# pull info on 3rd article
+articles$data[3]
+## [[1]]
+## <NYTimes article>Donald Trumpâs Strongest Supporters: A Certain Kind of Democrat
+##   Type: News
+##   Published: 2015-12-31T00:00:00Z
+##   Word count: 1469
+##   URL: http://www.nytimes.com/2015/12/31/upshot/donald-trumps-strongest-supporters-a-certain-kind-of-democrat.html
+##   Snippet: In a survey, he also excels among low-turnout voters and among the less affluent and the less educated, so the question is: Will they show up to vote?
+```
+We can use the campaign finance API and functions to gain some insight into Trumps compaign income and expenditures. The only special data you need is the [FEC ID](http://www.fec.gov/finance/disclosure/candcmte_info.shtml?tabIndex=2) for the candidate of interest.
+
+{linenos=off}
+```r
+trump <- cf_candidate_details(campaign_cycle = 2016, 
+                     fec_id = 'P80001571',
+                     key = cfinance_key)
+
+# pull summary data
+trump$meta
+##          id            name party
+## 1 P80001571 TRUMP, DONALD J   REP
+##                                             fec_uri
+## 1 http://docquery.fec.gov/cgi-bin/fecimg/?P80001571
+##                    committee  mailing_address mailing_city
+## 1 /committees/C00580100.json 725 FIFTH AVENUE     NEW YORK
+##   mailing_state mailing_zip status total_receipts
+## 1            NY       10022      O     1902410.45
+##   total_from_individuals total_from_pacs total_contributions
+## 1               92249.33               0            96298.97
+##   candidate_loans total_disbursements begin_cash  end_cash
+## 1      1804747.23          1414674.29          0 487736.16
+##   total_refunds debts_owed date_coverage_from date_coverage_to
+## 1             0 1804747.23         2015-04-02       2015-06-30
+##   independent_expenditures coordinated_expenditures
+## 1                1644396.8                        0
+```
+
+`rtimes` also allows us to gain some insight into what our locally elected officials are up to with the Congress API. First, I can get some informaton on my Senator and then use that information to see if he's supporting my interest. For instance, I can pull the most recent bills that he is co-sponsoring.
+
+{linenos=off}
+```r
+# pull info on OH senator
+senator <- cg_memberbystatedistrict(chamber = "senate", 
+                                    state = "OH", 
+                                    key = congress_key)
+senator$meta
+##        id           name               role gender party
+## 1 B000944 Sherrod  Brown Senator, 1st Class      M     D
+##   times_topics_url      twitter_id       youtube_id seniority
+## 1                  SenSherrodBrown SherrodBrownOhio         9
+##   next_election
+## 1          2018
+##                                                                               api_url
+## 1 http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/B000944.json
+
+# use member ID to pull recent bill sponsorship
+bills <- cg_billscosponsor(memberid = "B000944", 
+                           type = "cosponsored", 
+                           key = congress_key)
+head(bills$data)
+## Source: local data frame [6 x 11]
+## 
+##   congress    number
+##      (chr)     (chr)
+## 1      114    S.2098
+## 2      114    S.2096
+## 3      114    S.2100
+## 4      114    S.2090
+## 5      114 S.RES.267
+## 6      114 S.RES.269
+## Variables not shown: bill_uri (chr), title (chr), cosponsored_date
+##   (chr), sponsor_id (chr), introduced_date (chr), cosponsors (chr),
+##   committees (chr), latest_major_action_date (chr),
+##   latest_major_action (chr)
+```
+
+It looks like the most recent bill Sherrod is co-sponsoring is S.2098 - Student Right to Know Before You Go Act.  Maybe I'll do a NY Times article search with `as_search()` to find out more about this bill...an exercise for another time.
+
+So this gives you some flavor of how these API packages work.  You typically need to know the data sets and variables requested along with an API key. But once you get these basics its pretty straight forward on requesting the data.  Your next question may be, what if the API that I want to get data from does not yet have an R package developed for it?
+
+### httr for All Things Else
+Although numerous R API packages are available, and cover a wide range of data, you may eventually run into a situation where you want to leverage an organization's API but an R package does not exist. Enter [`httr`](https://cran.r-project.org/web/packages/httr/index.html).  `httr` was developed by Hadley Wickham to easily work with web APIs. It offers multiple functions (i.e. `HEAD()`, `POST()`, `PATCH()`, `PUT()` and `DELETE()`); however, the function we are most concerned with today is `Get()`. We use the `Get()` function to access an API, provide it some request parameters, and receive an output. 
+
+To give you a taste for how the `httr` package works, I'll quickly cover how to use it for a basic key-only API and an OAuth-required API:
+
+- [`Key-only API`](#key_only) is illustrated by pulling U.S. Department of Education data available on [data.gov](https://api.data.gov/docs/)
+- [`OAuth-required API`](#oauth) is illustrated by pulling tweets from my personal Twitter feed
+
+#### Key-only API {#key_only}
+To demonstrate how to use the `httr` package for accessing a key-only API, I'll illustrate with the [College Scorecard API](https://api.data.gov/docs/ed/) provided by the Department of Education. First, you'll need to [request your API key](https://api.data.gov/signup/). 
+
+{linenos=off}
+```r
+edu_key <- "fd783wmS3Z..."     # truncated
+```
+
+We can now proceed to use `httr` to request data from the API with the `GET()` function.  I went to North Dakota State University (NDSU) for my undergrad so I'm interested in pulling some data for this school. I can use the provided [data library](https://collegescorecard.ed.gov/data/documentation/) and [query explanation](https://github.com/18F/open-data-maker/blob/api-docs/API.md) to determine the parameters required.  In this example, the `URL` includes the primary path ("https://api.data.gov/ed/collegescorecard/"), the API version ("v1"), and the endpoint ("schools"). The question mark ("?") at the end of the URL is included to begin the list of query parameters, which only includes my API key and the school of interest.
+
+{linenos=off}
+```r
+library(httr)
+
+URL <- "https://api.data.gov/ed/collegescorecard/v1/schools?"
+
+# import all available data for NDSU
+ndsu_req <- GET(URL, query = list(api_key = edu_key,
+                                  school.name = "North Dakota State University"))
+```
+
+This request provides me with every piece of information collected by the U.S. Department of Education for NDSU. To retrieve the contents of this request I use the `content()` function which will output the data as an R object (a list in this case).  The data is segmented into two main components: *metadata* and *results*. I'm primarily interested in the results.
+
+The results branch of this list provides information on lat-long location, school identifier codes, some basic info on the school (city, number of branches, school website, accreditor, etc.), and then student data for the years 1997-2013. 
+
+{linenos=off}
+```r
+ndsu_data <- content(ndsu_req)
+
+names(ndsu_data)
+## [1] "metadata" "results"
+
+names(ndsu_data$results[[1]])
+##  [1] "2008"     "2009"     "2006"     "ope6_id"  "2007"     "2004"    
+##  [7] "2013"     "2005"     "location" "2002"     "2003"     "id"      
+## [13] "1996"     "1997"     "school"   "1998"     "2012"     "2011"    
+## [19] "2010"     "ope8_id"  "1999"     "2001"     "2000"
+```
+
+To see what kind of student data categories are offered we can assess a single year. You can see that available data includes earnings, academics, student info/demographics, admissions, costs, etc. With such a large data set, which includes many embedded lists, sometimes the easiest way to learn the data structure is to peruse names at different levels. 
+
+{linenos=off}
+```r
+# student data categories available by year
+names(ndsu_data$results[[1]]$`2013`)
+## [1] "earnings"   "academics"  "student"    "admissions" "repayment" 
+## [6] "aid"        "cost"       "completion"
+
+# cost categories available by year
+names(ndsu_data$results[[1]]$`2013`$cost)
+## [1] "title_iv"      "avg_net_price" "attendance"    "tuition"      
+## [5] "net_price"
+
+# Avg net price cost categories available by year
+names(ndsu_data$results[[1]]$`2013`$cost$avg_net_price)
+## [1] "other_academic_year" "overall"             "program_year"       
+## [4] "public"              "private"
+```
+
+So if I'm interested in comparing the rise in cost versus the rise in student debt I can simply subset for this data once I've identified its location and naming structure.  Note that for this subsetting we use the [`magrittr`](#pipe) package and the [`sapply](#apply_family) function; both we cover in later chapters but this is just meant to illustrate the types of data available through this API.
+
+{linenos=off}
+```r
+library(magrittr)
+
+# subset list for annual student data only
+ndsu_yr <- ndsu_data$results[[1]][c(as.character(1996:2013))]
+
+# extract median debt data for each year
+ndsu_yr %>%
+        sapply(function(x) x$aid$median_debt$completers$overall) %>% 
+        unlist()
+##    1997    1998    1999    2000    2001    2002    2003    2004 
+## 13388.0 13856.0 14500.0 15125.0 15507.0 15639.0 16251.0 16642.5 
+##    2005    2006    2007    2008    2009    2010    2011    2012 
+## 17125.0 17125.0 17125.0 17250.0 19125.0 21500.0 23000.0 24954.5 
+##    2013 
+## 25050.0
+
+# extract net price for each year
+ndsu_yr %>% 
+        sapply(function(x) x$cost$avg_net_price$overall) %>% 
+        unlist()
+##  2009  2010  2011  2012  2013 
+## 13474 12989 13808 15113 14404
+```
+
+Quite simple isn't it...at least once you've learned how the query requests are formatted for a particular API. 
+
+#### OAuth-required API {#oauth}
+At the outset I mentioned how OAuth is an authorization framework that provides credentials as proof for access. Many APIs are open to the public and only require an API key; however, some APIs require authorization to account data (think personal Facebook & Twitter accounts). To access these accounts we must provide proper credentials and OAuth authentication allows us to do this. This section is not meant to explain the details of OAuth (for that see [this](http://hueniverse.com/2007/09/05/explaining-oauth/), [this](https://en.wikipedia.org/wiki/OAuth), and [this](http://hueniverse.com/oauth/)) but, rather, how to use `httr` in times when OAuth is required.
+
+I'll demonstrate by accessing the Twitter API using my Twitter account. The first thing we need to do is identify the OAuth endpoints used to request access and authorization. To do this we can use `oauth_endpoint()` which typically requires a *request* URL, *authorization* URL, and *access* URL. `httr` also included some baked-in endpoints to include LinkedIn, Twitter, Vimeo, Google, Facebook, and GitHub. We can see the Twitter endpoints using the following:
+
+{linenos=off}
+```r
+twitter_endpts <- oauth_endpoints("twitter")
+twitter_endpts
+## <oauth_endpoint>
+##  request:   https://api.twitter.com/oauth/request_token
+##  authorize: https://api.twitter.com/oauth/authenticate
+##  access:    https://api.twitter.com/oauth/access_token
+```
+
+Next, I register my application at [https://apps.twitter.com/](https://apps.twitter.com/).  One thing to note is during the registration process, it will ask you for the *callback url*; be sure to use "http://127.0.0.1:1410". Once registered, Twitter will provide you with keys and access tokens. The two we are concerned about are the API key and API Secret.
+
+{linenos=off}
+```r
+twitter_key <- "BZgukbCol..."   # truncated
+twitter_secret <- "YpB8Xy..."   # truncated
+```
+
+We can then bundle the consumer key and secret into one object with `oauth_app()`. The first argument, `appname` is simply used as a local identifier; it does not need to match the name you gave the Twitter app you developed at https://apps.twitter.com/.
+
+We are now ready to ask for access credentials. Since Twitter uses OAuth 1.0 we use `oauth1.0_token()` function and incorporate the endpoints identified and the `oauth_app` object we previously named `twitter_app`.
+
+{linenos=off}
+```r
+twitter_token <- oauth1.0_token(endpoint = twitter_endpts, twitter_app)
+
+Waiting for authentication in browser...
+Press Esc/Ctrl + C to abort
+Authentication complete.
+```
+
+Once authentication is complete we can now use the API. I can pull all the tweets that show up on my personal timeline using the `GET()` function and the access cridentials I stored in `twitter_token`.  I then use `content()` to convert to a list and I can start to analyze the data.
+
+In this case each tweet is saved as an individual list item and a full range of data are provided for each tweet (i.e. id, text, user, geo location, favorite count, etc). For instance, we can see that the first tweet was by [FiveThirtyEight](http://fivethirtyeight.com/) concerning American politics and, at the time of this analysis, has been favorited by 3 people.
+
+
+{linenos=off}
+```r
+# request Twitter data
+req <- GET("https://api.twitter.com/1.1/statuses/home_timeline.json",
+           config(token = twitter_token))
+
+# convert to R object
+tweets <- content(req)
+
+# available data for first tweet on my timeline
+names(tweets[[1]])
+ [1] "created_at"                    "id"                           
+ [3] "id_str"                        "text"                         
+ [5] "source"                        "truncated"                    
+ [7] "in_reply_to_status_id"         "in_reply_to_status_id_str"    
+ [9] "in_reply_to_user_id"           "in_reply_to_user_id_str"      
+[11] "in_reply_to_screen_name"       "user"                         
+[13] "geo"                           "coordinates"                  
+[15] "place"                         "contributors"                 
+[17] "is_quote_status"               "retweet_count"                
+[19] "favorite_count"                "entities"                     
+[21] "extended_entities"             "favorited"                    
+[23] "retweeted"                     "possibly_sensitive"           
+[25] "possibly_sensitive_appealable" "lang" 
+
+# further analysis of first tweet on my timeline
+tweets[[1]]$user$name
+[1] "FiveThirtyEight"
+
+tweets[[1]]$text
+[1] "\U0001f3a7 A History Of Data In American Politics (Part 1): William Jennings Bryan to Barack Obama https://t.co/oCKzrXuRHf  https://t.co/6CvKKToxoH"
+
+tweets[[1]]$favorite_count
+[1] 3
+```
+
+This provides a fairly simple example of incorporating OAuth authorization. The `httr` provides several examples of accessing common social network APIs that require OAuth. I recommend you go through several of these examples to get familiar with using OAuth authorization; see them at `demo(package = "httr")`. The most difficult aspect of creating your own connections with APIs is gaining an understanding of the API and the arguments they leverage.  This obviously requires time and energy devoted to digging into the API documentation and data library. Next its just a matter of trial and error (likely more the latter than the former) to learn how to translate these arguments into `httr` function calls to pull the data of interest.
+
+Also, note that `httr` provides several other useful functions not covered here for communicating with APIs (i.e. `POST()`, `BROWSE()`). For more on these other `httr` capabilities see this [quickstart vignette](https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html).
+
+## Additional Resources
+As I stated in the outset, this chapter is meant to provide an introduction to basic web scraping capabilities in R. This area is vast and complex and this chapter will far from provide you expertise level insight. To advance your knowledge in webscraping with R [*Automated Data Collection with R*](http://www.amazon.com/Automated-Data-Collection-Practical-Scraping/dp/111883481X/ref=pd_sim_14_1?ie=UTF8&dpID=51Tm7FHxWBL&dpSrc=sims&preST=_AC_UL160_SR108%2C160_&refRID=1VJ1GQEY0VCPZW7VKANX") and [*XML and Web Technologies for Data Sciences with R*](http://www.amazon.com/XML-Web-Technologies-Data-Sciences/dp/1461478995) offer the most detailed resources available. But this chapter should be enough to get your curiousity piqued and to start pulling data from the tangled masses of online data.
 
 
 [^fn_scrap1]: In [Automated Data Collection with R](http://www.amazon.com/Automated-Data-Collection-Practical-Scraping/dp/111883481X/ref=pd_sim_14_1?ie=UTF8&dpID=51Tm7FHxWBL&dpSrc=sims&preST=_AC_UL160_SR108%2C160_&refRID=1VJ1GQEY0VCPZW7VKANX") Munzert et al. state that "[t]he first way to get data from the web is almost too banal to be considered here and actually not a case of web scraping in the narrower sense."
