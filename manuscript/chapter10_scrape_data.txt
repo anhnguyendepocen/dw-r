@@ -833,7 +833,7 @@ An application-programming interface (API) in a nutshell is a method of communic
 
 Consequently, APIs provide consistency in data retrieval processes which can be essential for recurring analyses. Luckily, the use of APIs by organizations that collect data are [growing exponentially](http://www.programmableweb.com/api-research). This is great for you and I as more and more data continues to be at our finger tips.  So what do you need to get started?
 
-### Prerequisits?
+### Prerequisites?
 Each API is unique; however, there are a few fundamental pieces of information you'll need to work with an API.  First, the reason you're using an API is to request specific types of data from a specific data set from a specific organization. You at least need to know a little something about each one of these:
 
 1. The URL for the organization and data you are pulling. Most pre-built API packages already have this connection established but when using `httr` you'll need to specify.
