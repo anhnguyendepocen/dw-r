@@ -339,7 +339,7 @@ which(x == y)
 ## [1] 2 3
 ```
 
-{#numeric_exact)
+{#numeric_exact}
 ### Exact Equality
 To test if two objects are exactly equal:
 
@@ -361,7 +361,7 @@ identical(x, y)
 ## [1] TRUE
 ```
 
-{#numeric_near)
+{#numeric_near}
 ### Floating Point Comparison
 Sometimes you wish to test for 'near equality'.  The `all.equal()` function allows you to test for equality with a difference tolerance of 1.5e-8.
 
