@@ -1,4 +1,4 @@
-# Dealing with Factors
+# Dealing with Factors {#factors}
 Factors are variables in R which take on a limited number of different values; such variables are often referred to as [categorical variables](https://en.wikipedia.org/wiki/Categorical_variable). One of the most important uses of factors is in statistical modeling; since categorical variables enter into statistical models such as `lm` and `glm` differently than continuous variables, storing data as factors insures that the modeling functions will treat such data correctly.
 
 One can think of a factor as an integer vector where each integer has a label[^rdpeng_rprogramming]. In fact, factors are built on top of integer vectors using two attributes: the `class()` "factor", which makes them behave differently from regular integer vectors, and the `levels()`, which defines the set of allowed values[^adv_r].
