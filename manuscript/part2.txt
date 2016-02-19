@@ -1,1 +1,10 @@
 -# Working with Different Types of Data in R
+
+R is a flexible language that allows you to work with many different *forms* of data. This includes numeric, character, categorical, dates, and logical. Technically, R classifies all the different types of data into five classes:
+
+- integer
+- numeric
+- character
+- complex
+- logical
+
