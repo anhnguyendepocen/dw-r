@@ -11,6 +11,8 @@ So what exactly is this thing called *data wrangling*?  Its the ability to take 
 
 However, learning how to wrangle your data does not follow a linear progression as suggested by the above figure. In fact, you need to start from scratch to understand how to work with data in R.  Consequently, this book takes a meandering route through the data wrangling process to help build a solid data wrangling foundation. 
 
+First, modern day data wrangling requires being comfortable writing code. If you are new to writing code, R or RStudio you need to understand some of the basics of working in the "command line" environment. The next chapter in this section walks you through the process of assigning and evaluating expressions, the idea of vectorization, how to get help, managing your workspace, and how to work with packages. Lastly, I offer some basic styling guidelines to help you write code that is easier to digest by others.
+
 Working with different forms of data...explain the different requirements with different data classes and managing them.  Then state how section XX will address this.
 
 Managing different data structures...
