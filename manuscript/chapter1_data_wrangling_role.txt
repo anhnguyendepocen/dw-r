@@ -15,7 +15,7 @@ First, modern day data wrangling requires being comfortable writing code. If you
 
 Second, data wrangling requires the ability to work with different forms of data.  Analysts and organizations are finding new and unique ways to leverage all forms of data so it's important to be able to work not only with numbers but also with character strings, categorical variables, logical variables, and dates.  Section two explains how to work with these different classes of data so that when you start to learn how to manage the different data structures, which combines these data classes into multiple dimensions, you will have a strong knowledge base.
 
-Managing different data structures...
+Third, modern day datasets often contain variables of different lengths and/or classes (i.e. numeric, character, dates, etc). Furthermore, many statistical and mathematical calculations operate on different types of data structures. Consequently, data wrangling requires a strong knowledge of the different structures to hold your datasets. Section three covers the different types of data structures available in R, how they differ by dimensionality and how to create, add to, and subset the various data structures. Lastly, I cover how to deal with missing values in data structures. Consequently, this section provides a robust understanding of managing various forms of datasets.
 
 Importing, scraping, and exporting data...
 
