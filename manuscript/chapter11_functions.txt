@@ -13,7 +13,7 @@ With the exception of [primitive functions](https://cran.r-project.org/doc/manua
 - `formals()`: the list of arguments used to call the function
 - `environment()`: the mapping of the location(s) of the function's variables
 
-For example, let's build a function that calculates the present value (PV) of a single future sum.  The equation for a single sum PV is: $PV = FV/(1+r)^n$ where FV is future value, r is the interest rate, and n is the number of periods.  In the function that follows the `body` of the function includes the equation $FV/(1+r)^{n}$ and then rounding the output to two decimals. The `formals` (or arguments) required for the function include `FV`, `r`, and `n`.  And the `environment` shows that function operates in the global environment.
+For example, let's build a function that calculates the present value (PV) of a single future sum.  The equation for a single sum PV is: {$$}PV = FV/(1+r)^n{$$} where FV is future value, r is the interest rate, and n is the number of periods.  In the function that follows the `body` of the function includes the equation {$$}FV/(1+r)^{n}{$$} and then rounding the output to two decimals. The `formals` (or arguments) required for the function include `FV`, `r`, and `n`.  And the `environment` shows that function operates in the global environment.
 
 {linenos=off}
 ```r
