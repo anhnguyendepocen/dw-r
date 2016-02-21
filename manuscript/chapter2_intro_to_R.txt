@@ -26,7 +26,7 @@ So although the analytic montra *"use the right tool for the problem"* should al
 The R community is fantastically diverse and engaged. On a daily basis, the R community generates opportunities and resources for learning about R.  These cover the full spectrum of training - [books](http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=r+programming), [online courses](https://www.coursera.org/specializations/jhu-data-science), [R user groups](http://blog.revolutionanalytics.com/local-r-groups.html), [workshops](https://www.rstudio.com/resources/training/workshops), [conferences](https://www.r-project.org/conferences.html), etc. And with over 2 million users and developers, finding help and technical expertise is only a simple click. Support is available through [R mailing lists](https://www.r-project.org/mail.html), Q&A websites[^r_QA], [social media networks](www.twitter.com/search/rstats), and [numerous blogs](http://www.r-bloggers.com/). 
 
 
-
+So now that you know how awesome R is, it's time to learn how to use it.
 
 
 
