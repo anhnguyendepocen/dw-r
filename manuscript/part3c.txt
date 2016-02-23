@@ -1,4 +1,4 @@
--# Applying the DRY Principle in R
+-# Applying the DRY & KISS Principles in R
 
 > *"To iterate is human, to recurse divine."* - L. Peter Deutsch
 
