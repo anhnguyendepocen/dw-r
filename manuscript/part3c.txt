@@ -1,8 +1,14 @@
--# Applying the DRY & KISS Principles in R
+-# Creating Efficient & Readable Code in R
 
 > *"To iterate is human, to recurse divine."* - L. Peter Deutsch
 
-Don't repeat yourself (DRY) is a software development principle aimed at reducing repetition. Formulated by Andy Hunt and Dave Thomas in their book [The Pragmatic Programmer](http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/ref=sr_1_1?s=books&ie=UTF8&qid=1456066112&sr=1-1&keywords=the+pragmatic+programmer), the DRY principle states that "every piece of knowledge must have a single, unambiguous, authoritative representation within a system." This principle has been widely adopted to imply that you should not duplicate code.  Although the principle was meant to be far grander than that[^dave_thomas], there's plenty of merit behind this slight misinterpretation.
+Don't repeat yourself (DRY) is a software development principle aimed at reducing repetition. Formulated by Andy Hunt and Dave Thomas in their book [The Pragmatic Programmer](http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/ref=sr_1_1?s=books&ie=UTF8&qid=1456066112&sr=1-1&keywords=the+pragmatic+programmer), the DRY principle states that "every piece of knowledge must have a single, unambiguous, authoritative representation within a system." This principle has been widely adopted to imply that you should not duplicate code.  Although the principle was meant to be far grander than that[^dave_thomas], there's plenty of merit behind this slight misinterpretation.  
+
+Removing duplication is an important part of writing efficient code and reducing potential errors.  Efficient code comes from...reduced duplication of code, less writing, less editing, less creation and saving of unnecessary objects, etc.  Reducing errors results from not having to modify or change multiple lines of copy-and-pasted code; inevitably, one line of code gets edited incorrectly... 
+
+Furthermore, its important to have readable code...
+
+This section covers the process of creating efficient and readable code. First, I cover the basics of functions 
 
 
 
