@@ -1,14 +1,12 @@
 # Loop Control Statements
 
-> *"To iterate is human, to recurse divine."* - L. Peter Deutsch
+Looping is similiar to creating functions in that they are merely a means to automate a certain multi step process by organizing sequence of R expressions. R consists of several loop control statements which allow you to perform repetititve code processes with different intentions and allow these automated expressions to naturally respond to features of your data. Consequently, learning these loop control statements will go a long ways in reducing code redundancy and becoming a more efficient data wrangler.
 
-Provide introduction to loops here...
-
-In this chapter I will cover the [basic loop functions](#loop_functions) in R.  These loop functions are considered "control statements" because they allow you to control the flow of execution through various logical commands.  Common loop functions that I will cover include `if`, `else`, `for`, `while`, and `repeat`.  In addition, I cover `break` and `next` which allow you to further control flow within the aforementioned loop functions.
-Next I will cover a set of vectorized functions known as the [apply family](#apply_family) of functions which minimize your need to explicitly create loops.  I then provide some [additional "loop-like" functions](#other_loops) that are helpful in everyday data analysis followed by a list of [additional resources](#functions_add_resource) to learn more about control structures in R.
+This chapter starts by covering the [basic control statements](#loop_functions) in R, which includes `if`, `else`, along with the `for`, `while`, and `repeat` loop control structures.  In addition, I cover `break` and `next` which allow you to further control flow within the aforementioned control statements.
+Next I cover a set of vectorized functions known as the [apply family](#apply_family) of functions which minimize your need to explicitly create loops.  I then provide some [additional "loop-like" functions](#other_loops) that are helpful in everyday data analysis followed by a list of [additional resources](#functions_add_resource) to learn more about control structures in R.
 
 
-## Basic loop functions (i.e. `if`, `for`, `while`, etc.) {#loop_functions}
+## Basic control statements (i.e. `if`, `for`, `while`, etc.) {#loop_functions}
 
 ### if Statement
 The conditional `if` statement is used to test an expression.  If the `test_expression` is `TRUE`, the `statement` gets executed. But if it's `FALSE`, nothing happens. 
