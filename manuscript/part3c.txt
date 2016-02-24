@@ -8,7 +8,7 @@ Removing duplication is an important part of writing efficient code and reducing
 
 Furthermore, its important to have readable code...
 
-This section covers the process of creating efficient and readable code. First, I cover the basics of writing your own functions so that you can reduce code duplication and automate generalized tasks to be applied recursively. I then cover loop control statements which provide additional means for automating 
+This section covers the process of creating efficient and readable code. First, I cover the basics of writing your own functions so that you can reduce code duplication and automate generalized tasks to be applied recursively. I then cover loop control statements which which allow you to perform repetititve code processes with different intentions and allow these automated expressions to naturally respond to features of your data.  Lastly, I demonstrate how you can simplify your code
 
 
 
