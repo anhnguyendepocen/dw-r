@@ -19,9 +19,7 @@ Third, modern day datasets often contain variables of different lengths and/or c
 
 Fourth, data are arriving from multiple sources at an alarming rate and analysts and organizations are seeking ways to leverage these new sources of information. Consequently, analysts need to understand how to *get* data from these data sources.  Furthermore, since analysis is often a collaborative effort analysts also need to know how to share their data. Section four covers the basics of importing tabular and spreadsheet data, scraping data stored online, and exporting data for sharing purposes.
 
-Functions and loop control statements...
-
-Simplifying your code...
+Fifth, minimizing duplication and writing simple and readable code is important to becoming an effective and efficient data analyst. Moreover, clarity should always be a goal throughout the data analysis process. Section five introduces the art of writing functions and using loop control statements to reduce redundancy in code. I also discuss how to simplify your code using pipe operators to make your code more readable. Consequently, this section will help you to perform data wrangling tasks more effectively, efficiently, and with more clarity.
 
 Reshaping your data...
 
