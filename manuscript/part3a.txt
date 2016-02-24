@@ -1,6 +1,6 @@
 -# Managing Data Structures in R
 
-> *"Witty quote here"*
+> *"Smart data structures and dumb code works a lot better than the other way around"* - Eric S. Raymond
 
 In the previous section I illustrated how to work with different types of data; however, we primarily focused on data in a one-dimensional structure.  In typical data analyses you often need more than one dimension.  Many datasets can contain variables of different length and or types of values (i.e. numeric vs character).  Furthermore, many statistical and mathematical calculations are based on matrices.  R provides multiple types of data structures to deal with these different needs.
 
