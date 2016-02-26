@@ -280,9 +280,9 @@ sub_exp %>%
 ## 5 Wisconsin  9678256  507461.2
 ```
 
-There are several built in summary functions in `dplyr` as displayed below. You can also build in your own functions as well.
+There are several built-in summary functions in `dplyr` as displayed below. You can also build in your own functions as well.
 
-![](images/addtl_summary_fun.png)
+![Built-in Summary Functions](images/addtl_summary_fun.png)
 
 
 ## Arranging variables by value
