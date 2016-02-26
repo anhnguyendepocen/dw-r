@@ -523,7 +523,7 @@ str_pad("beer", width = 10, side = "right", pad = "!")
 ```
 
 ## Set operatons for character strings
-There are also base R functions that allows for assessing the set union, intersection, difference, equality, and membership on two vectors.  
+There are also base R functions that allows for assessing the set union, intersection, difference, equality, and membership of two vectors.  
 
 ### Set Union
 To obtain the elements of the union between two character vectors use `union()`:
