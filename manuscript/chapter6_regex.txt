@@ -140,7 +140,7 @@ grep(pattern = "s{1,2}", state.name, value = TRUE)
 
 {#regex_functions}
 ## Regex Functions
-Now that I've illustrated how R handles some of the most common regular expression elements, it’s time to present the functions you can use for working with regular expression.  R contains a [set of functions](#main_regex_functions) in the base package that we can use to find pattern matches.  Alternatively, the R package stringr also provides [several functions](#stringr_regex_functions) for regex operations.  We will cover both these alternatives.
+Now that I've illustrated how R handles some of the most common regular expression elements, it's time to present the functions you can use for working with regular expression.  R contains a [set of functions](#main_regex_functions) in the base package that we can use to find pattern matches.  Alternatively, the R package stringr also provides [several functions](#stringr_regex_functions) for regex operations.  We will cover both these alternatives.
 
 {#main_regex_functions}
 ### Main regex functions in R
