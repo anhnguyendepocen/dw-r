@@ -90,7 +90,7 @@ ses
 ## Levels: low < middle < high
 
 # you can also reverse the order of levels if desired
-factor(ses, levels=rev(levels(ses)))
+factor(ses, levels = rev(levels(ses)))
 ##  [1] low    middle low    low    low    low    middle low    middle middle
 ## [11] middle middle middle high   high   low    middle middle low    high  
 ## Levels: high < middle < low
