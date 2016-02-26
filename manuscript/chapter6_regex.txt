@@ -121,12 +121,15 @@ The following provides examples to show how to use the quantifier syntax to matc
 
 {linenos=off}
 ```r
+# match states that contain z 
 grep(pattern = "z+", state.name, value = TRUE)
 ## [1] "Arizona"
 
+# match states with two s
 grep(pattern = "s{2}", state.name, value = TRUE)
 ## [1] "Massachusetts" "Mississippi"   "Missouri"      "Tennessee"
 
+# match states with one or two s
 grep(pattern = "s{1,2}", state.name, value = TRUE)
 ##  [1] "Alaska"        "Arkansas"      "Illinois"      "Kansas"       
 ##  [5] "Louisiana"     "Massachusetts" "Minnesota"     "Mississippi"  
