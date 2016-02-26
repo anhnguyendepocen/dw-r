@@ -196,7 +196,7 @@ The *working directory* is the default location for all file inputs and outputs.
 # returns path for the current working directory
 getwd()                  
 
-#set the working directory to directory_name
+# set the working directory to a specified directory
 setwd(directory_name)    
 ```
 
