@@ -107,7 +107,7 @@ back2wide
 ```
 
 
-## Split single column into multiple columns
+## Splitting a single column into multiple columns
 Many times a single column variable will capture multiple variables, or even parts of a variable you just don't care about.  Some examples follow.  Here, the `Grp_Ind` variable combines an individual variable (a, b, c) with the group variable (1, 2, 3), the `Yr_Mo` variable combines a year variable with a month variable, etc. In each case there may be a purpose for separating parts of these columns into *separate* variables. This can be accomplished using the `separate()` function which turns a single character column into multiple columns.
 
 {linenos=off}
@@ -155,7 +155,7 @@ messy_df %>% separate(col = Grp_Ind, into = c("Grp", "Ind"), remove = FALSE)
 ## 4     2.a   2   a 2007_Jan   Rochester (MN)   XX04person_4
 ```
 
-## Combine multiple columns into a single column
+## Combining multiple columns into a single column
 Similarly, there are times when we would like to combine the values of two variables.  As a compliment to `separate()`, the `unite()` function is a convenient function to paste together multiple variable values into one. Consider the following data frame that has separate date variables. To perform time series analysis or for visualizations we may desire to have a single date column.
 
 {linenos=off}
