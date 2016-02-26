@@ -37,7 +37,7 @@ value ->> x
 
 The original assignment operator in R was `<-` and has continued to be the preferred among R users.  The `=` assignment operator was [added in 2001](http://developer.r-project.org/equalAssign.html) primarily because it is the accepted assignment operator in many other languages and beginners to R coming from other languages were so prone to use it. However, R uses `=` to associate function arguments with values (i.e. f(x = 3) explicitly means to call function f and set the argument x to 3.  Consequently, most R programmers prefer to keep `=` reserved for argument association and use `<-` for assignment.
 
-The operators `<<-` is normally only used in functions which we will not get into the details.  Lastly, the rightward assignment operators perform the same as their leftward counterparts, they just assign the value in an opposite direction.
+The operators `<<-` is normally only used in functions which we will not get into the details.  And the rightward assignment operators perform the same as their leftward counterparts, they just assign the value in an opposite direction.
 
 Overwhelmed yet?  Don't be.  This is just meant to show you that there are options and you will likely come across them sooner or later.  My suggestion is to stick with the tried and true `<-` operator.  This is the most conventional for and is what you will find in all the base R source code...which means it should be good enough for you. 
 
