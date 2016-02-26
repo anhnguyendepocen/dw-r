@@ -289,7 +289,7 @@ library(stringr)
 ```
 
 #### Detecting Patterns
-To detecting whether a pattern is present (or absent) in a string vector use the `str_detect()`. This function is a wraper for [`grepl()`](#grepl).
+To detect whether a pattern is present (or absent) in a string vector use the `str_detect()`. This function is a wraper for [`grepl()`](#grepl).
 
 {linenos=off}
 ```r
