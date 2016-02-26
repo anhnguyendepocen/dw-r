@@ -262,7 +262,7 @@ y - x
 ## Time difference of 3 hours
 ```
 
-Similarly, the same functionality exists with the `lubridate` package with the only difference being the accessor function(s) used to.
+Similarly, the same functionality exists with the `lubridate` package with the only difference being the accessor function(s) used.
 
 {linenos=off}
 ```r
