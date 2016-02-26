@@ -139,7 +139,7 @@ For each non-uniform probability distribution there are four primary functions a
 - `q`: quantiles
 
 ### Normal Distribution Numbers 
-The normal (or Gaussian) distribution is the most common and well know distribution.  Within R, the normal distribution functions are are written as <prefix>`norm()`.
+The normal (or Gaussian) distribution is the most common and well know distribution.  Within R, the normal distribution functions are written as <prefix>`norm()`.
 
 {linenos=off}
 ```r
