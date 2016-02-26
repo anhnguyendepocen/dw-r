@@ -144,7 +144,7 @@ Now that I've illustrated how R handles some of the most common regular expressi
 
 {#main_regex_functions}
 ### Main regex functions in R
-The primary base R regex functions serve three primary purposes:  [pattern matching](#pattern_matching), [pattern replacement](#pattern_replacement), and [character splitting](#character_splitting).
+The primary base R regex functions serve three primary purposes:  [pattern matching](#pattern_matching), [pattern replacement](#pattern_replacement), and [character splitting](#strsplit).
 
 #### Pattern matching {#pattern_matching}
 There are five functions that provide pattern matching capabilities.  The three functions that I provide examples for are ones that are most common.  The two other functions which I do not illustrate are `gregexpr()` and `regexec()` which provide similar capabilities as `regexpr()` but with the output in list form.
