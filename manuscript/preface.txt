@@ -23,7 +23,9 @@ Obviously to gain and retain knowledge from this book it is highly recommended t
 ## Reader Feedback
 Reader comments are greatly appreciated.  Please send any feedback regarding typos, mistakes, confusing statements, or opportunitites for improvement to wranglingdata@gmail.com.
 
+
 ## Colophon
-This book was written in Rmarkdown via Rstudio. The source code is available on GitHub and automatically published to LeanPub.
+This book was written in Rmarkdown via Rstudio. The source code is available on GitHub and automatically published to LeanPub. Cover image provided by [Gabriela de Queiroz](https://twitter.com/gdequeiroz)
+
 
 [^fn-first_footnote]: cf. [Wickham, 2014](http://vita.had.co.nz/papers/tidy-data.pdf) and [Dasu and Johnson, 2003](http://onlinelibrary.wiley.com/doi/10.1002/0471448354.ch4/summary)
