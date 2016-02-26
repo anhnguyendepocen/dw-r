@@ -391,7 +391,7 @@ If files need to be run in sequence, prefix them with numbers:
 3-fit-model.R
 ```
 
-In R, naming conventions for variables and function are are famously muddled. They range across the following:
+In R, naming conventions for variables and function are famously muddled. They include the following:
 
 {line-numbers=off}
 ```r
@@ -404,7 +404,7 @@ NamingConvention        # upper camel case
 
 Historically, there has been no clearly preferred approach with multiple naming styles sometimes used within a single package. Bottom line, your naming convention will be driven by your preference but the ultimate goal should be consistency.
 
-My personal preference is to use all lowercase with an underscore (_) to separate words within a name. This follows Hadley Wickham's suggestions in his style guide. Furthermore, variable names should be nouns and function names should be verbs to help distinguish their purpose. Also, refrain from using existing names (i.e. True, sum).
+My personal preference is to use all lowercase with an underscore (_) to separate words within a name. This follows Hadley Wickham's suggestions in his style guide. Furthermore, variable names should be nouns and function names should be verbs to help distinguish their purpose. Also, refrain from using existing names of functions (i.e. mean, sum, true).
 
 
 ### Organization
@@ -449,7 +449,7 @@ code_5
 
 ### Syntax
 
-The maximum number of characters on a single line of code should be or 80 less. If you are using RStudio you can have a margin displayed so you know when you need to break to a new line.[^character_length]  This allows your code to be printed on a normal 8.5 x 11 page with a reasonably sized font.  Also, when indenting your code use two spaces rather than using tabs.  The only exception is if a line break occurs inside parentheses. In this case align the wrapped line with the first character inside the parenthesis:
+The maximum number of characters on a single line of code should be 80 or less. If you are using RStudio you can have a margin displayed so you know when you need to break to a new line.[^character_length]  This allows your code to be printed on a normal 8.5 x 11 page with a reasonably sized font.  Also, when indenting your code use two spaces rather than using tabs.  The only exception is if a line break occurs inside parentheses. In this case align the wrapped line with the first character inside the parenthesis:
 
 {line-numbers=off}
 ```r
@@ -469,7 +469,7 @@ average <- mean(feet / 12 + inches, na.rm = TRUE)
 average<-mean(feet/12+inches,na.rm=TRUE)
 ```
 
-There’s a small exception to this rule: `:`, `::` and `:::` don’t need spaces around them.
+There's a small exception to this rule: `:`, `::` and `:::` don't need spaces around them.
 
 {line-numbers=off}
 ```r
