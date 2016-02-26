@@ -326,7 +326,7 @@ alphabet
 ## [1] "ABCDEFGHIJKLMNOPQRRRRRRRYZ"
 ```
 
-The purpose of `substring()` is to extract and replace substrings with only a specified starting point.  `substring()` als allows you to extract/replace in a recursive fashion:
+The purpose of `substring()` is to extract and replace substrings with only a specified starting point.  `substring()` also allows you to extract/replace in a recursive fashion:
 
 {linenos=off}
 ```r
