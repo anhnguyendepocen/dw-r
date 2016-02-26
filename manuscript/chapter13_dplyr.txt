@@ -1,4 +1,4 @@
-# `dplyr` for Manipulating, Summarizing, and Joining Data Frames {#dplyr}
+# Transforming Your Data with `dplyr` {#dplyr}
 
 Transforming your data is a basic part of data wrangling.  This can include filtering, summarizing, and ordering your data by different means. This also includes combining disperate data sets, creating new variables, and many other manipulation tasks. Although many fundamental data transformation and manipulation functions exist in R, historically they have been a bit convoluted and lacked a consistent and cohesive code structure. Consequently, Hadley Wickham developed the very popular `dplyr` package to make these data processing tasks more efficient along with a syntax that is consistent and easier to remember and read. 
 
