@@ -23,7 +23,7 @@ Fifth, minimizing duplication and writing simple and readable code is important 
 
 Last, data wrangling is all about getting your data into the right form in order to feed it into the visualization and modeling stages. This typically requires a large amount of reshaping and transforming of your data. Section six introduces some of the fundamental functions for *"tidying"* your data and for manipulating, sorting, summarizing, and joining your data. These tasks will help to significantly reduce the time you spend on the data wrangling process.
 
-Individually, each section will provide you important tools for performing individual data wrangling tasks. Combined, these tools will help to make you more effective and efficient in the front end of the data analysis process so that you can spend more of your time visualizing, modelling, and communicating!
+Individually, each section will provide you important tools for performing individual data wrangling tasks. Combined, these tools will help to make you more effective and efficient in the front end of the data analysis process so that you can spend more of your time visualizing and modeling your data and communicating your results!
 
 
 [^elephant]: See [Dasu & Johnson, 2003](http://samples.sainsburysebooks.co.uk/9780471458647_sample_388340.pdf); [Kandel et al., 2011](http://ivi.sagepub.com/content/10/4/271.short); [Wickham, 2013](http://www.jstatsoft.org/article/view/v059i10).
