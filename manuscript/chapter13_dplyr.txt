@@ -7,7 +7,6 @@ Transforming your data is a basic part of data wrangling.  This can include filt
 For most of these examples we'll use the following [census data](http://www.census.gov/en.html) which includes the K-12 public school expenditures by state.  This dataframe currently is 50x16 and includes expenditure data for 14 unique years (50 states and has data through year 2011). Here I only show you a subset of the data.
 
 {linenos=off}
-
 ```
 ##   Division      State   X1980    X1990    X2000    X2001    X2002    X2003
 ## 1        6    Alabama 1146713  2275233  4176082  4354794  4444390  4657643
@@ -31,7 +30,6 @@ For most of these examples we'll use the following [census data](http://www.cens
 When working with a sizable dataframe, often we desire to only assess specific variables.  The `select()` function allows you to select and/or rename variables. Let's say our goal is to only assess the 5 most recent years worth of expenditure data.  Applying the `select()` function we can *select* only the variables of concern.
 
 {linenos=off}
-
 ```r
 sub_exp <- expenditures %>% select(Division, State, X2007:X2011)
 head(sub_exp)  # for brevity only display first 6 rows
@@ -47,7 +45,6 @@ head(sub_exp)  # for brevity only display first 6 rows
 We can also apply some of the special functions within `select()`. For instance we can select all variables that start with 'X' (`?select` to see the available functions):
 
 {linenos=off}
-
 ```r
 expenditures %>% 
         select(starts_with("X")) %>%
@@ -71,7 +68,6 @@ expenditures %>%
 You can also de-select variables by using "-" prior to name or function.  The following produces the inverse of functions above:
 
 {linenos=off}
-
 ```r
 expenditures %>% select(-X1980:-X2006)
 expenditures %>% select(-starts_with("X"))
@@ -80,7 +76,6 @@ expenditures %>% select(-starts_with("X"))
 And for convenience, you can rename selected variables with two options:
 
 {linenos=off}
-
 ```r
 # select and rename a single column
 expenditures %>% select(Yr_1980 = X1980)
@@ -97,7 +92,6 @@ expenditures %>% rename(`2011` = X2011)
 Filtering data is a common task to identify/select observations in which a particular variable matches a specific value/condition. The `filter()` function provides this capability. Continuing with our `sub_exp` dataframe which includes only the recent 5 years worth of expenditures, we can filter by `Division`:
 
 {linenos=off}
-
 ```r
 sub_exp %>% filter(Division == 3)
 ##   Division     State    X2007    X2008    X2009    X2010    X2011
@@ -111,7 +105,6 @@ sub_exp %>% filter(Division == 3)
 We can apply multiple logic rules in the `filter()` function such as:
 
 {linenos=off}
-
 ```r
 <   Less than                    !=      Not equal to
 >   Greater than                 %in%    Group membership
@@ -123,7 +116,6 @@ We can apply multiple logic rules in the `filter()` function such as:
 For instance, we can filter for Division 3 and expenditures in 2011 that were greater than $10B.  This results in Indiana being excluded since it falls within division 3 and its expenditures were < $10B*(FYI - the raw census data are reported in units of $1,000)*.
 
 {linenos=off}
-
 ```r
 # Raw census data are in units of $1,000
 sub_exp %>% filter(Division == 3, X2011 > 10000000)
@@ -137,7 +129,6 @@ sub_exp %>% filter(Division == 3, X2011 > 10000000)
 There are additional filtering and subsetting functions that are quite useful:
 
 {linenos=off}
-
 ```r
 # remove duplicate rows
 sub_exp %>% distinct() 
@@ -162,7 +153,6 @@ Often, observations are nested within groups or categories and our goal is to pe
 The `group_by()` function is a *silent* function in which no observable manipulation of the data is performed as a result of applying the function.  Rather, the only change you'll notice is, when you print the dataframe you will notice underneath the *Source* information and prior to the actual dataframe, an indicator of what variable the data is grouped by will be provided. In the example that follows you'll notice that we grouped by `Division` and there are nine categories for this variable. The real magic of the `group_by()` function comes when we perform summary statistics which we will cover shortly. 
 
 {linenos=off}
-
 ```r
 group.exp <- sub_exp %>% group_by(Division)
 
@@ -209,7 +199,6 @@ Obviously the goal of all this data *wrangling* is to be able to perform statist
 Lets get the mean expenditure value across all states in 2011:
 
 {linenos=off}
-
 ```r
 sub_exp %>% summarise(Mean_2011 = mean(X2011))
 ##   Mean_2011
@@ -219,7 +208,6 @@ sub_exp %>% summarise(Mean_2011 = mean(X2011))
 Not too bad, lets get some more summary stats:
 
 {linenos=off}
-
 ```r
 sub_exp %>% summarise(Min = min(X2011, na.rm = TRUE),
                      Median = median(X2011, na.rm = TRUE),
@@ -235,7 +223,6 @@ sub_exp %>% summarise(Min = min(X2011, na.rm = TRUE),
 This information is useful, but being able to compare summary statistics at multiple levels is when you really start to gather some insights.  This is where the `group_by()` function comes in.  First, let's group by `Division` and see how the different regions compared in by 2010 and 2011.
 
 {linenos=off}
-
 ```r
 sub_exp %>%
         group_by(Division)%>% 
@@ -259,7 +246,6 @@ sub_exp %>%
 Now we're starting to see some differences pop out.  How about we compare states within a Division?  We can start to apply multiple functions we've learned so far to get the 5 year average for each state within Division 3.
 
 {linenos=off}
-
 ```r
 library(tidyr)
 
@@ -289,7 +275,6 @@ There are several built-in summary functions in `dplyr` as displayed below. You 
 Sometimes we wish to view observations in rank order for a particular variable(s). The `arrange()` function allows us to order data by variables in accending or descending order. Let's say we want to assess the average expenditures by division. We could apply the `arrange()` function at the end to order the divisions from lowest to highest expenditure for 2011.  This makes it easier to see the significant differences between Divisions 8,4,1 & 6 as compared to Divisions 5,7,9,3 & 2.
 
 {linenos=off}
-
 ```r
 sub_exp %>%
         group_by(Division)%>% 
@@ -314,7 +299,6 @@ sub_exp %>%
 We can also apply a *descending* argument to rank-order from highest to lowest.  The following shows the same data but in descending order by applying `desc()` within the `arrange()` function.
 
 {linenos=off}
-
 ```r
 sub_exp %>%
         group_by(Division)%>% 
@@ -350,7 +334,6 @@ Often we have separate dataframes that can have common and differing variables f
 Our public education expenditure data represents then-year dollars.  To make any accurate assessments of longitudinal trends and comparison we need to adjust for inflation.  I have the following data frame which provides inflation adjustment factors for base-year 2012 dollars *(obviously I should use 2015 values but I had these easily accessable and it only serves for illustrative purposes)*.
 
 {linenos=off}
-
 ```
 ##    Year  Annual Inflation
 ## 28 2007 207.342 0.9030811
@@ -364,7 +347,6 @@ Our public education expenditure data represents then-year dollars.  To make any
 To join to my expenditure data I obviously need to get my expenditure data in the proper form that allows me to join these two data frames.  I can apply the following functions to accomplish this:
 
 {linenos=off}
-
 ```r
 long_exp <- sub_exp %>%
         gather(Year, Expenditure, X2007:X2011) %>%         # turn to long format
@@ -385,7 +367,6 @@ head(long_exp)
 I can now apply the `left_join()` function to join the inflation data to the expenditure data.  This aligns the data in both dataframes by the *Year* variable and then joins the remaining inflation data to the expenditure data frame as new variables.
 
 {linenos=off}
-
 ```r
 
 join_exp <- long_exp %>% left_join(inflation)
@@ -403,7 +384,6 @@ head(join_exp)
 To illustrate the other joining methods we can use the `a` and `b` data frames from the `EDAWR` package:
 
 {linenos=off}
-
 ```r
 library(EDAWR)
 
@@ -421,7 +401,6 @@ b
 ```
 
 {linenos=off}
-
 ```r
 # include all of a, and join matching rows of b
 left_join(a, b, by = "x1")
@@ -466,7 +445,6 @@ anti_join(a, b, by = "x1")
 There are additional `dplyr` functions for merging data sets worth exploring:
 
 {linenos=off}
-
 ```r
 intersect(y, z)	  # Rows that appear in both y and z
 union(y, z)	  # Rows that appear in either or both y and z
@@ -479,7 +457,6 @@ bind_cols(y, z)	  # Append z to y as new columns
 Often we want to create a new variable that is a function of the current variables in our data frame or even just add a new variable.  The `mutate()` function allows us to add new variables while preserving the existing variables. If we go back to our previous `join_exp` dataframe, remember that we joined inflation rates to our non-inflation adjusted expenditures for public schools.  The dataframe looks like:
 
 {linenos=off}
-
 ```
 ##   Division      State Year Expenditure  Annual Inflation
 ## 1        6    Alabama 2007     6245031 207.342 0.9030811
@@ -493,7 +470,6 @@ Often we want to create a new variable that is a function of the current variabl
 If we wanted to adjust our annual expenditures for inflation we can use `mutate()` to create a new inflation adjusted cost variable which we'll name `Adj_Exp`:
 
 {linenos=off}
-
 ```r
 
 inflation_adj <- join_exp %>% mutate(Adj_Exp = Expenditure / Inflation)
@@ -511,7 +487,6 @@ head(inflation_adj)
 Lets say we wanted to create a variable that rank-orders state-level expenditures (inflation adjusted) for the year 2010 from the highest level of expenditures to the lowest. 
 
 {linenos=off}
-
 ```r
 
 rank_exp <- inflation_adj %>% 
@@ -532,7 +507,6 @@ head(rank_exp)
 If you wanted to assess the percent change in cost for a particular state you can use the `lag()` function within the `mutate()` function:
 
 {linenos=off}
-
 ```r
 
 inflation_adj %>%
@@ -549,7 +523,6 @@ inflation_adj %>%
 You could also look at what percent of all US expenditures each state made up in 2011.  In this case we use `mutate()` to take each state's inflation adjusted expenditure and divide by the sum of the entire inflation adjusted expenditure column.  We also apply a second function within `mutate()` that provides the cummalative percent in rank-order.  This shows that in 2011, the top 8 states with the highest expenditures represented over 50% of the total U.S. expenditures in K-12 public schools.  *(I remove the non-inflation adjusted Expenditure, Annual & Inflation columns so that the columns don't wrap on the screen view)*
 
 {linenos=off}
-
 ```r
 
 cum_pct <- inflation_adj %>%
@@ -574,7 +547,6 @@ head(cum_pct, 8)
 An alternative to `mutate()` is `transmute()` which creates a new variable and then drops the other variables. In essence, it allows you to create a new data frame with only the new variables created. We can perform the same string of functions as above but this time use transmute to only keep the newly created variables.
 
 {linenos=off}
-
 ```r
 
 inflation_adj %>%
@@ -595,7 +567,6 @@ inflation_adj %>%
 Lastly, you can easily also apply the `summarise` and `mutate` functions to multiple columns by using `summarise_each()` and `mutate_each()` respectively.
 
 {linenos=off}
-
 ```r
 # calculate the mean for each division with summarise_each
 # call the function of interest with the `funs()` argument
