@@ -289,7 +289,7 @@ library(stringr)
 ```
 
 #### Detecting Patterns
-To detect whether a pattern is present (or absent) in a string vector use the `str_detect()`. This function is a wraper for [`grepl()`](#grepl).
+To *detect* whether a pattern is present (or absent) in a string vector use the `str_detect()`. This function is a wraper for [`grepl()`](#grepl).
 
 {linenos=off}
 ```r
@@ -311,7 +311,7 @@ sum(str_detect(state.name, pattern = "New"))
 ```
 
 #### Locating Patterns
-To *locate* the occurences of patterns `stringr` offers two options:
+To *locate* the occurrences of patterns `stringr` offers two options:
 
 * [Locate first match](#first_match)
 * [Locate all matches](#last_match)
