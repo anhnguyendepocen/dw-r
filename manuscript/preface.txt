@@ -9,8 +9,7 @@ that you become fluent *and* efficient in data wrangling techniques.
 
 This book will guide you through the data wrangling process along with give you a solid foundation of the basics of working
 with data in R. My goal is to teach you how to easily wrangle your data, so you can spend more time focused on understanding
-the content of your data via visualization, analysis, and reporting. By the time you finish reading this book, you will have 
-learned how to work with the different data types and structures, acquire and parse data from locations you may not have been able to access before, develop your own functions, manage control structures, reshape the layout of your data, and manipulate, summarize, and join data sets.  In essence, you will have the data wrangling toolbox required for modern day data analysis.
+the content of your data via visualization, modeling, and reporting your results. By the time you finish reading this book, you will have learned how to work with the different data types and structures, acquire and parse data from locations you may not have been able to access before, develop your own functions, manage control structures, reshape the layout of your data, and manipulate, summarize, and join data sets.  In essence, you will have the data wrangling toolbox required for modern day data analysis.
 
 
 ## Who this Book is For
@@ -18,7 +17,7 @@ This book is meant to establish the baseline R vocabulary and knowledge for the 
 
 
 ## What You Need For this Book
-Obviously to gain and retain knowledge from this book it is highly recommended that you follow along and practice the code examples yourself.  Furthermore, this book assumes that you will actually be performing data wrangling in R; therefore, it is only assumed that you have or plan to have R installed on your computer. You will find the latest version of R for Linux, Mac OS, and Windows at [cran.r-project.org/](https://cran.r-project.org/).  It is also recommended that you use an integrated development environment (IDE) as it will simplify and organize your coding environment greatly.  There are several to choose from; however, I highly recommend [RStudio](https://www.rstudio.com/).
+Obviously to gain and retain knowledge from this book it is highly recommended that you follow along and practice the code examples yourself.  Furthermore, this book assumes that you will actually be performing data wrangling in R; therefore, it is assumed that you have or plan to have R installed on your computer. You will find the latest version of R for Linux, Mac OS, and Windows at [cran.r-project.org/](https://cran.r-project.org/).  It is also recommended that you use an integrated development environment (IDE) as it will simplify and organize your coding environment greatly.  There are several to choose from; however, I highly recommend [RStudio](https://www.rstudio.com/).
 
 
 ## Reader Feedback
