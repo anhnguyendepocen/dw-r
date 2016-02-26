@@ -160,7 +160,7 @@ head(as.character(state.division))
 ## [4] "West South Central" "Pacific"            "Mountain"
 
 
-# find the elements which match the patter
+# find the elements which match the pattern
 grep("North", state.division)
 ##  [1] 13 14 15 16 22 23 25 27 34 35 41 49
 
