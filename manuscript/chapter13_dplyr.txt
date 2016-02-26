@@ -349,10 +349,10 @@ To join to my expenditure data I obviously need to get my expenditure data in th
 {linenos=off}
 ```r
 long_exp <- sub_exp %>%
-        gather(Year, Expenditure, X2007:X2011) %>%         # turn to long format
-        separate(Year, into=c("x", "Year"), sep = "X") %>% # separate "X" from year value
-        select(-x) %>%                                     # remove "x" column
-        mutate(Year = as.numeric(Year))                    # convert Year to numeric
+        gather(Year, Expenditure, X2007:X2011) %>%         
+        separate(Year, into=c("x", "Year"), sep = "X") %>% 
+        select(-x) %>%                                     
+        mutate(Year = as.numeric(Year))                   
 
 head(long_exp)
 ##   Division      State Year Expenditure
@@ -446,11 +446,11 @@ There are additional `dplyr` functions for merging data sets worth exploring:
 
 {linenos=off}
 ```r
-intersect(y, z)	  # Rows that appear in both y and z
-union(y, z)	  # Rows that appear in either or both y and z
-setdiff(y, z)	  # Rows that appear in y but not z
-bind_rows(y, z)	  # Append z to y as new rows
-bind_cols(y, z)	  # Append z to y as new columns
+intersect(y, z)    # Rows that appear in both y and z
+union(y, z)        # Rows that appear in either or both y and z
+setdiff(y, z)      # Rows that appear in y but not z
+bind_rows(y, z)    # Append z to y as new rows
+bind_cols(y, z)    # Append z to y as new columns
 ```
 
 ## Creating new variables
