@@ -287,7 +287,7 @@ x - hours(4)
 ## [1] "2015-09-26 06:08:18 EDT"
 ```
 
-We can also deal with time spans by using the duration functions in `lubridate`.  Durations simply measure the time span between start and end dates and using base R date functions for duration calculations is tedious and often results in wrong measurements.  `lubridate` provides simplistic syntax to calculate durations with the desired measurement (seconds, minutes, hours, etc.).
+We can also deal with time spans by using the duration functions in `lubridate`.  Durations simply measure the time span between start and end dates. Using base R date functions for duration calculations is tedious and often results in wrong measurements.  `lubridate` provides simplistic syntax to calculate durations with the desired measurement (seconds, minutes, hours, etc.).
 
 {linenos=off}
 ```r
