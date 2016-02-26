@@ -100,7 +100,7 @@ rep(1:4, each = 2)
 ```
 
 ## Generating sequence of random numbers {#generating_random_numbers}
-Simulation is a common practice in data analysis. Sometimes your analysis requires the implementation of a statistical procedure that requires random number generation or sampling (i.e. Monte Carlo simulation, bootstrap sampling, etc).  R comes with a set of pseuodo-random number generators that allow you to simulate the most common probability distributions such as Uniform, Normal, Binomial, Poisson, Exponential and Gamma. 
+Simulation is a common practice in data analysis. Sometimes your analysis requires the implementation of a statistical procedure that requires random number generation or sampling (i.e. Monte Carlo simulation, bootstrap sampling, etc).  R comes with a set of pseudo-random number generators that allow you to simulate the most common probability distributions such as Uniform, Normal, Binomial, Poisson, Exponential and Gamma. 
 
 ### Uniform numbers 
 To generate random numbers from a uniform distribution you can use the `runif()` function.  Alternatively, you can also use `sample()` to take a random sample using with or without replacements.
