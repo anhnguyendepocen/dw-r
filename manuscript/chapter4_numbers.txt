@@ -285,7 +285,7 @@ rnorm(n = 10, mean = 0, sd = 1)
 ## Comparing numeric values {#compare_numeric_values}
 There are multiple ways to compare numeric values and vectors.  This includes [logical operators](#numeric_comparison) along with testing for [exact equality](#numeric_exact) and also [near equality](#numeric_near).
 
-{#numeric_comparison)
+{#numeric_comparison}
 ### Comparison Operators
 The normal binary operators allow you to compare numeric values and provides the answer in logical form:
 
