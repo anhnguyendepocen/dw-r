@@ -215,7 +215,7 @@ regexpr("v.", x)
 The output of `regexpr()` can be interepreted as follows.  The first element provides the starting position of the match in each element.  Note that the value **-1** means there is no match.  The second element (attribute "match length") provides the length of the match.  The third element (attribute "useBytes") has a value TRUE meaning matching was done byte-by-byte rather than character-by-character.
 
 ##### Pattern Replacement Functions {#pattern_replacement}
-In addition to finding patterns in character vectors, its also common to want to replace a pattern in a string with a new patter.  There are two options for this:
+In addition to finding patterns in character vectors, its also common to want to replace a pattern in a string with a new pattern.  There are two options for this:
 
 * Replace the first occurrence
 * Replace all occurrences
