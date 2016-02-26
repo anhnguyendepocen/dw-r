@@ -39,7 +39,7 @@ The original assignment operator in R was `<-` and has continued to be the prefe
 
 The operators `<<-` is normally only used in functions which we will not get into the details.  And the rightward assignment operators perform the same as their leftward counterparts, they just assign the value in an opposite direction.
 
-Overwhelmed yet?  Don't be.  This is just meant to show you that there are options and you will likely come across them sooner or later.  My suggestion is to stick with the tried and true `<-` operator.  This is the most conventional for and is what you will find in all the base R source code...which means it should be good enough for you. 
+Overwhelmed yet?  Don't be.  This is just meant to show you that there are options and you will likely come across them sooner or later.  My suggestion is to stick with the tried and true `<-` operator.  This is the most conventional assignment operator used and is what you will find in all the base R source code...which means it should be good enough for you. 
 
 Lastly, note that R is a case sensitive programming language.  Meaning all variables, functions, and objects must be called by their exact spelling:
 
