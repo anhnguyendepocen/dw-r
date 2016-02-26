@@ -399,7 +399,7 @@ For extracting a string containing a pattern, `stringr` offers two options:
 * [Replace all matches](#replace_all)
 
 {#replace_first}
-To replace the first occurrence of a pattern in a character vector use `str_replace()`. This function is a wraper of [`sub()`](#sub)
+To replace the first occurrence of a pattern in a character vector use `str_replace()`. This function is a wrapper of [`sub()`](#sub)
 
 {linenos=off}
 ```r
