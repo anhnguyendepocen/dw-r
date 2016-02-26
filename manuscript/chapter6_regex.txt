@@ -181,7 +181,7 @@ grep("North | South", state.division, invert = TRUE)
 
 {#grepl}
 ##### `grepl()`:
-To find a pattern in a character vector and to have logical (TRUE/FALSE) outputs use `grep()`:
+To find a pattern in a character vector and to have logical (TRUE/FALSE) outputs use `grepl()`:
 
 {linenos=off}
 ```r
