@@ -27,7 +27,7 @@ For most of these examples we'll use the following [census data](http://www.cens
 
 
 
-## Select variables of interest
+## Selecting variables of interest
 When working with a sizable dataframe, often we desire to only assess specific variables.  The `select()` function allows you to select and/or rename variables. Let's say our goal is to only assess the 5 most recent years worth of expenditure data.  Applying the `select()` function we can *select* only the variables of concern.
 
 {linenos=off}
@@ -93,7 +93,7 @@ expenditures %>% rename(`2011` = X2011)
 ```
 
 
-## Filter rows 
+## Filtering rows 
 Filtering data is a common task to identify/select observations in which a particular variable matches a specific value/condition. The `filter()` function provides this capability. Continuing with our `sub_exp` dataframe which includes only the recent 5 years worth of expenditures, we can filter by `Division`:
 
 {linenos=off}
@@ -156,7 +156,7 @@ sub_exp %>% slice(3:5)
 sub_exp %>% top_n(n = 5, wt = X2011)
 ```
 
-## Group data by categorical variables
+## Grouping data by categorical variables
 Often, observations are nested within groups or categories and our goal is to perform statistical analysis both at the observation level and also at the group level.  The `group_by()` function allows us to create these categorical groupings.
 
 The `group_by()` function is a *silent* function in which no observable manipulation of the data is performed as a result of applying the function.  Rather, the only change you'll notice is, when you print the dataframe you will notice underneath the *Source* information and prior to the actual dataframe, an indicator of what variable the data is grouped by will be provided. In the example that follows you'll notice that we grouped by `Division` and there are nine categories for this variable. The real magic of the `group_by()` function comes when we perform summary statistics which we will cover shortly. 
@@ -203,7 +203,7 @@ ungroup(group.exp)
 ## ..      ...         ...      ...      ...      ...      ...      ...
 ```
 
-## Perform summary statistics on variables
+## Performing summary statistics on variables
 Obviously the goal of all this data *wrangling* is to be able to perform statistical analysis on our data.  The `summarise()` function allows us to perform the majority of summary statistics when performing exploratory data analysis.
 
 Lets get the mean expenditure value across all states in 2011:
