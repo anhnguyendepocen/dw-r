@@ -371,7 +371,7 @@ unlist(strsplit(a, split = "-"))
 ```
 
 ## String manipulation with `stringr`
-The [`stringr`](http://cran.r-project.org/web/packages/stringr/index.html) package was developed by Hadley Wickham to act as simple wrappers that make R's string functions more consistent, simpler, and easier to use.  To replicate the functions in this section you will need to install and load the `stringr` package:
+The [`stringr`](http://cran.r-project.org/web/packages/stringr/index.html) package was developed by Hadley Wickham to act as simple wrappers that make R's string functions more consistent, simple, and easier to use.  To replicate the functions in this section you will need to install and load the `stringr` package:
 
 {linenos=off}
 ```r
