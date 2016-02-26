@@ -1,4 +1,4 @@
-# `tidyr` for Reshaping the Layout of Data Frames
+# Reshaping Your Data with `tidyr` {#tidyr}
 
 > *"Cannot emphasize enough how much time you save by putting analysis efforts into tidying data first."* - Hilary Parker
 
