@@ -46,7 +46,7 @@ as.Date(x)
 ## [1] "2015-07-01" "2015-08-01" "2015-09-01"
 ```
 
-Note that the defaul date format is YYYY-MM-DD; therefore, if your string is of different format you must incorporate the `format` argument.  Note that there are multiple formats that dates can be in; for a complete list of formatting code options in R type `?strftime` in your console.
+Note that the default date format is YYYY-MM-DD; therefore, if your string is of different format you must incorporate the `format` argument.  There are multiple formats that dates can be in; for a complete list of formatting code options in R type `?strftime` in your console.
 
 {linenos=off}
 ```r
