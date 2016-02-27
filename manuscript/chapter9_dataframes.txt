@@ -27,7 +27,7 @@ ncol(df)
 ## [1] 4
 ```
 
-Note how col2 in 'df' was converted to a column of factors.  This is because there is a default setting in `data.frame()` that converts character columns to factors.  We can turn this off by setting the `stringsAsFactors = FALSE` argument:
+Note how `col2` in `df` was converted to a column of factors.  This is because there is a default setting in `data.frame()` that converts character columns to factors.  We can turn this off by setting the `stringsAsFactors = FALSE` argument:
 
 {linenos=off}
 ```r
