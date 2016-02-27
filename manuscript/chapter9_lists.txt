@@ -211,7 +211,7 @@ l2[c("item1", "item3")]
 ```
 
 ### Subset List - Simplify Output {#list_subset_simplify}
-To extract one or more list items and **simplifying**[^preserve_simplify] the output use the `[ ]`  or `$` operator:
+To extract one or more list items while **simplifying**[^preserve_simplify] the output use the `[ ]`  or `$` operator:
 
 {linenos=off}
 ```r
