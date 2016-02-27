@@ -131,7 +131,7 @@ The four main ways to subset a vector include combining square brackets [ ] with
 
 You can also subset with double brackets `[[ ]]` for [simplifying](#vector_simplify) subsets.
 
-### Positive Integers {#vector_positive}
+### Subsetting with positive integers {#vector_positive}
 Subsetting with positive integers returns the elements at the specified positions:
 
 {linenos=off}
@@ -158,7 +158,7 @@ v1[c(2, 2, 4)]
 ##  9  9 11
 ```
 
-### Negative Integers {#vector_negative}
+### Subsetting with negative integers {#vector_negative}
 Subsetting with negative integers will omit the elements at the specified positions:
 
 {linenos=off}
@@ -172,7 +172,7 @@ v1[-c(2, 4, 6, 8)]
 ##  8 10 12 14 16 17
 ```
 
-### Logical values {#vector_logical}
+### Subsetting with logical values {#vector_logical}
 Subsetting with logical values will select the elements where the corresponding logical value is `TRUE`:
 
 {linenos=off}
@@ -196,7 +196,7 @@ v1[c(TRUE, FALSE)]
 ##  8 10 12 14 16
 ```
 
-### Names {#vector_names}
+### Subsetting with names {#vector_names}
 Subsetting with names will return the elements with the matching names specified:
 
 {linenos=off}
