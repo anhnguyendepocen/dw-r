@@ -166,7 +166,10 @@ Subsetting with negative integers will omit the elements at the specified positi
 v1[-1]
 ##  b  c  d  e  f  g  h  i  j 
 ##  9 10 11 12 13 14 15 16 17
+```
 
+{linenos=off}
+```r
 v1[-c(2, 4, 6, 8)]
 ##  a  c  e  g  i  j 
 ##  8 10 12 14 16 17
@@ -204,7 +207,10 @@ Subsetting with names will return the elements with the matching names specified
 v1["b"]
 ## b 
 ## 9
+```
 
+{linenos=off}
+```r
 v1[c("a", "c", "h")]
 ##  a  c  h 
 ##  8 10 15
