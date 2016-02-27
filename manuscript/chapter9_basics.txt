@@ -3,7 +3,7 @@ Prior to jumping into the data structures, it's beneficial to understand two com
 
 
 ## Identifying the Structure
-Given an object, the best way to understand what data structure it is composed of is to use the structure function `str()`.  `str()` stands for structure and provides a compact display of the internal **str**ucture of an R object.
+Given an object, the best way to understand what data structure it represents is to use the structure function `str()`.  `str()` stands for structure and provides a compact display of the internal **str**ucture of an R object.
 
 {linenos=off}
 ```r
