@@ -391,7 +391,7 @@ all_text <- scraping_wiki %>%
 ### Scraping Specific HTML Nodes {#scraping_specific_nodes}
 However, if we are concerned only with specific content on the webpage then we need to make our HTML node selection process a little more focused.  To do this we, we can use our browser's developer tools to examine the webpage we are scraping and get more details on specific nodes of interest.  If you are using Chrome or Firefox you can open the developer tools by clicking F12 (Cmd + Opt + I for Mac) or for Safari you would use Command-Option-I. An additional option which is recommended by Hadley Wickham is to use [selectorgadget.com](http://selectorgadget.com/), a Chrome extension, to help identify the web page elements you need[^selector]. 
 
-Once the developers tools are opened your primary concern is with the element selector. This is located in the top lefthand corner of the developers tools window. 
+Once the developer's tools are opened your primary concern is with the element selector. This is located in the top lefthand corner of the developers tools window. 
 
 ![Developer Tools: Element Selector](images/element_selector.jpg)
 
@@ -448,7 +448,7 @@ scraping_wiki %>%
 ```
 
 ### Cleaning up
-With any webscraping activity, especially involving text, there is likely to be some clean-up involved. For example, in the previous example we saw that we can specifically pull the list of [**Notable Tools**](https://en.wikipedia.org/wiki/Web_scraping#Notable_tools); however, you can see that in between each list item rather than a space there contains one or more `\n` which is used in HTML to specify a new line. We can clean this up quickly with a little [character string manipulation](#string_manipulation).
+With any webscraping activity, especially involving text, there is likely to be some clean up involved. For example, in the previous example we saw that we can specifically pull the list of [**Notable Tools**](https://en.wikipedia.org/wiki/Web_scraping#Notable_tools); however, you can see that in between each list item rather than a space there contains one or more `\n` which is used in HTML to specify a new line. We can clean this up quickly with a little [character string manipulation](#string_manipulation).
 
 {linenos=off}
 ```r
@@ -536,8 +536,8 @@ Remember that `html_nodes()` does not parse the data; rather, it acts as a CSS s
 
 More often than not we want to parse specific tables. Lets assume we want to parse the second and third tables on the webpage:
 
-1. Table 2. Nonfarm employment benchmarks by industry, March 2014 (in thousands) and
-2. Table 3. Net birth/death estimates by industry supersector, April – December 2014 (in thousands) 
+- Table 2. Nonfarm employment benchmarks by industry, March 2014 (in thousands) and
+- Table 3. Net birth/death estimates by industry supersector, April – December 2014 (in thousands) 
 
 This can be accomplished two ways. First, we can assess the previous `tbls` list and try to identify the table(s) of interest. In this example it appears that `tbls` list items 3 and 4 correspond with Table 2 and Table 3, respectively. We can then subset the list of table nodes prior to parsing the data with `html_table()`. This results in a list of two data frames containing the data of interest.
 
@@ -698,13 +698,13 @@ str(emp_ls)
 ## List of 2
 ##  $ Table2:'data.frame':	145 obs. of  6 variables:
 ##   ..$ V1: Factor w/ 145 levels "00-000000","05-000000",..: 1 2 3 4 5 6 7 8 ...
-##   ..$ V2: Factor w/ 143 levels "Accommodation",..: 130 131 52 116 102 74 67 ...
+##   ..$ V2: Factor w/ 143 levels "Accommodation",..: 130 131 52 116 102 74 ...
 ##   ..$ V3: Factor w/ 145 levels "1,010.3","1,048.3",..: 40 35 48 37 145 140 ...
 ##   ..$ V4: Factor w/ 145 levels "1,008.4","1,052.3",..: 41 34 48 36 144 142 ...
-##   ..$ V5: Factor w/ 123 levels "-0.3","-0.4",..: 113 68 71 48 9 19 29 11 12 ...
+##   ..$ V5: Factor w/ 123 levels "-0.3","-0.4",..: 113 68 71 48 9 19 29 11 ...
 ##   ..$ V6: Factor w/ 56 levels "-0.1","-0.2",..: 30 31 36 30 30 16 28 14 29 ...
 ##  $ Table3:'data.frame':	11 obs. of  12 variables:
-##   ..$ CES Industry Code : Factor w/ 11 levels "10-000000","20-000000",..: 1 ...
+##   ..$ CES Industry Code : Factor w/ 11 levels "10-000000","20-000000",..:1 ...
 ##   ..$ CES Industry Title: Factor w/ 11 levels "263","Construction",..: 8 2 ...
 ##   ..$ Apr               : Factor w/ 10 levels "0","12","2","204",..: 3 7 1 ...
 ##   ..$ May               : Factor w/ 10 levels "129","13","2",..: 3 6 8 5 7 ...
