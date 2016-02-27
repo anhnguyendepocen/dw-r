@@ -1,9 +1,9 @@
 # Importing Data {#import}
-The first step to any data analysis process is to *get* the data.  Data can come from many sources but two of the most common include text & Excel files.  This chapter covers how to import data into R by reading data from common [text files](#csv) and [Excel spreadsheets](#excel).  In addition, I cover how to load data from [saved R object files](#robject) for holding or transferring data that has been processed in R.  In addition to the the commonly used base R functions to perform data importing, I will also cover functions from the popular [`readr`](https://cran.rstudio.com/web/packages/readr/), [`xlsx`](https://cran.rstudio.com/web/packages/xlsx/), and [`readxl`](https://cran.rstudio.com/web/packages/readxl/) packages.
+The first step to any data analysis process is to *get* the data.  Data can come from many sources but two of the most common include text and Excel files.  This chapter covers how to import data into R by reading data from common [text files](#csv) and [Excel spreadsheets](#excel).  In addition, I cover how to load data from [saved R object files](#robject) for holding or transferring data that has been processed in R.  In addition to the the commonly used base R functions to perform data importing, I will also cover functions from the popular [`readr`](https://cran.rstudio.com/web/packages/readr/), [`xlsx`](https://cran.rstudio.com/web/packages/xlsx/), and [`readxl`](https://cran.rstudio.com/web/packages/readxl/) packages.
 
 
 ## Reading data from text files {#csv}
-Text files are a popular way to hold and exchange tabular data as almost any data application supports exporting data to the CSV (or other text file) formats.  Text file formats use delimiters to separate the different elements in a line, and each line of data is in its own line in the text file.  Therefore, importing different text kinds of text files can follow a fairly consistent process once you've identified the delimiter.
+Text files are a popular way to hold and exchange tabular data as almost any data application supports exporting data to the CSV (or other text file) formats.  Text file formats use delimiters to separate the different elements in a line, and each line of data is in its own line in the text file.  Therefore, importing different kinds of text files can follow a fairly consistent process once you've identified the delimiter.
 
 There are two main groups of functions that we can use to read in text files:
 
@@ -40,7 +40,7 @@ str(mydata)
 ##  $ variable.3: logi  TRUE TRUE FALSE
 ```
 
-For many reasons we may want to read in `variable.2` as a character variable rather then a factor.  We can take care of this by changing the `stringsAsFactors` argument.  The default has `stringsAsFactors = TRUE`; however, setting it equal to `FALSE` will read in the variable as a character variable.
+However, we may want to read in `variable.2` as a character variable rather then a factor.  We can take care of this by changing the `stringsAsFactors` argument.  The default has `stringsAsFactors = TRUE`; however, setting it equal to `FALSE` will read in the variable as a character variable.
 
 {linenos=off}
 ```r
@@ -184,7 +184,7 @@ With Excel still being the spreadsheet software of choice its important to be ab
 Note that there are several packages available to connect R with Excel (i.e. `gdata`, `RODBC`, `XLConnect`, `RExcel`, etc.); however, I am only going to cover the two main packages that I use which provide all the fundamental requirements I've needed for dealing with Excel.
 
 ### xlsx package {#xlsx_import}
-The [`xlsx`](https://cran.rstudio.com/web/packages/xlsx/) package provides tools neccessary to interact with Excel 2007 (and older) files from R. Many of the benefits of the `xlsx` come from being able to *export* and *format* Excel files from R.  Some of these capabilities will be covered in the [Exporting Data](exporting_data) chapter; however, in this section we will simply cover *importing* data from Excel with the `xlsx` package.
+The [`xlsx`](https://cran.rstudio.com/web/packages/xlsx/) package provides tools neccessary to interact with Excel 2007 (and older) files from R. Many of the benefits of the `xlsx` come from being able to *export* and *format* Excel files from R.  Some of these capabilities will be covered in the [Exporting Data](#export) chapter; however, in this section we will simply cover *importing* data from Excel with the `xlsx` package.
 
 To illustrate, we'll use similar data from the [previous section](#base_text_import); however, saved as an .xlsx file in our working director.  To import the Excel data we simply use the `read.xlsx()` function:
 
