@@ -2,7 +2,7 @@
 A data frame is the most common way of storing data in R and, generally, is the data structure most often used for data analyses. Under the hood, a data frame is a list of equal-length vectors. Each element of the list can be thought of as a column and the length of each element of the list is the number of rows. As a result, data frames can store different classes of objects in each column (i.e. numeric, character, factor). In essence, the easiest way to think of a data frame is as an Excel worksheet that contains columns of different types of data but are all of equal length rows.  In this chapter I will illustrate how to [create data frames](#dataframes_create), [add additional elements to pre-existing data frames](#dataframes_add), [add attributes to data frames](#dataframes_attribute), and [subset data frames](#dataframes_subset).
 
 ## Creating {#dataframes_create}
-Data frames are usually created by reading in a dataset using the `read.table()` or `read.csv()`; this will be covered in the [importing and scraping data chapters](#import_scrape_export). However, data frames can also be created explicitly with the `data.frame()` function or they can be coerced from other types of objects like lists:
+Data frames are usually created by reading in a dataset using the `read.table()` or `read.csv()`; this will be covered in the [importing and scraping data chapters](#import_scrape_export). However, data frames can also be created explicitly with the `data.frame()` function or they can be coerced from other types of objects like lists. In this case I'll create a simple data frame `df` and assess its basic structure:
 
 {linenos=off}
 ```r
@@ -11,6 +11,7 @@ df <- data.frame(col1 = 1:3,
                  col3 = c(TRUE, FALSE, TRUE), 
                  col4 = c(2.5, 4.2, pi))
 
+# assess the structure of a data frame
 str(df)
 ## 'data.frame':	3 obs. of  4 variables:
 ##  $ col1: int  1 2 3
@@ -54,8 +55,7 @@ v1 <- 1:3
 v2 <-c("this", "is", "text")
 v3 <- c(TRUE, FALSE, TRUE)
 
-# convert same length vectors to a data frame using
-# data.frame()
+# convert same length vectors to a data frame using data.frame()
 data.frame(col1 = v1, col2 = v2, col3 = v3)
 ##   col1 col2  col3
 ## 1    1 this  TRUE
@@ -117,7 +117,7 @@ cbind(df, v4)
 ## 3    3 text  TRUE 3.141593  C
 ```
 
-We can also use the `rbind()` function to add data frame rows together.  However, severe caution should be taken because this can cause changes in the classes of the columns:
+We can also use the `rbind()` function to add data frame rows together.  However, severe caution should be taken because this can cause changes in the classes of the columns. For instance, our data frame `df` currently consists of an integer, character, logical, and numeric variables.
 
 {linenos=off}
 ```r
@@ -132,9 +132,12 @@ str(df)
 ##  $ col2: chr  "this" "is" "text"
 ##  $ col3: logi  TRUE FALSE TRUE
 ##  $ col4: num  2.5 4.2 3.14
+```
 
-# if we attempt to add a row using the c() function it converts all columns
-# to a character class
+If we attempt to add a row using `rbind()` and `c()` it converts all columns to a character class. This is because all elements in the vector created by `c()` must be of the same class so they are all coerced to the character class which coerces all the variables in the data frame to the character class.
+
+{linenos=off}
+```r
 df2 <- rbind(df, c(4, "R", F, 1.1))
 df2
 ##   col1 col2  col3             col4
@@ -148,9 +151,12 @@ str(df2)
 ##  $ col2: chr  "this" "is" "text" "R"
 ##  $ col3: chr  "TRUE" "FALSE" "TRUE" "FALSE"
 ##  $ col4: chr  "2.5" "4.2" "3.14159265358979" "1.1"
+```
 
-# to add rows on, we need to convert the items being added to a data frame
-# and make sure the columns are the same class as the original data frame
+To add rows appropriately, we need to convert the items being added to a data frame and make sure the columns are the same class as the original data frame.
+
+{linenos=off}
+```r
 adding_df <- data.frame(col1 = 4, col2 = "R", col3 = FALSE, col4 = 1.1, 
                  stringsAsFactors = FALSE)
 
@@ -171,7 +177,7 @@ str(df3)
 There are better ways to join data frames together than to use `cbind()` and `rbind()`.  These are covered later on in the [transforming your data with `dplyr`](#dplyr) chapter.
 
 ## Adding attributes {#dataframes_attribute}
-Similar to matrices, data frames will have a dimension attribute.  In addition, data frames can also have additional attributes such as row names, column names, and comments:
+Similar to matrices, data frames will have a dimension attribute.  In addition, data frames can also have additional attributes such as row names, column names, and comments. We can illustrate with data frame `df`.
 
 {linenos=off}
 ```r
@@ -192,7 +198,12 @@ attributes(df)
 ## 
 ## $class
 ## [1] "data.frame"
+```
 
+Currently `df` does not have row names but we can add them with `rownames()`:
+
+{linenos=off}
+```r
 # add row names
 rownames(df) <- c("row1", "row2", "row3")
 df
@@ -209,8 +220,13 @@ attributes(df)
 ## 
 ## $class
 ## [1] "data.frame"
+```
 
-# add column names
+We can also also change the existing column names by using `colnames()` or `names()`:
+
+{linenos=off}
+```r
+# add/change column names with colnames()
 colnames(df) <- c("col_1", "col_2", "col_3", "col_4")
 df
 ##      col_1 col_2 col_3    col_4
@@ -227,7 +243,7 @@ attributes(df)
 ## $class
 ## [1] "data.frame"
 
-# can also change column names with the `names()` function
+# add/change column names with names()
 names(df) <- c("col.1", "col.2", "col.3", "col.4")
 df
 ##      col.1 col.2 col.3    col.4
@@ -243,7 +259,12 @@ attributes(df)
 ## 
 ## $class
 ## [1] "data.frame"
+```
 
+Lastly, just like vectors, lists, and matrices, we can add a comment to a data frame without affecting how it operates.
+
+{linenos=off}
+```r
 # adding a comment attribute
 comment(df) <- "adding a comment to a data frame"
 attributes(df)
