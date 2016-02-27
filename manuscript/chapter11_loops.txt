@@ -326,7 +326,7 @@ The syntax for `apply()` is as follows where
 apply(x, MARGIN, FUN, ...)
 ```
 
-To provide examples let's use the mtcars data set provided in R:
+To provide examples let's use the `mtcars` data set provided in R:
 
 {linenos=off}
 ```r
@@ -406,7 +406,8 @@ To provide examples we'll generate a list of four items:
 
 {linenos=off}
 ```r
-data <- list(item1 = 1:4, item2 = rnorm(10), item3 = rnorm(20, 1), item4 = rnorm(100, 5))
+data <- list(item1 = 1:4, item2 = rnorm(10), 
+             item3 = rnorm(20, 1), item4 = rnorm(100, 5))
 
 # get the mean of each list item 
 lapply(data, mean)
@@ -619,3 +620,8 @@ summary(iris)
 
 
 ## Additional Resources {#loops_add_resource}
+This provides an introduction to control statements in R.  However, the following provides additional resources to learn more:
+
+- [Tutorial on loops by DataCamp](https://www.datacamp.com/community/tutorials/tutorial-on-loops-in-r)
+- Roger Peng's [R Programming for Data Science](https://leanpub.com/rprogramming)
+- Hadley Wickham's [Advanced R](http://adv-r.had.co.nz/)
