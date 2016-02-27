@@ -368,7 +368,7 @@ mydata_ex
 ```
 
 ## Load data from saved R object file {#robject}
-Sometimes you may need to save data or other R objects outside of your workspace.  You may want to share R data/objects with co-workers, transfer between projects or computers, or simply archive them.  There are three primary ways that people tend to save R data/objects: as .RData, .rda, or as .rds files.  The differences behind when you use each will be covered in the [Saving data as an R object file](exporting_data#Robject) section.  This section will simply shows how to load these data/object forms.
+Sometimes you may need to save data or other R objects outside of your workspace.  You may want to share R data/objects with co-workers, transfer between projects or computers, or simply archive them.  There are three primary ways that people tend to save R data/objects: as .RData, .rda, or as .rds files.  The differences behind when you use each will be covered in the [Saving data as an R object file](#save_object) section.  This section will simply shows how to load these data/object forms.
 
 {linenos=off}
 ```r
