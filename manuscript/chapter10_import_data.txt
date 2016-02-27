@@ -380,7 +380,7 @@ name <- readRDS("mydata.rds")
 ```
 
 ## Additional resources {#importing_resources}
-In addition to text and Excel files, there are multiple other ways in which data is stored and exchanged.  Commercial statistical software such as SPSS, SAS, Stata, and Minitab often have the option to store data in a specific format for that software.  In addition, analysts commonly use databases to store large quantities of data.  R has good support to work with these additional options which we did not cover here.  The following provides a list of additional resources to learn about data importing for these specific cases:
+In addition to text and Excel files, there are multiple other ways that data are stored and exchanged.  Commercial statistical software such as SPSS, SAS, Stata, and Minitab often have the option to store data in a specific format for that software.  In addition, analysts commonly use databases to store large quantities of data.  R has good support to work with these additional options which we did not cover here.  The following provides a list of additional resources to learn about data importing for these specific cases:
 
 * [R data import/export manual](https://cran.r-project.org/doc/manuals/R-data.html)
 * [Working with databases](https://cran.r-project.org/doc/manuals/R-data.html#Relational-databases)
