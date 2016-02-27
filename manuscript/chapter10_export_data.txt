@@ -235,7 +235,7 @@ saveWorkbook(wb, file = "output_example_4.xlsx")
 ![Formatted Excel Output Example 2](images/output_example_4.png) 
 
 
-## Saving data as an R object file
+## Saving data as an R object file {#save_object}
 Sometimes you may need to save data or other R objects outside of your workspace.  You may want to share R data/objects with co-workers, transfer between projects or computers, or simply archive them.  There are three primary ways that people tend to save R data/objects: as .RData, .rda, or as .rds files.
 
 .rda is just short for .RData, therefore, these file extensions represent the same underlying object type. You use the .rda or .RData file types when you want to save several, or all, objects and functions that exist in your global environment. On the other hand, if you only want to save a single R object such as a data frame, function, or statistical model results its best to use .rds file type. You can use .rda or .RData to save a single object but the benefit of .rds is it only saves a representation of the object and not the name whereas .rda and .RData save the both the object and its name. As a result, with .rds the saved object can be loaded into a named object within R that is different from the name it had when originally saved.  The following illustrates how you save R objects with each type.
