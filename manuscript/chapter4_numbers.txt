@@ -3,7 +3,8 @@ In this chapter you will learn the basics of working with numbers in R.  This in
 
 
 ## Integer vs. Double {#integer_vs_double}
-The two most common numeric classes used in R are integer and double (for double precision floating point numbers). R automatically converts between these two classes when needed for mathematical purposes. As a result, it's feasible to use R and perform analyses for years without specifying these differences.
+The two most common numeric classes used in R are integer and double (for double precision floating point numbers). R automatically converts between these two classes when needed for mathematical purposes. As a result, it's feasible to use R and perform analyses for years without specifying these differences. To check whether a pre-existing vector is made up of integer or double values you can use `typeof(x)` which will tell you if the vector is a double, integer, logical, or character type.
+
 
 ### Creating Integer and Double Vectors
 By default, when you create a numeric vector using the `c()` function it will produce a vector of double precision numeric values.  To create a vector of integers using `c()` you must specify explicity by placing an `L` directly after each number.
@@ -39,14 +40,6 @@ as.integer()
 ## integer(0)
 ```
 
-### Checking for Numeric Type
-To check whether a vector is made up of integer or double values:
-
-{linenos=off}
-```r
-# identifies the vector type (double, integer, logical, or character)
-typeof(x)     
-```
 
 ## Generating sequence of non-random numbers {#generating_sequence_numbers}
 There are a few R operators and functions that are especially useful for creating vectors.  These functions allow for generating numbers in multiple ways.
