@@ -156,7 +156,7 @@ filenames
 ## [4] "http://download.bls.gov/pub/time.series/ap/ap.data.3.Food"
 ```
 
-We can now proceed to develop a simple `for` loop function to download each data set. We store the results in a list which contains 4 items, one item for each data set.  Each list item contains the url in which the data was extracted from and the dataframe containing the downloaded data.  We're now ready to analyze these data sets as necessary. 
+We can now proceed to develop a simple `for` loop function (which you will learn about in the [loop control statements chapter](#control_structures)) to download each data set. We store the results in a list which contains 4 items, one item for each data set.  Each list item contains the url in which the data was extracted from and the dataframe containing the downloaded data.  We're now ready to analyze these data sets as necessary. 
 
 {linenos=off}
 ```r
