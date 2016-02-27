@@ -213,7 +213,7 @@ sprintf("%E", pi)         # exponential decimal notation 'E'
 ```
 
 
-### Counting Elements
+### Counting string elements and characters
 To count the number of elements in a string use `length()`:
 
 {linenos=off}
@@ -225,7 +225,6 @@ length(c("How", "many", "elements", "are", "in", "this", "string?"))
 ## [1] 7
 ```
 
-### Counting Characters
 To count the number of characters in a string use `nchar()`:
 
 {linenos=off}
@@ -241,7 +240,7 @@ nchar(c("How", "many", "characters", "are", "in", "this", "string?"))
 ## String manipulation with base R {#string_manipulation}
 Basic string manipulation typically inludes case conversion, simple character and substring replacement, adding/removing whitespace, and performing set operations to compare similarities and differences between two character vectors.  These operations can all be performed with base R functions; however, some operations (or at least their syntax) are simplified with the `stringr` package which we will discuss in the next section.  This section illustrates the base R string manipulation capabilities.
 
-### Convert to Lower Case
+### Case conversion
 To convert all upper case characters to lower case use `tolower()`:
 
 {linenos=off}
@@ -252,7 +251,6 @@ tolower(x)
 ## [1] "learning to manipulate strings in r"
 ```
 
-### Convert to Upper Case
 To convert all lower case characters to upper case use `toupper()`:
 
 {linenos=off}
