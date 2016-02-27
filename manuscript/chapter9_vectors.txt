@@ -22,12 +22,13 @@ y1 <- c(TRUE, FALSE, FALSE)
 y1
 ## [1]  TRUE FALSE FALSE
 
-y2 <- c(T, F, F) ## shorthand
+# logical vector in shorthand
+y2 <- c(T, F, F) 
 y2
 ## [1]  TRUE FALSE FALSE
 
 # Character vector
-z <- c("a", "b", "c") ## character
+z <- c("a", "b", "c") 
 z
 ## [1] "a" "b" "c"
 ```
