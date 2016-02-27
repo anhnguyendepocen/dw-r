@@ -4,7 +4,7 @@ A matrix is a collection of data elements arranged in a two-dimensional rectangu
 
 
 ## Creating {#matrix_create}
-Matrices are constructed column-wise, so entries can be thought of starting in the "upper left" corner and running down the columns.  We can create a matrix using the `matrix()` function:
+Matrices are constructed column-wise, so entries can be thought of starting in the "upper left" corner and running down the columns.  We can create a matrix using the `matrix()` function and specifying the values to fill in the matrix and the number of rows and columns to make the matrix.
 
 {linenos=off}
 ```r
@@ -14,23 +14,31 @@ m1
 ##      [,1] [,2] [,3]
 ## [1,]    1    3    5
 ## [2,]    2    4    6
+```
 
-# structure of m1 is simply integer vector with an added
-# dimension attribute
+The underlying structure of this matrix is simply integer vector with an added 2x3 dimension attribute.
+
+{linenos=off}
+```r
 str(m1)
 ##  int [1:2, 1:3] 1 2 3 4 5 6
 attributes(m1)
 ## $dim
 ## [1] 2 3
+```
 
-# can also create a character matrix
+Matrices can also contain character values. Whether a matrix contains data that is of numeric or character type, like a vector all the elements must be of the same class.
+
+{linenos=off}
+```r
+# a character matrix
 m2 <- matrix(letters[1:6], nrow = 2, ncol = 3)
 m2
 ##      [,1] [,2] [,3]
 ## [1,] "a"  "c"  "e" 
 ## [2,] "b"  "d"  "f"
 
-# structure of m2 is simply character vector with dimensions
+# structure of m2 is simply character vector with 2x3 dimension
 str(m2)
 ##  chr [1:2, 1:3] "a" "b" "c" "d" "e" "f"
 attributes(m2)
