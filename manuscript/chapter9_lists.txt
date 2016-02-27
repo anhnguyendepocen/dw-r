@@ -1,5 +1,5 @@
 # Managing Lists {#managing_lists}
-A list is an R structure that allows you to combine elements of different types, including lists.  Lists provide a very general and flexible type of structure to hold information as they provide an organized way of grouping different type of data objects.  Many statistical outputs are provided as a list as well; therefore, its critical to understand how to work with lists.  In this chapter I will illustrate how to [create lists](#lists_create), [add additional elements to pre-existing lists](#lists_add), [add attributes to lists](#lists_attribute), and [subset lists](#lists_subset).
+A list is an R structure that allows you to combine elements of different types, including lists embedded in a list.  Lists provide a very general and flexible type of structure to hold information as they provide an organized way of grouping different type of data objects.  Many statistical outputs are provided as a list as well; therefore, its critical to understand how to work with lists.  In this chapter I will illustrate how to [create lists](#lists_create), [add additional elements to pre-existing lists](#lists_add), [add attributes to lists](#lists_attribute), and [subset lists](#lists_subset).
 
 
 ## Creating {#lists_create}
