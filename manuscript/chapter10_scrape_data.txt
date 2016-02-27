@@ -166,7 +166,7 @@ data_ls <- list()
 for(i in 1:length(filenames)){
         url <- filenames[i]
         data <- read.delim(url)
-        data_ls[[length(data_ls) + 1]] <- list(url=filenames[i], data=data)
+        data_ls[[length(data_ls) + 1]] <- list(url = filenames[i], data = data)
 }
 
 str(data_ls)
