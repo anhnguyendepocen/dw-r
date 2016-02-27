@@ -147,9 +147,8 @@ Now that I've illustrated how R handles some of the most common regular expressi
 The primary base R regex functions serve three primary purposes:  [pattern matching](#pattern_matching), [pattern replacement](#pattern_replacement), and [character splitting](#strsplit).
 
 #### Pattern matching {#pattern_matching}
-There are five functions that provide pattern matching capabilities.  The three functions that I provide examples for are ones that are most common.  The two other functions which I do not illustrate are `gregexpr()` and `regexec()` which provide similar capabilities as `regexpr()` but with the output in list form.
+There are five functions that provide pattern matching capabilities.  The three functions that I provide examples for (`grep()`, `grepl()`, and `regexpr()`) are ones that are most common.  The primary difference in between these three functions is the output they provide. The two other functions which I do not illustrate are `gregexpr()` and `regexec()`. These two functions provide similar capabilities as `regexpr()` but with the output in list form.
 
-##### `grep()`:
 To find a pattern in a character vector and to have the element values or indices as the output use `grep()`:
 
 {linenos=off}
@@ -179,8 +178,6 @@ grep("North | South", state.division, invert = TRUE)
 ## [24] 40 44 45 46 47 48 50
 ```
 
-{#grepl}
-##### `grepl()`:
 To find a pattern in a character vector and to have logical (TRUE/FALSE) outputs use `grepl()`:
 
 {linenos=off}
@@ -197,7 +194,6 @@ sum(grepl("North | South", state.division))
 ## [1] 20
 ```
 
-##### `regexpr()`:
 To find exactly where the pattern exists in a string use `regexpr()`:
 
 {linenos=off}
@@ -215,13 +211,8 @@ regexpr("v.", x)
 The output of `regexpr()` can be interepreted as follows.  The first element provides the starting position of the match in each element.  Note that the value **-1** means there is no match.  The second element (attribute "match length") provides the length of the match.  The third element (attribute "useBytes") has a value TRUE meaning matching was done byte-by-byte rather than character-by-character.
 
 #### Pattern Replacement Functions {#pattern_replacement}
-In addition to finding patterns in character vectors, its also common to want to replace a pattern in a string with a new pattern.  There are two options for this:
+In addition to finding patterns in character vectors, its also common to want to *replace* a pattern in a string with a new pattern.  Base R regex functions provide two options for this: *i*) replace the first matching occurrence or *ii*) replace all occurrences.
 
-* Replace the first occurrence
-* Replace all occurrences
-
-{#sub}
-##### `sub()`:
 To replace the **first** matching occurrence of a pattern use `sub()`:
 
 {linenos=off}
@@ -239,8 +230,6 @@ sub("New", replacement = "Old", new, ignore.case = TRUE)
 ## [1] "Old York"         "Old new York"     "Old New New York"
 ```
 
-{#gsub}
-##### `gsub()`:
 To replace **all** matching occurrences of a pattern use `gsub()`:
 
 {linenos=off}
@@ -256,7 +245,7 @@ gsub("New", replacement = "Old", new, ignore.case = TRUE)
 
 {#strsplit}
 #### Splitting Character Vectors
-To split the elements of a character string use `strsplit()`:
+There will be times when you want to to split the elements of a character string into seperate elements. To divide the characters in a vector into individual components use `strsplit()`:
 
 {linenos=off}
 ```r
@@ -289,7 +278,7 @@ library(stringr)
 ```
 
 #### Detecting Patterns
-To *detect* whether a pattern is present (or absent) in a string vector use the `str_detect()`. This function is a wrapper for [`grepl()`](#grepl).
+To *detect* whether a pattern is present (or absent) in a string vector use the `str_detect()`. This function is a wrapper for `grepl()`.
 
 {linenos=off}
 ```r
@@ -311,13 +300,7 @@ sum(str_detect(state.name, pattern = "New"))
 ```
 
 #### Locating Patterns
-To *locate* the occurrences of patterns `stringr` offers two options:
-
-* [Locate first match](#first_match)
-* [Locate all matches](#last_match)
-
-{#first_match}
-To locate the position of the first occurrence of a pattern in a string vector use `str_locate()`. The output provides the starting and ending position of the first match found within each element.
+To *locate* the occurrences of patterns `stringr` offers two options: *i*) locate the first matching occurrence or *ii*) locate all occurrences.  To locate the position of the first occurrence of a pattern in a string vector use `str_locate()`. The output provides the starting and ending position of the first match found within each element.
 
 {linenos=off}
 ```r
@@ -333,7 +316,6 @@ str_locate(x, "[0-9]+")
 ```
 
 
-{#last_match}
 To locate the positions of all pattern match occurrences in a character vector use `str_locate_all()`.  The output provides a list the same length as the number of elements in the vector.  Each list item will provide the starting and ending positions for each pattern match occurrence in its respective element.
 
 {linenos=off}
@@ -360,13 +342,7 @@ str_locate_all(x, "[0-9]+")
 ```
 
 #### Extracting Patterns
-For extracting a string containing a pattern, `stringr` offers two primary options: 
-
-* [Extract first match](#first_match_extract)
-* [Extract all matches](#all_match_extract)
-
-{#first_match_extract}
-To extract the first occurrence of a pattern in a character vector use `str_extract()`. The output will be the same length as the string and if no match is found the output will be `NA` for that element.
+For extracting a string containing a pattern, `stringr` offers two primary options: *i*) extract the first matching occurrence or *ii*) extract all occurrences.  To extract the first occurrence of a pattern in a character vector use `str_extract()`. The output will be the same length as the string and if no match is found the output will be `NA` for that element.
 
 {linenos=off}
 ```r
@@ -376,7 +352,6 @@ str_extract(y, pattern = "R")
 ## [1] "R" "R" NA
 ```
 
-{#all_match_extract}
 To extract all occurrences of a pattern in a character vector use `str_extract_all()`.  The output provides a list the same length as the number of elements in the vector.  Each list item will provide the matching pattern occurrence within that relative vector element.
 
 {linenos=off}
@@ -393,13 +368,7 @@ str_extract_all(y, pattern = "[[:punct:]]*[a-zA-Z0-9]*R[a-zA-Z0-9]*")
 ```
 
 #### Replacing Patterns
-For extracting a string containing a pattern, `stringr` offers two options:
-
-* [Replace first match](#replace_first)
-* [Replace all matches](#replace_all)
-
-{#replace_first}
-To replace the first occurrence of a pattern in a character vector use `str_replace()`. This function is a wrapper for [`sub()`](#sub)
+For extracting a string containing a pattern, `stringr` offers two options: *i*) replace the first matching occurrence or *ii*) replace all occurrences.  To replace the first occurrence of a pattern in a character vector use `str_replace()`. This function is a wrapper for `sub()`.
 
 {linenos=off}
 ```r
@@ -416,8 +385,7 @@ str_replace(cities, pattern = "[N]*[n]*ew", replacement = "Old")
 ## [1] "Old York"         "Old new York"     "Old New New York"
 ```
 
-{#replace_all}
-To extract all occurrences of a pattern in a character vector use `str_replace_all()`.  This function is a wrapper for [`gsub()`](#gsub)
+To extract all occurrences of a pattern in a character vector use `str_replace_all()`.  This function is a wrapper for `gsub()`.
 
 {linenos=off}
 ```r
@@ -426,7 +394,7 @@ str_replace_all(cities, pattern = "[N]*[n]*ew", replacement = "Old")
 ```
 
 #### String Splitting
-To split the elements of a character string use `str_split()`. This function is a wrapper for [`strsplit()`](#strsplit).
+To split the elements of a character string use `str_split()`. This function is a wrapper for `strsplit()`.
 
 {linenos=off}
 ```r
