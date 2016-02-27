@@ -25,7 +25,7 @@ Reader comments are greatly appreciated.  Please send any feedback regarding typ
 
 
 ## Colophon
-This book was written in Rmarkdown via Rstudio. The source code is available on GitHub and automatically published to LeanPub. Cover image provided by [Gabriela de Queiroz](https://twitter.com/gdequeiroz)
+This book was written in Rmarkdown with Rstudio. The source code is hosted on GitHub and automatically published to LeanPub. Cover image provided by [Gabriela de Queiroz](https://twitter.com/gdequeiroz)
 
 
 [^fn-first_footnote]: cf. [Wickham, 2014](http://vita.had.co.nz/papers/tidy-data.pdf) and [Dasu and Johnson, 2003](http://onlinelibrary.wiley.com/doi/10.1002/0471448354.ch4/summary)
