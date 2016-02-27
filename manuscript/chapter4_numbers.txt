@@ -42,10 +42,10 @@ as.integer()
 
 
 ## Generating sequence of non-random numbers {#generating_sequence_numbers}
-There are a few R operators and functions that are especially useful for creating vectors.  These functions allow for generating numbers in multiple ways.
+There are a few R operators and functions that are especially useful for creating vectors of non-random numbers.  These functions provide multiple ways for generating sequences of numbers.
 
 ### Specifing Numbers within a Sequence
-To explicitly specify numbers in a sequence you can use the colon `:` operator to specify all integers between two specified numbers or the combine `c()` function to explicity specify all numbers.
+To explicitly specify numbers in a sequence you can use the colon `:` operator to specify all integers between two specified numbers or the combine `c()` function to explicity specify all numbers in the sequence.
 
 {linenos=off}
 ```r
@@ -69,7 +69,7 @@ A generalization of `:` is the `seq()` function, which generates a sequence of n
 {linenos=off}
 ```r
 # generate a sequence of numbers from 1 to 21 by increments of 2
-seq(1, 21, by = 2)             
+seq(from = 1, to = 21, by = 2)             
 ##  [1]  1  3  5  7  9 11 13 15 17 19 21
 
 # generate a sequence of numbers from 1 to 21 that has 15 equal incremented 
@@ -96,7 +96,7 @@ rep(1:4, each = 2)
 Simulation is a common practice in data analysis. Sometimes your analysis requires the implementation of a statistical procedure that requires random number generation or sampling (i.e. Monte Carlo simulation, bootstrap sampling, etc).  R comes with a set of pseudo-random number generators that allow you to simulate the most common probability distributions such as Uniform, Normal, Binomial, Poisson, Exponential and Gamma. 
 
 ### Uniform numbers 
-To generate random numbers from a uniform distribution you can use the `runif()` function.  Alternatively, you can also use `sample()` to take a random sample using with or without replacements.
+To generate random numbers from a uniform distribution you can use the `runif()` function.  Alternatively, you can use `sample()` to take a random sample using with or without replacements.
 
 {linenos=off}
 ```r
