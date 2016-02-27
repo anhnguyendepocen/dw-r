@@ -350,7 +350,8 @@ One unique difference between `readxl` and `xlsx` is how to deal with column typ
 ```r
 
 mydata_ex <- read_excel("mydata.xlsx", sheet = "Sheet5",
-                        col_types = c("numeric", "blank", "numeric", "date", "blank"))
+                        col_types = c("numeric", "blank", "numeric", 
+                                      "date", "blank"))
 mydata_ex
 ##   variable 1 variable 3 variable 4
 ## 1         10          1 2015-11-20
