@@ -1,5 +1,5 @@
 # Data Structure Basics
-Prior to jumping into the data structures, it's beneficial to understand two components of data structures.  
+Prior to jumping into the data structures, it's beneficial to understand two components of data structures - the structure and attributes.  
 
 
 ## Identifying the Structure
