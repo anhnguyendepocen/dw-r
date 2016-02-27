@@ -83,7 +83,7 @@ length(list)
 length(df)
 ## [1] 2
 ```
-This chapter only shows you functions to assess these attributes.  In the chapters that follow more details are provided on how to create attributes within each data structure type page.
+This chapter only shows you functions to assess these attributes.  In the chapters that follow more details are provided on how to view and create attributes for each type of data structure.
 
 
 
