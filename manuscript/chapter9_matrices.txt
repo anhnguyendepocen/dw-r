@@ -108,7 +108,7 @@ rbind(m1, c(4.1, 8.1))
 ```
 
 ## Adding attributes {#matrix_attribute}
-As previously mentioned, matrices by default will have a dimension attribute.  However, matrices can also have additional attributes such as row names, column names, and comments:
+As previously mentioned, matrices by default will have a dimension attribute as illustrated in the following matrix `m2`.
 
 {linenos=off}
 ```r
@@ -125,7 +125,12 @@ m2
 attributes(m2)
 ## $dim
 ## [1] 4 3
+```
 
+However, matrices can also have additional attributes such as row names, column names, and comments. Adding names can be done individually, meaning we can add row names or column names separately.
+
+{linenos=off}
+```r
 # add row names as an attribute
 rownames(m2) <- c("row1", "row2", "row3", "row4")
 m2
@@ -166,9 +171,12 @@ attributes(m2)
 ## 
 ## $dimnames[[2]]
 ## [1] "col1" "col2" "col3"
+```
 
-# another option is to use the `dimnames()` function
-# row names are contained in the first list item
+Another option is to use the `dimnames()` function. To add row names you assign the names to `dimnames(m2)[[1]]` and to add column names you assign the names to `dimnames(m2)[[2]]`.
+
+{linenos=off}
+```r
 dimnames(m2)[[1]] <- c("row_1", "row_2", "row_3", "row_4")
 m2
 ##       col1 col2 col3
@@ -185,8 +193,13 @@ m2
 ## row_2     2     6    10
 ## row_3     3     7    11
 ## row_4     4     8    12
+```
 
-# adding a comment attribute
+
+Lastly, similar to lists and vectors you can add a comment attribute to a list.
+
+{linenos=off}
+```r
 comment(m2) <- "adding a comment to a matrix"
 attributes(m2)
 ## $dim
@@ -205,7 +218,7 @@ attributes(m2)
 ```
 
 ## Subsetting {#matrix_subset}
-To subset matrices we use the `[` operator; however, since matrices have 2 dimensions we need to incorporate subsetting arguments for both row and column dimensions.  A generic form of matrix subsetting looks like: `matrix[rows, columns]`.
+To subset matrices we use the `[` operator; however, since matrices have 2 dimensions we need to incorporate subsetting arguments for both row and column dimensions.  A generic form of matrix subsetting looks like: `matrix[rows, columns]`.  We can illustrate with matrix `m2`:
 
 {linenos=off}
 ```r
@@ -215,7 +228,12 @@ m2
 ## row_2     2     6    10
 ## row_3     3     7    11
 ## row_4     4     8    12
+```
 
+By using different values in the `rows` and `columns` argument of `m2[rows, columns]`, we can subset `m2` in multiple ways.
+
+{linenos=off}
+```r
 # subset for rows 1 and 2 but keep all columns
 m2[1:2, ]
 ##       col_1 col_2 col_3
