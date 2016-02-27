@@ -3,7 +3,7 @@
 The basic structure in R is the vector.  A vector is a sequence of data elements of the same basic type: [integer](#integer_vs_double), [double](#integer_vs_double), logical, or [character](#character_basics).[^vectors]  The one-dimensional examples illustrated in the previous section are considered vectors.  In this chapter I will illustrate how to [create vectors](#vector_create), [add additional elements to pre-existing vectors](#vector_add), [add attributes to vectors](#vector_attributes), and [subset vectors](#vector_subset). 
 
 ## Creating {#vector_create}
-The `c()` function can be used to create vectors of objects by concatenating elements together:
+The colon `:` operator can be used to create a vector of integers between two specified numbers or the `c()` function can be used to create vectors of objects by concatenating elements together:
 
 {linenos=off}
 ```r
@@ -214,10 +214,7 @@ Subsetting with names will return the elements with the matching names specified
 v1["b"]
 ## b 
 ## 9
-```
 
-{linenos=off}
-```r
 v1[c("a", "c", "h")]
 ##  a  c  h 
 ##  8 10 15
@@ -226,7 +223,7 @@ v1[c("a", "c", "h")]
 ### Simplifying vs. Preserving {#vector_simplify}
 Its also important to understand the difference between simplifying and preserving when subsetting.  **Simplifying** subsets returns the simplest possible data structure that can represent the output. **Preserving** subsets keeps the structure of the output the same as the input.
 
-For vectors, subsetting with single brackets `[ ]` preserves while subsetting with double brackets `[[ ]]` simplifies.  The change you will notice when simplifying vectors is the removal of names and/or factor levels:
+For vectors, subsetting with single brackets `[ ]` preserves while subsetting with double brackets `[[ ]]` simplifies.  The change you will notice when simplifying vectors is the removal of names.
 
 {linenos=off}
 ```r
@@ -237,11 +234,6 @@ v1[1]
 v1[[1]]
 ## [1] 8
 
-# drop factor levels
-f <- factor(c("low", "medium", "high", "high", "low"), levels = c("low", "medium", "high"))
-f[-2, drop = TRUE]
-## [1] low  high high low 
-## Levels: low high
 ```
 
 [^vectors]: There are two additional vector types which I will not discuss - complex and raw.
