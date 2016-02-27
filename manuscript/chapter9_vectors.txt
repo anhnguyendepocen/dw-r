@@ -80,15 +80,19 @@ c(v1, c(18, c(19, c(20, c(21:22)))))
 ```
 
 ## Adding attributes {#vector_attribute}
-The attributes that you can add to vectors includes names and comments:
+The attributes that you can add to vectors includes names and comments.  If we continue with our vector `v1` we can see that the vector currently has no attributes:
 
 {linenos=off}
 ```r
-# currently no attributes exist for vector v1
 attributes(v1)
 ## NULL
+```
 
-# we can add names to vectors
+We can add names to vectors using two approaches. The first uses `names()` to assign names to each element of the vector. The second approach is to assign names when creating the vector.
+
+{linenos=off}
+```r
+# assigning names to a pre-existing vector
 names(v1) <- letters[1:length(v1)]
 v1
 ##  a  b  c  d  e  f  g  h  i  j 
@@ -105,9 +109,12 @@ v2
 attributes(v2)
 ## $names
 ## [1] "name1" "name2" "name3"
+```
 
-# adding comments to vectors acts as a note to the user
-# without changing how the vector behaves
+We can also add comments to vectors to act as a note to the user.  This does not change how the vector behaves; rather, it simply acts as a form of metadata for the vector.
+
+{linenos=off}
+```r
 comment(v1) <- "This is a comment on a vector"
 v1
 ##  a  b  c  d  e  f  g  h  i  j 
