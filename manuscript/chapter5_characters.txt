@@ -72,12 +72,11 @@ toString(c("Aug", 24, 1980))
 ### Printing Strings
 The common printing methods include:
 
-- [`print()`](#print): generic printing
-- [`noquote()`](#noquote): print with no quotes
-- [`cat()`](#cat): concatenate and print with no quotes
-- [`sprintf()`](#sprintf): a wrapper for the C function `sprintf`, that returns a character vector containing a formatted combination of text and variable values
+- `print()`: generic printing
+- `noquote()`: print with no quotes
+- `cat()`: concatenate and print with no quotes
+- `sprintf()`: a wrapper for the C function `sprintf`, that returns a character vector containing a formatted combination of text and variable values
 
-#### print() {#print}
 The primary printing function in R is `print()`
 
 {linenos=off}
@@ -93,9 +92,7 @@ print(x, quote = FALSE)
 ## [1] learning to print strings
 ```
 
-
-#### noquote() {#noquote}
-An alternative to printing without quotes.
+An alternative to printing a string without quotes is to use `noquote()`
 
 {linenos=off}
 ```r
@@ -103,7 +100,6 @@ noquote(x)
 ## [1] learning to print strings
 ```
 
-#### cat() {#cat}
 Another very useful function is `cat()` which allows us to concatenate objects and print them either on screen or to a file.  The output result is very similar to `noquote()`; however, `cat()` does not print the numeric line indicator.  As a result, `cat()` can be useful for printing nicely formated responses to users.
 
 {linenos=off}
@@ -146,8 +142,7 @@ cat(x, y, z, fill = 5)
 ## The day after I will take a break and drink a beer.
 ```
 
-#### sprintf() {#sprintf}
-A wrapper for the C function `sprintf`, that returns a character vector containing a formatted combination of text and variable values.
+`sprintf()` is a useful printing function for precise control of the output. It is a wrapper for the C function `sprintf` and returns a character vector containing a formatted combination of text and variable values.
 
 To substitute in a string or string variable, use `%s`:
 
