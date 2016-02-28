@@ -16,7 +16,7 @@ m1
 ## [2,]    2    4    6
 ```
 
-The underlying structure of this matrix is simply integer vector with an added 2x3 dimension attribute.
+The underlying structure of this matrix is simply an integer vector with an added 2x3 dimension attribute.
 
 {linenos=off}
 ```r
