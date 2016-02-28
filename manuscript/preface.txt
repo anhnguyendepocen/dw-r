@@ -3,7 +3,7 @@
 Welcome to Data Wrangling with R! In this book, I will help you learn the essentials of preprocessing data leveraging the R 
 programming language to easily and quickly turn noisy data into usable pieces of information. Data wrangling, which is also 
 commonly referred to as data munging, transformation, manipulation, janitor work, etc. can be a painstakenly laborious process.
-In fact, its been stated that up to 80% of data analysis is spent on the process of cleaning and preparing data[^fn-first_footnote].
+In fact, it has been stated that up to 80% of data analysis is spent on the process of cleaning and preparing data[^fn-first_footnote].
 However, being a prerequisite to the rest of the data analysis workflow (visualization, modeling, reporting), it's essential 
 that you become fluent *and* efficient in data wrangling techniques.
 
@@ -13,7 +13,7 @@ the content of your data via visualization, modeling, and reporting your results
 
 
 ## Who this Book is For
-This book is meant to establish the baseline R vocabulary and knowledge for the primary data wrangling processes.  This captures a wide range of programming activities which covers the full spectrum from understanding basic data objects in R to writing your own functions, applying loops, and webscraping.  As a result, this book can be beneficial to all levels of R programmers.  Beginner R programmers will gain a basic understanding of the functionality of R along with learning how to work with data using R.  Intermediate and/or advanced R programmers will likely find the early chapters reiterating established knowledge; however, these programmers will benefit from the mid and latter chapters by learning newer and/or more efficient data wrangling techniques.  
+This book is meant to establish the baseline R vocabulary and knowledge for the primary data wrangling processes.  This captures a wide range of programming activities which covers the full spectrum from understanding basic data objects in R to writing your own functions, applying loops, and webscraping.  As a result, this book can be beneficial to all levels of R programmers.  Beginner R programmers will gain a basic understanding of the functionality of R along with learning how to work with data using R.  Intermediate and/or advanced R programmers will likely find the early chapters reiterating established knowledge; however, these programmers will benefit from the mid and later chapters by learning newer and/or more efficient data wrangling techniques.  
 
 
 ## What You Need For this Book
@@ -21,7 +21,7 @@ Obviously to gain and retain knowledge from this book it is highly recommended t
 
 
 ## Reader Feedback
-Reader comments are greatly appreciated.  Please send any feedback regarding typos, mistakes, confusing statements, or opportunitites for improvement to wranglingdata@gmail.com.
+Reader comments are greatly appreciated.  Please send any feedback regarding typos, mistakes, confusing statements, or opportunities for improvement to wranglingdata@gmail.com.
 
 
 ## Colophon
