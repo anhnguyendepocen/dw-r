@@ -1,4 +1,4 @@
-# Functions
+# Functions {#functions}
 
 R is a functional programming language, meaning that everything you do is basically built on functions.  However, moving beyond simply *using* pre-built functions to *writing* your own functions is when your capabilities really start to take off and your code development/writing takes on a new level of efficiency. Functions allow you to reduce code duplication by automating a generalized task to be applied recursively. Whenever you catch yourself repeating a function or copy and pasting code there is a good change that you should write a function to eliminate the redundancies.  
 
