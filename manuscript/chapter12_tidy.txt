@@ -8,9 +8,9 @@
 2. Each observation forms a row
 3. Each type of observational unit forms a table
 
-To create tidy data you need to be able to reshape your data; preferably via efficient and simple code.  To help with this process Hadley created the [`tidyr`](https://cran.r-project.org/web/packages/tidyr/index.html) package. This chapter covers the basics of `tidyr` to help you reshape your data as necessary. I demonstrate how to turn wide data to long, long data to wide, splitting and combining variables, and finally I will cover some lesser known functions in `tidyr` that are useful.  Note that throughout I use the `%>%` operator we covered in the [last chapter](#pipe). Although not required, the `tidyr` package has the `%>%` operator baked in to its functionality, which allows you to sequence multiple tidy functions together.  
+To create tidy data you need to be able to reshape your data; preferably via efficient and simple code.  To help with this process Hadley created the [`tidyr`](https://cran.r-project.org/web/packages/tidyr/index.html) package. This chapter covers the basics of `tidyr` to help you reshape your data as necessary. I demonstrate how to [turn wide data to long](#gather), [long data to wide](#spread), [splitting](#separate) and [combining](#unite) variables, and finally I will cover some [lesser known functions](#tidyr_addtl) in `tidyr` that are useful.  Note that throughout I use the `%>%` operator we covered in the [last chapter](#pipe). Although not required, the `tidyr` package has the `%>%` operator baked in to its functionality, which allows you to [sequence multiple tidy functions together](#tidyr_seq).  
 
-## Making wide data long
+## Making wide data long {#gather}
 There are times when our data is considered "wide" or "unstacked" and a common attribute/variable of concern is spread out across columns.  To reformat the data such that these common attributes are *gathered* together as a single variable, the `gather()` function will take multiple columns and collapse them into key-value pairs, duplicating all other columns as needed.
 
 For example, let's say we have the given data frame.
@@ -77,7 +77,7 @@ wide %>% gather(Quarter, Revenue, Qtr.1, Qtr.2, Qtr.3, Qtr.4)
 ```
 
 
-## Making long data wide
+## Making long data wide {#spread}
 There are also times when we are required to turn long formatted data into wide formatted data.  As a complement to `gather()`, the `spread()` function spreads a key-value pair across multiple columns. So now let's take our `long` data frame from above and and turn the `Quarter` variable into column headings and spread the `Revenue` values across the quarters they are related to.
 
 {linenos=off}
@@ -103,7 +103,7 @@ back2wide
 ```
 
 
-## Splitting a single column into multiple columns
+## Splitting a single column into multiple columns {#separate}
 Many times a single column variable will capture multiple variables, or even parts of a variable you just don't care about.  Some examples follow.  Here, the `Grp_Ind` variable combines an individual variable (a, b, c) with the group variable (1, 2, 3), the `Yr_Mo` variable combines a year variable with a month variable, etc. In each case there may be a purpose for separating parts of these columns into *separate* variables. This can be accomplished using the `separate()` function which turns a single character column into multiple columns.
 
 {linenos=off}
@@ -146,7 +146,7 @@ messy_df %>% separate(col = Grp_Ind, into = c("Grp", "Ind"), remove = FALSE)
 ## 4     2.a   2   a 2007_Jan   Rochester (MN)   XX04person_4
 ```
 
-## Combining multiple columns into a single column
+## Combining multiple columns into a single column {#unite}
 Similarly, there are times when we would like to combine the values of two variables.  As a compliment to `separate()`, the `unite()` function is a convenient function to paste together multiple variable values into one. Consider the following data frame that has separate date variables. To perform time series analysis or for visualizations we may desire to have a single date column.
 
 {linenos=off}
@@ -187,7 +187,7 @@ expenses %>% unite(col = "Date", c(Year, Month, Day), sep = "-")
 ## 4 2015-3-10     325
 ```
 
-## Additional `tidyr` functions
+## Additional `tidyr` functions {#tidyr_addtl}
 The previous four functions (`gather`, `spread`, `separate` and `unite`) are the primary functions you will find yourself using on a continuous basis; however, there are some handy functions that are lesser known with the `tidyr` package.
 
 {linenos=off}
@@ -278,7 +278,7 @@ expenses %>% replace_na(replace = list(Year = 2015, Day = "unknown"))
 ## 6    NA  2015     2       5   90.00
 ```
 
-## Sequencing your `tidyr` operations
+## Sequencing your `tidyr` operations {#tidyr_seq}
 Since the `%>%` operator is embedded in `tidyr`, we can string multiple operations together to efficiently tidy data *and* make the process easy to read and follow.  To illustrate, let's use the following data, which has multiple *messy* attributes.  
 
 {linenos=off}
