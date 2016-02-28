@@ -104,7 +104,7 @@ back2wide
 
 
 ## Splitting a single column into multiple columns {#separate}
-Many times a single column variable will capture multiple variables, or even parts of a variable you just don't care about.  Some examples follow.  Here, the `Grp_Ind` variable combines an individual variable (a, b, c) with the group variable (1, 2, 3), the `Yr_Mo` variable combines a year variable with a month variable, etc. In each case there may be a purpose for separating parts of these columns into *separate* variables. This can be accomplished using the `separate()` function which turns a single character column into multiple columns.
+Many times a single column variable will capture multiple variables, or even parts of a variable you just don't care about.  This is exemplified in the following `messy_df` data frame.  Here, the `Grp_Ind` variable combines an individual variable (a, b, c) with the group variable (1, 2, 3), the `Yr_Mo` variable combines a year variable with a month variable, etc. In each case there may be a purpose for separating parts of these columns into *separate* variables. 
 
 {linenos=off}
 ```r
@@ -220,7 +220,7 @@ expenses %>% fill(Dept, Year)
 ## 6     B  2015     2     5    $90.00
 ```
 
-Also, sometimes accounting values in Excel spreadsheet get read in as a character value, which is the case for the `Cost` variable. We may wish to extract only the numeric part of this regular expression, which can be done with `extract_numeric()`. Note that `extract_numeric` works on a single variable so when you pipe the `expense` data frame into the function you need to use `%$%` operator as discussed in the last chapter.
+Also, sometimes accounting values in Excel spreadsheet get read in as a character value, which is the case for the `Cost` variable. We may wish to extract only the numeric part of this regular expression, which can be done with `extract_numeric()`. Note that `extract_numeric` works on a single variable so when you pipe the `expense` data frame into the function you need to use `%$%` operator as discussed in the [last chapter](#pipe).
 
 {linenos=off}
 ```r
