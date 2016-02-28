@@ -27,7 +27,7 @@ attributes(m1)
 ## [1] 2 3
 ```
 
-Matrices can also contain character values. Whether a matrix contains data that is of numeric or character type, like a vector all the elements must be of the same class.
+Matrices can also contain character values. Whether a matrix contains data that are of numeric or character type, all the elements must be of the same class.
 
 {linenos=off}
 ```r
