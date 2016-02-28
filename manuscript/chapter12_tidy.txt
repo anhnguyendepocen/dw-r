@@ -36,7 +36,7 @@ wide <- tbl_df(read.table(header = TRUE, text = "
 "))
 ```
 
-This data is considered wide since the *<u>time</u>* variable (represented as quarters) is structured such that each quarter represents a variable. To re-structure the time component as an individual variable, we can *gather* each quarter within one column variable and also *gather* the values associated with each quarter in a second column variable.
+This data is considered wide since the *____time____* variable (represented as quarters) is structured such that each quarter represents a variable. To re-structure the time component as an individual variable, we can *gather* each quarter within one column variable and also *gather* the values associated with each quarter in a second column variable.
 
 {linenos=off}
 ```r
