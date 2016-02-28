@@ -1,6 +1,6 @@
 # Introduction to R
 
-A language for data analysis and graphics. This definition of R was used by Ross Ihaka and Robert Gentleman in the title of their 1996 paper[^RR_paper] outlining their experience of designing and implementating the R software. Its safe to say this remains the essence of what R is; however, its tough to encapsulate such a diverse programming language into a single phrase.
+A language for data analysis and graphics. This definition of R was used by Ross Ihaka and Robert Gentleman in the title of their 1996 paper[^RR_paper] outlining their experience of designing and implementating the R software. It's safe to say this remains the essence of what R is; however, it's tough to encapsulate such a diverse programming language into a single phrase.
 
 During the last decade, the R programming language has become one of the most widely used tools for statistics and data science. Its application runs the gamut from data preprocessing, cleaning, web scraping and visualization to a wide range of analytic tasks such as computational statistics, econometrics, optimization, and natural language processing.  In 2012 R had over [2 million users](http://www.oracle.com/us/corporate/press/1515738) and continues to grow by double digit percentage points every year. R has become an essential analytic software throughout industry; being used by organizations such as Google, Facebook, New York Times, Twitter, Etsy, Department of Defense, and even in presidential political campaigns.
 
