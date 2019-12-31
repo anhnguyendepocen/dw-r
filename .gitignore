@@ -1,3 +1,14 @@
 .Rproj.user
 .Rhistory
 .RData
+/*.html
+/*.pdf
+book/dw-r.pdf
+_cache
+_figures
+_main.rds
+_main.adx
+_main.log
+
+_book/
+_bookdown_files/
