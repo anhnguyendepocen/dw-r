@@ -3,24 +3,22 @@ cache:
   packages: true
   directories:
   - $HOME/.npm
+  - _book
   
 pandoc_version: 2.3.1
 
 repos:
   CRAN: https://cloud.r-project.org
   ropensci: http://packages.ropensci.org
-  
+
 before_install:
-  - export DEPLOY_MSG="${TRAVIS_COMMIT:0:7} ${TRAVIS_COMMIT_MESSAGE:0:70}"
-
-script:
-- Rscript -e 'bookdown::render_book("index.Rmd")'
-
-after_success:
 - nvm install stable
 - npm install netlify-cli -g
 
+script:
+  - Rscript -e 'bookdown::render_book("index.rmd")'
+
 deploy:
   provider: script
-  script: netlify deploy --prod --dir _book --message "$DEPLOY_MSG"
+  script: netlify deploy --prod --dir _book
   skip_cleanup: true
