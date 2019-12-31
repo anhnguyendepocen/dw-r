@@ -1,5 +1,8 @@
 # Data Wrangling with R
 
+[![Travis-CI Build
+Status](https://travis-ci.org/bradleyboehmke/dw-r.svg?branch=master)](https://travis-ci.org/bradleyboehmke/dw-r)
+
 Code and text for the 2nd edition of the [_Data Wrangling with R_](https://www.springer.com/us/book/9783319455983) book.
 Please help me make it better by [contributing](contributing.md)!
 
