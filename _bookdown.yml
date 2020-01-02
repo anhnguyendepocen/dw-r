@@ -3,3 +3,50 @@ new_session: true
 
 rmd_files:
 - "index.Rmd"
+
+- "01-role.Rmd"
+- "02-intro-to-language.Rmd"
+- "03-getting-started.Rmd"
+
+- "04-numbers.Rmd"
+- "05-characters.Rmd"
+- "06-regex.Rmd"
+- "07-factors.Rmd"
+- "08-dates.Rmd"
+
+- "09-structure-basics.Rmd"
+- "10-vectors.Rmd"
+- "11-lists.Rmd"
+- "12-matrices.Rmd"
+- "13-arrays.Rmd"
+- "14-dataframes.Rmd"
+- "15-missing-values.Rmd"
+
+- "16-basic-io.Rmd"
+- "17-scraping.Rmd"
+
+- "18-choice-flow.Rmd"
+- "19-loops.Rmd"
+- "20-fp.Rmd"
+
+- "21-functions.Rmd"
+- "22-parallel.Rmd"
+- "23-rcpp.Rmd"
+
+- "24-scripts.Rmd"
+- "25-projects.Rmd"
+- "26-deliverables.Rmd"
+- "27-version-control.Rmd"
+
+- "28-pipe.Rmd"
+- "29-reshape.Rmd"
+- "30-dplyr.Rmd"
+- "31-dtplyr.Rmd"
+- "32-eda.Rmd"
+
+- "33-databases.Rmd"
+- "34-distributed.Rmd"
+
+- "35-case-studies.Rmd"
+
+- "99-references.Rmd"
