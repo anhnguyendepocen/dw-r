@@ -11,3 +11,5 @@ _main.adx
 _main.log
 _book
 _bookdown_files
+.DS_Store
+/*.key
