@@ -1,3 +1,3 @@
-# (PART) Managing Data Strctures in R {-} 
+# (PART) Managing Data Structures in R {-} 
 
 # Data Structure Basics

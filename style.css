@@ -67,6 +67,51 @@ div.base::before,
   color: red;
 }
 
+.warning {
+  display: block;
+  border: 1px solid red;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.warning::before {
+  content: "Warning! ";
+  font-weight: bold;
+  color: red;
+}
+
+.note {
+  display: block;
+  border: 1px solid red;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.note::before {
+  content: "Note: ";
+  font-weight: bold;
+  color: black;
+}
+
+.tip {
+  display: block;
+  border: 1px solid red;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.tip::before {
+  content: "Pro Tip: ";
+  font-weight: bold;
+  color: black;
+}
+
 /* Other gitbook tweaks -------------------------------------------------- */
 
 .book .book-body .page-wrapper .page-inner section.normal code {
