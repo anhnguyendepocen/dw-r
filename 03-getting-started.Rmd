@@ -33,7 +33,7 @@ Next, you can download RStudio’s IDE (integrated development environment), a p
 There are other R IDE’s available: Emacs, Microsoft R Open, Notepad++, etc; however, I have found RStudio to be my preferred route. When you are done installing RStudio click on the icon that looks like:
 
 ```{r rstudio-icon, echo=FALSE, fig.cap='RStudio icon', fig.align='center', out.height="25%", out.width="25%"}
-knitr::include_graphics("https://pbs.twimg.com/profile_images/1111468813919252490/YYMiHBTH_400x400.png")
+knitr::include_graphics("figures/rstudio-icon.png")
 ```
 
 and you should get a window that looks like the following:
@@ -49,7 +49,7 @@ You are now ready to start programming!
 The RStudio console is where all the action happens. There are four fundamental windows in the console, each with their own purpose. I discuss each briefly below but I highly suggest Oscar Torres-Reyna’s Introduction to RStudio for a thorough understanding of the console^[You can access this tutorial at http://dss.princeton.edu/training/RStudio101.pdf. Note that although it is from 2013 it still is very applicable and does a very thorough introduction].
 
 ```{r rstudio-console-notation, echo=FALSE, fig.cap='The four fundamental windows within the RStudio IDE', fig.align='center'}
-knitr::include_graphics("http://uc-r.github.io/public/images/RStudio_console.png")
+knitr::include_graphics("figures/rstudio-console-notation.png")
 ```
 
 ### Script Editor
@@ -63,8 +63,8 @@ To execute the code in the script editor you have two options:
 1. Place the cursor on the line that you would like to execute and execute Cmd/Ctrl + Enter. Alternatively, you could hit the __Run__ button in the toolbar.
 2. If you want to run _all_ lines of code in the script then you can highlight the lines you want to run and then execute one of the options in #1.
 
-```{r rstudio-script-runner, echo=FALSE, fig.cap='Execute lines of code in your script with Cmd/Ctrl + Enter or using the __Run__ button.', fig.align='center'}
-knitr::include_graphics("http://uc-r.github.io/public/images/run_code.png")
+```{r rstudio-script-runner, echo=FALSE, fig.cap='Execute lines of code in your script with Cmd/Ctrl + Enter or using the Run button.', fig.align='center'}
+knitr::include_graphics("figures/run-code.png")
 ```
 
 ### Workspace Environment
@@ -154,7 +154,7 @@ options(digits=3)
 For a thorough tutorial regarding the RStudio console and how to customize different components check out this [tutorial](http://dss.princeton.edu/training/RStudio101.pdf). You can also find the RStudio console cheatsheet shown below [here](https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf) or by going to __Help menu » Cheatsheets__. As with most computer programs, there are numerous keyboard shortcuts for working with the console. To access a menu displaying all the shortcuts in RStudio you can use option + shift + k. Within RStudio you can also access them in the __Help menu » Keyboard__ Shortcuts.
 
 ```{r rstudio-cheat-sheet, echo=FALSE, fig.cap='RStudio IDE cheat sheet.', fig.align='center'}
-knitr::include_graphics("https://raw.githubusercontent.com/uc-r/uc-r.github.io/master/public/images/RStudio%20Cheatsheet.png")
+knitr::include_graphics("figures/rstudio-cheatsheet.png")
 ```
 
 ### Exercises

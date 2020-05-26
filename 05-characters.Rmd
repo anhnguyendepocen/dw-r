@@ -1,1 +1,4 @@
 # Dealing with Character Strings
+
+Dealing with character strings is often under-emphasized in data analysis training. The focus typically remains on numeric values; however, the growth in data collection is also resulting in greater bits of information embedded in character strings. Consequently, handling, cleaning and processing character strings is becoming a prerequisite in daily data analysis. This chapter is meant to give you the foundation of working with characters by covering some basics followed by learning how to manipulate strings using base R functions along with using the simplified __stringr__ package.
+

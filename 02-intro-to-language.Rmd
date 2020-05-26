@@ -9,9 +9,6 @@ R is an ___open source___ software created over 20 years ago by Ihaka and Gentle
 
 Although the history of S and R is interesting^[See Roger Peng’s R programming for Data Science [@peng2016r] for further, yet concise, details on S and R’s history.], the principal artifact to observe is that R is an open source software. Open-source software^[Open-source is far from new as it has been around for decades (i.e. A-2 in the 1950s, IBM’s ACP in the ’60s, Tiny BASIC in the ’70s) but has gained prominence since the late 1990s.] such as R blurs the distinction between developer and user, which provides the ability to extend and modify the analytic functionality to your, or your organization’s, needs. The data analysis process is rarely restricted to just a handful of tasks with predictable input and outputs that can be pre-defined by a fixed user interface as is common in proprietary software. Rather, as previously mentioned in the introduction, data analyses include unique, different, and often multiple requirements regarding the specific tasks involved. Open source software allows more flexibility for you, the data scientist, to manage how data are being transformed, manipulated, and modeled “under the hood” of software rather than relying on “stiff” point and click software interfaces. Open source also allows you to operate on every major platform rather than be restricted to what your personal budget allows or the idiosyncratic purchases of organizations.
 
-```{block, type = "todo"}
-Add more context around open source
-```
 
 ## Flexibility
 
